@@ -48,7 +48,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
     def post_news():
         auth = request.headers.get('Authorization', '')
         token = auth.replace('Bearer ', '')
-        token_expiry = TOKENS.get(token, None)
+        token_expiry = TOKENS.get(token)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
             return jsonify({'error': 'Unauthorized'}), 401
