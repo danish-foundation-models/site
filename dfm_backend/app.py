@@ -19,6 +19,9 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
             raise FileNotFoundError(f"Config file {config_path} does not exist.")
         config = {}
         exec(open(config_path).read(), {}, config)
+        local_config_path = config_path.with_suffix('.local.py')
+        if Path(local_config_path).exists():
+            exec(open(local_config_path).read(), {}, config)
     app = Flask(__name__, static_folder=config['STATIC_FOLDER'], static_url_path='')
     app.config.update(config)
     limiter = Limiter(app=app, key_func=get_remote_address)

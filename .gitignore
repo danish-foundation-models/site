@@ -167,4 +167,4 @@ separate-logs/
 scripts/tailwindcss
 
 # backend config
-dfm_backend/app.conf.py
+dfm_backend/app.conf.local.py
