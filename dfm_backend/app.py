@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_mail import Mail, Message
+from http import HTTPStatus
 import json
 from os import getenv
 from pathlib import Path
@@ -62,7 +63,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         if not item['title'] or not item['date'] or not item['content']:
             return jsonify({'error': 'Missing fields'}), 400
         save_news(item)
-        return jsonify(item), 201
+        return jsonify(item), HTTPStatus.CREATED
 
     @app.route('/api/news/<news_id>', methods=['DELETE'])
     def delete_news(news_id):
