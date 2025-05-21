@@ -17,5 +17,8 @@ dependencies = [
 license = "MIT"
 license-files = ["LICENSE"]
 
+[project.scripts]
+dfm-backend = "dfm_backend.cli:run"
+
 [tool.setuptools]
-packages = ["backend"]
+packages = ["dfm_backend"]
