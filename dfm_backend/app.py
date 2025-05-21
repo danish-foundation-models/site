@@ -34,7 +34,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         if not Path(app.config['NEWS_FILE']).exists():
             return []
         with open(app.config['NEWS_FILE']) as f:
-            return [json.loads(line) for line in f]
+            return [json.loads(line) for line in f if line]
 
     def save_news(item):
         with open(app.config['NEWS_FILE'], 'a') as f:
