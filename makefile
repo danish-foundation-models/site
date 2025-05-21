@@ -7,4 +7,7 @@ build-docs:
 view-docs:
 	@echo "--- 👀 Viewing docs ---"
 	uv run mkdocs serve
-	
+
+start-backend:
+	@echo "--- 🚀 Starting backend ---"
+	dfm-backend
