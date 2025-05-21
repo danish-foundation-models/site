@@ -1,0 +1,5 @@
+{"id": "phase-1", "title": "Phase 1: Research & Planning", "quarter": "Q1 2023", "description": "Establish research framework, gather Danish language datasets, and define model architecture.", "status": "In Progress"}
+{"id": "phase-2", "title": "Phase 2: Initial Model Development", "quarter": "Q2-Q3 2023", "description": "Develop first versions of Danish language models, focusing on core language understanding capabilities.", "status": "Completed"}
+{"id": "phase-3", "title": "Phase 3: Community Testing", "quarter": "Q4 2023", "description": "Release beta versions to research community for feedback and improvement.", "status": "In Progress"}
+{"id": "phase-4", "title": "Phase 4: Model Optimization", "quarter": "Q1 2024", "description": "Refine models based on community feedback, improve efficiency and Danish-specific performance.", "status": ""}
+{"id": "phase-5", "title": "Phase 5: Public Release", "quarter": "Q2 2024", "description": "Release stable versions of Danish foundation models with documentation and examples.", "status": ""}

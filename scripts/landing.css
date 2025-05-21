@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dfmBlue: #003366;
+  --color-dfmLightBlue: #0066cc;
+  --color-dfmTeal: #00a3a3;
+  --color-dfmGreen: #00cc99;
+}
+
+.section {
+    scroll-margin-top: 100px;
+}
+
+.news-item {
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #00a3a3;
+}
+
+.roadmap-item:last-child::before {
+    height: 50%;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00cc99;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}

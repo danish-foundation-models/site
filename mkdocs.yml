@@ -1,8 +1,12 @@
 site_name: Danish Foundation Models
+site_url: https://foundationmodels.dk
+use_directory_urls: false
+
 docs_dir: "docs/"
-repo_url: https://github.com/centre-for-humanities-computing/danish-foundation-models
+repo_url: https://github.com/danish-foundation-models/site
 watch: [docs/]
 edit_uri: "blob/main/docs/"
+
 theme:
   name: material
   favicon: _static/icon.png
