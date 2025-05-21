@@ -52,7 +52,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
         data = request.json
         item = {
             'id': str(uuid.uuid4()),
@@ -61,7 +61,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
             'content': data.get('content', '').strip()
         }
         if not item['title'] or not item['date'] or not item['content']:
-            return jsonify({'error': 'Missing fields'}), 400
+            return jsonify({'error': 'Missing fields'}), HTTPStatus.BAD_REQUEST
         save_news(item)
         return jsonify(item), HTTPStatus.CREATED
 
@@ -72,11 +72,11 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token, None)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
         news_items = load_news()
         updated_news = [item for item in news_items if item.get('id') != news_id]
         if len(news_items) == len(updated_news):
-            return jsonify({'error': 'News item not found'}), 404
+            return jsonify({'error': 'News item not found'}), HTTPStatus.NOT_FOUND
         with open(app.config['NEWS_FILE'], 'w') as f:
             for item in updated_news:
                 f.write(json.dumps(item) + '\n')
@@ -89,13 +89,13 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token, None)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
         data = request.json
         title = data.get('title', '').strip()
         date = data.get('date', '').strip()
         content = data.get('content', '').strip()
         if not title or not date or not content:
-            return jsonify({'error': 'Missing fields'}), 400
+            return jsonify({'error': 'Missing fields'}), HTTPStatus.BAD_REQUEST
         news_items = load_news()
         updated = False
         for item in news_items:
@@ -106,7 +106,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
                 updated = True
                 break
         if not updated:
-            return jsonify({'error': 'News item not found'}), 404
+            return jsonify({'error': 'News item not found'}), HTTPStatus.NOT_FOUND
         with open(app.config['NEWS_FILE'], 'w') as f:
             for item in news_items:
                 f.write(json.dumps(item) + '\n')
@@ -134,7 +134,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
 
         data = request.json
         item = {
@@ -145,7 +145,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
             'status': data.get('status', '').strip(),
         }
         if not item['title'] or not item['quarter'] or not item['description']:
-            return jsonify({'error': 'Missing required fields'}), 400
+            return jsonify({'error': 'Missing required fields'}), HTTPStatus.BAD_REQUEST
 
         items = load_roadmap()
         items.append(item)
@@ -159,7 +159,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
 
         data = request.json
         items = load_roadmap()
@@ -175,7 +175,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
                 break
 
         if not updated:
-            return jsonify({'error': 'Roadmap item not found'}), 404
+            return jsonify({'error': 'Roadmap item not found'}), HTTPStatus.NOT_FOUND
 
         save_roadmap(items)
         return jsonify({'success': True})
@@ -187,13 +187,13 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token_expiry = TOKENS.get(token)
         if not token_expiry or datetime.now(UTC) > token_expiry:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
 
         items = load_roadmap()
         updated_items = [item for item in items if item.get('id') != roadmap_id]
 
         if len(updated_items) == len(items):
-            return jsonify({'error': 'Roadmap item not found'}), 404
+            return jsonify({'error': 'Roadmap item not found'}), HTTPStatus.NOT_FOUND
 
         save_roadmap(updated_items)
         return jsonify({'success': True})
@@ -204,12 +204,12 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         token = auth.replace('Bearer ', '')
         if not TOKENS.get(token) or datetime.now(UTC) > TOKENS[token]:
             TOKENS.pop(token, None)
-            return jsonify({'error': 'Unauthorized'}), 401
+            return jsonify({'error': 'Unauthorized'}), HTTPStatus.UNAUTHORIZED
 
         data = request.json
         new_order = data.get('order', [])
         if not isinstance(new_order, list):
-            return jsonify({'error': 'Invalid format'}), 400
+            return jsonify({'error': 'Invalid format'}), HTTPStatus.BAD_REQUEST
 
         current_items = load_roadmap()
         id_map = {item['id']: item for item in current_items}
@@ -230,7 +230,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
             token = str(uuid.uuid4())
             TOKENS[token] = datetime.now(UTC) + timedelta(hours=1)
             return jsonify({'token': token})
-        return jsonify({'error': 'Invalid password'}), 403
+        return jsonify({'error': 'Invalid password'}), HTTPStatus.FORBIDDEN
 
     @app.route('/api/contact', methods=['POST'])
     def contact():
@@ -240,7 +240,7 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         subject = data.get('subject', '').strip()
         message = data.get('message', '').strip()
         if not name or not email or not subject or not message:
-            return jsonify({'error': 'All fields are required.'}), 400
+            return jsonify({'error': 'All fields are required.'}), HTTPStatus.BAD_REQUEST
         timestamp = datetime.now(UTC).isoformat()
         entry = {
             "name": name,
@@ -268,8 +268,8 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
     """
             mail.send(msg)
         except Exception as e:
-            return jsonify({'error': f'Failed to send email: {str(e)}'}), 500
-        return jsonify({'success': True, 'message': 'Message received and email sent.'}), 200
+            return jsonify({'error': f'Failed to send email: {str(e)}'}), HTTPStatus.INTERNAL_SERVER_ERROR
+        return jsonify({'success': True, 'message': 'Message received and email sent.'}), HTTPStatus.OK
 
     @app.route('/api/newsletter', methods=['POST'])
     def newsletter():
@@ -278,9 +278,9 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
         consent = data.get('consent', False)
         timestamp = datetime.now(UTC).isoformat()
         if not email:
-            return jsonify({'error': 'Email is required.'}), 400
+            return jsonify({'error': 'Email is required.'}), HTTPStatus.BAD_REQUEST
         if not consent:
-            return jsonify({'error': 'You must provide GDPR consent to subscribe.'}), 400
+            return jsonify({'error': 'You must provide GDPR consent to subscribe.'}), HTTPStatus.BAD_REQUEST
         entry = {
             "email": email,
             "consent": True,
@@ -300,8 +300,8 @@ def create_app(config: dict[str, Any] | str | Path | None = None) -> Flask:
     """
             mail.send(msg)
         except Exception as e:
-            return jsonify({'error': f'Failed to send email: {str(e)}'}), 500
-        return jsonify({'success': True, 'message': 'Subscription successful with GDPR consent.'}), 200
+            return jsonify({'error': f'Failed to send email: {str(e)}'}), HTTPStatus.INTERNAL_SERVER_ERROR
+        return jsonify({'success': True, 'message': 'Subscription successful with GDPR consent.'}), HTTPStatus.OK
 
     @app.route('/')
     def index():
