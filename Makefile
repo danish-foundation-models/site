@@ -10,7 +10,8 @@ prepare-build:
 			echo "Updating uv..."; \
 			uv self update; \
 	fi
-	uv sync
+	uv python install 3.12
+	uv sync --all-extras --python 3.12
 
 build-docs:
 	@echo "--- 📚 Building docs ---"
