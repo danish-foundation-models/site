@@ -24,4 +24,4 @@ build-site: build-css
 
 start-backend:
 	@echo "--- 🚀 Starting backend ---"
-	scripts/backend.sh
+	scripts/dfm-backend
