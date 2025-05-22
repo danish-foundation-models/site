@@ -34,10 +34,7 @@ jobs:
 
       - name: Prepare landing page
         if: github.event_name == 'push'
-        run: |
-          mkdir -p site
-          touch site/.nojekyll
-          cp -rv landing/* site/
+        run: make build-site
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'

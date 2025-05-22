@@ -1,5 +1,5 @@
 import os
-STATIC_FOLDER = os.getenv('STATIC_FOLDER', os.path.join(os.getcwd(), 'landing'))
+STATIC_FOLDER = os.getenv('STATIC_FOLDER', os.path.join(os.getcwd(), 'site'))
 DATA_FOLDER = os.getenv('DATA_FOLDER', os.path.join(os.getcwd(), 'data'))
 NEWS_FILE = os.getenv('NEWS_FILE', os.path.join(DATA_FOLDER, 'news.jsonl'))
 ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'changeme')

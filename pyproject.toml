@@ -13,12 +13,13 @@ dependencies = [
     "flask-limiter==3.12",
     "flask-mail==0.10.0",
     "gunicorn==23.0.0",
+    "uv==0.7.6",
 ]
 license = "MIT"
 license-files = ["LICENSE"]
 
-[project.scripts]
-dfm-backend = "dfm_backend.cli:run"
-
 [tool.setuptools]
 packages = ["dfm_backend"]
+
+[tool.setuptools.data-files]
+"bin" = ["scripts/dfm-backend"]

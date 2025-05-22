@@ -1,3 +1,5 @@
+all: build-docs build-site
+
 build-docs:
 	@echo "--- 📚 Building docs ---"
 	@echo "Builds the docs and puts them in the 'site' folder"
@@ -8,6 +10,18 @@ view-docs:
 	@echo "--- 👀 Viewing docs ---"
 	uv run mkdocs serve
 
+build-css:
+	@echo "--- 🎨 Building CSS ---"
+	@echo "Builds the CSS and puts it in the 'landing' folder"
+	scripts/landing.sh
+
+build-site: build-css
+	@echo "--- 🏗️ Building site ---"
+	@echo "Builds the site and puts it in the 'site' folder"
+	mkdir -p site
+	touch site/.nojekyll
+	cp -rv landing/* site/
+
 start-backend:
 	@echo "--- 🚀 Starting backend ---"
-	dfm-backend
+	scripts/backend.sh
