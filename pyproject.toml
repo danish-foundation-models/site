@@ -22,4 +22,4 @@ license-files = ["LICENSE"]
 packages = ["dfm_backend"]
 
 [tool.setuptools.data-files]
-"bin" = ["scripts/dfm-backend"]
+bin = ["scripts/dfm-backend"]
