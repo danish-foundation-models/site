@@ -1,4 +1,16 @@
-all: build-docs build-site
+all: prepare-build build-docs build-site
+
+prepare-build:
+	@echo "--- 🛠️ Preparing build ---"
+	@echo "This will install the dependencies"
+	@if [ "$(shell which uv)" = "" ]; then \
+		curl -LsSf https://astral.sh/uv/install.sh | sh; \
+			echo "Installed uv."; \
+		else \
+			echo "Updating uv..."; \
+			uv self update; \
+	fi
+	uv sync
 
 build-docs:
 	@echo "--- 📚 Building docs ---"
