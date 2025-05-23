@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+export GUNICORN_CONF=$(python -c $'import pathlib as p\nimport dfm_backend as d\nprint(p.Path(d.__file__).resolve().parent / "gunicorn.conf.py")')
+gunicorn "dfm_backend:create_app()" -c $GUNICORN_CONF $@
