@@ -13,7 +13,7 @@ dependencies = [
     "flask-limiter==3.12",
     "flask-mail==0.10.0",
     "gunicorn==23.0.0",
-    "uv==0.7.6",
+    "uv==0.8.6",
 ]
 license = "MIT"
 license-files = ["LICENSE"]
