@@ -52,12 +52,94 @@ nav:
   - About: index.md
   - Models: models.md
   - Datasets:
-      - DCC: dcc.md
+      - DFMv1: dfm_data.md
       - Datasheets:
-          - DaNews: datasheets/danews.md
-          - HopeTwitter: datasheets/hopetwitter.md
-          - NAT: datasheets/netarkivet_text.md
-          - DaRadio: datasheets/daradio.md
+        - Archive for Danish Literature: data/adl/adl.md
+        - AI Aktindsigt: data/ai-aktindsigt/ai-aktindsigt.md
+        - ArXiv Abstracts: data/arxiv_abstracts_filtered/arxiv_abstracts_filtered.md
+        - ArXiv Papers: data/arxiv_papers_filtered/arxiv_papers_filtered.md
+        - Biodiversity Heritage Library: data/biodiversity_heritage_library_filtered/biodiversity_heritage_library_filtered.md
+        - Bornholmsk: data/botxt/botxt.md
+        - Caselaw Access Project: data/caselaw_access_project_filtered/caselaw_access_project_filtered.md
+        - Creative Commons Common Crawl: data/cccc_filtered/cccc_filtered.md
+        - Cellar: data/cellar/cellar.md
+        - Annual Reports (CVR): data/cvr-reports/cvr-reports.md
+        - PleIAs - Danish Public Domain: data/danish-pd/danish-pd.md
+        - DanNet: data/dannet/dannet.md
+        - Danske Taler: data/danske-taler/danske-taler.md
+        - Data Provenance Initiative: data/data_provenance_initiative_filtered/data_provenance_initiative_filtered.md
+        - DBC D1G1TAL - Abstracts : data/dbc-abstracts/dbc-abstracts.md
+        - DBC D1G1TAL - Faktalink: data/dbc-faktalink/dbc-faktalink.md
+        - DBC D1G1TAL - Forfatterweb: data/dbc-forfatterweb/dbc-forfatterweb.md
+        - DBC D1G1TAL - Reviews: data/dbc-reviews/dbc-reviews.md
+        - Danish Dependency Treebank: data/depbank/depbank.md
+        - Directory of Open Access Books: data/doab_filtered/doab_filtered.md
+        - Domsdatabasen.dk: data/domsdatabasen/domsdatabasen.md
+        - DSK - Alexandra Institutet: data/dsk-alexandra/dsk-alexandra.md
+        - DSK - ATP: data/dsk-atp/dsk-atp.md
+        - DSK - cBrain: data/dsk-cbrain/dsk-cbrain.md
+        - DSK - Dansk Erhverv: data/dsk-danskerhverv/dsk-danskerhverv.md
+        - DSK - DK Medier: data/dsk-dkmedier/dsk-dkmedier.md
+        - DSK - HOFOR: data/dsk-hofor/dsk-hofor.md
+        - DSK - IDA: data/dsk-ida/dsk-ida.md
+        - DSK - Odense Kommune: data/dsk-odense/dsk-odense.md
+        - DSK - Plesner: data/dsk-plesner/dsk-plesner.md
+        - DSK - Salling Group: data/dsk-salling/dsk-salling.md
+        - DSK - Vejle Kommune: data/dsk-vejle/dsk-vejle.md
+        - DSK - Vitec: data/dsk-vitec/dsk-vitec.md
+        - Enevældens Nyheder Online: data/enevaeldens_nyheder/enevaeldens_nyheder.md
+        - European Parliament: data/ep/ep.md
+        - EUR-Lex SUM: data/eur-lex-sum-da/eur-lex-sum-da.md
+        - Finansministeriets Udgivelser: data/fm-udgivelser/fm-udgivelser.md
+        - Folketinget: data/ft/ft.md
+        - GitHub Archive: data/github_archive_filtered/github_archive_filtered.md
+        - Grundtvig's Works: data/grundtvig/grundtvig.md
+        - Gutenberg: data/gutenberg/gutenberg.md
+        - Health Hovedstaden: data/health_hovedstaden/health_hovedstaden.md
+        - Hestenettet (Danish debate forum): data/hest/hest.md
+        - Johannes V. Jensen: data/jvj/jvj.md
+        - Library of Congress: data/library_of_congress_filtered/library_of_congress_filtered.md
+        - LibreTexts: data/libretexts_filtered/libretexts_filtered.md
+        - MeMo Canonical Novels: data/memo/memo.md
+        - Miljøportalen: data/miljoeportalen/miljoeportalen.md
+        - NAAT: data/naat/naat.md
+        - Norwegian Colossal Corpus (books): data/ncc_books/ncc_books.md
+        - Norwegian Colossal Corpus (maalfrid): data/ncc_maalfrid/ncc_maalfrid.md
+        - Norwegian Colossal Corpus (newspaper): data/ncc_newspaper/ncc_newspaper.md
+        - Norwegian Colossal Corpus (parliament): data/ncc_parliament/ncc_parliament.md
+        - News: data/news_filtered/news_filtered.md
+        - Nordjylland News: data/nordjyllandnews/nordjyllandnews.md
+        - Nota lyd- og tekstdata (Tekst only): data/nota/nota.md
+        - OERCommons: data/oercommons_filtered/oercommons_filtered.md
+        - OpenSubtitles: data/opensubtitles/opensubtitles.md
+        - PeS2o: data/peS2o_filtered/peS2o_filtered.md
+        - Plan- og Landdistriktsstyrelsen - Plandata.dk: data/plandata/plandata.md
+        - Pre-1929 Books: data/pre_1929_books_filtered/pre_1929_books_filtered.md
+        - PressBooks: data/pressbooks_filtered/pressbooks_filtered.md
+        - Project Gutenberg: data/project_gutenberg_filtered/project_gutenberg_filtered.md
+        - Public Domain Review: data/public_domain_review_filtered/public_domain_review_filtered.md
+        - PubMed: data/pubmed_filtered/pubmed_filtered.md
+        - Python Enhancement Proposals (PEP): data/python_enhancement_proposals_filtered/python_enhancement_proposals_filtered.md
+        - Regulations.Gov: data/regulations_filtered/regulations_filtered.md
+        - Religious texts: data/relig/relig.md
+        - retsinformation.dk (Danish legal information): data/retsinformationdk/retsinformationdk.md
+        - retspraksis (Danish legal information): data/retspraksis/retspraksis.md
+        - skat.dk: data/skat/skat.md
+        - Spontaneous speech: data/spont/spont.md
+        - Stack Exchange: data/stackexchange_filtered/stackexchange_filtered.md
+        - Stack V2 Edu: data/stackv2_edu_filtered/stackv2_edu_filtered.md
+        - Synnejysk Forening: data/synne/synne.md
+        - TV 2 Radio: data/tv2r/tv2r.md
+        - Ubuntu IRC: data/ubuntu_irc_filtered/ubuntu_irc_filtered.md
+        - UK Hansard: data/uk_hansard_filtered/uk_hansard_filtered.md
+        - USGPO: data/usgpo_filtered/usgpo_filtered.md
+        - USPTO: data/uspto_filtered/uspto_filtered.md
+        - Wikipedia: data/wiki/wiki.md
+        - Wikibooks: data/wikibooks/wikibooks.md
+        - Wikimedia: data/wikimedia_filtered/wikimedia_filtered.md
+        - Wikisource: data/wikisource/wikisource.md
+        - Wikiteam: data/wikiteam_filtered/wikiteam_filtered.md
+        - Creative Commons Youtube: data/youtube_filtered/youtube_filtered.md
   - Blog: blog
 
 plugins:
