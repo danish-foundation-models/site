@@ -107,7 +107,7 @@ From [the Department of Computer Science at the University of Copenhagen](https:
 
 From [Center for Sprogteknologi at the University of Copenhagen](https://cst.ku.dk):
 
-  - Bolette Sandford Pedersen ([bspedersen@hum.ku.dk]((mailto:bspedersen@hum.ku.dk))
+  - Bolette Sandford Pedersen ([bspedersen@hum.ku.dk](mailto:bspedersen@hum.ku.dk))
   - Ali Basirat ([alib@hum.ku.dk](mailto:alib@hum.ku.dk))
 
 <details>
@@ -124,8 +124,8 @@ Those without data access, but who have contributed substantially to the project
 
 From [Alvenir](https://www.alvenir.ai/):
 
-  - Martin Carsten Nielsen ([martin@alvenir.ai](martin@alvenir.ai))
-  - Søren Vejlgaard Holm ([swh@alvenir.ai](swh@alvenir.ai))
+  - Martin Carsten Nielsen ([martin@alvenir.ai](mailto:martin@alvenir.ai))
+  - Søren Vejlgaard Holm ([swh@alvenir.ai](mailto:swh@alvenir.ai))
 
 ## Join Us
 
