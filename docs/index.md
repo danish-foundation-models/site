@@ -41,91 +41,147 @@ Additionally, we prioritise the security of the data during its processing and t
 Besides our [models](https://www.foundationmodels.dk/models/) DFM has led to a series of positive open-source contributions, the following table include some of these contributions:
 
 
-| Project                                                                                                                                                                                                                                                                            | Contribution                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **Packages**                                                                                                                                                                                                                                                                       |                                                                                                     |
-| [NLPDedup](https://github.com/saattrupdan/NLPDedup)                                                                                                                                                                                                                                | A deduplication library derived from DFM's deduplication code                                       |
-| **Code contributions**                                                                                                                                                                                                                                                             |                                                                                                     |
-| [TextDescriptives](https://hlasse.github.io/TextDescriptives/)                                                                                                                                                                                                                     | Added heuristic quality measure for texts                                                           |
-| [dolma](https://github.com/allenai/dolma)                                                                                                                                                                                                                                          | Bugfixes and addition of taggers for filtering                                                      |
-| **Benchmarks**                                                                                                                                                                                                                                                                     |                                                                                                     |
+| Project                                                                                                                                                                                                                                                                            | Contribution                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Packages**                                                                                                                                                                                                                                                                       |                                                                                                                             |
+| [NLPDedup](https://github.com/saattrupdan/NLPDedup)                                                                                                                                                                                                                                | A deduplication library derived from DFM's deduplication code                                                               |
+| **Code contributions**                                                                                                                                                                                                                                                             |                                                                                                                             |
+| [TextDescriptives](https://hlasse.github.io/TextDescriptives/)                                                                                                                                                                                                                     | Added heuristic quality measure for texts                                                                                   |
+| [dolma](https://github.com/allenai/dolma)                                                                                                                                                                                                                                          | Bugfixes and addition of taggers for filtering                                                                              |
+| **Benchmarks**                                                                                                                                                                                                                                                                     |                                                                                                                             |
 | [ScandEval](https://scandeval.com)                                                                                                                                                                                                                                                 | Co-contributors have significant contributions to developing NLU and NLG benchmarks for Scandinavian and Germanic languages |
-| [Scandinavian Embedding Benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)                                                                                                                                                                          | The benchmark for evaluating Scandinavian embedding has been created as a part of DFM               |
-| **Datasets**                                                                                                                                                                                                                                                                       |                                                                                                     |
-| [m_arc](https://huggingface.co/datasets/alexandrainst/m_arc), [m_mmlu](https://huggingface.co/datasets/alexandrainst/m_mmlu), [m_hellaswag](https://huggingface.co/datasets/alexandrainst/m_hellaswag), [m_truthfulqa](https://huggingface.co/datasets/alexandrainst/m_truthfulqa) | Translated versions of English datasets intended for model evaluation for these domains             |
+| [Scandinavian Embedding Benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)                                                                                                                                                                          | The benchmark for evaluating Scandinavian embedding has been created as a part of DFM                                       |
+| **Datasets**                                                                                                                                                                                                                                                                       |                                                                                                                             |
+| [m_arc](https://huggingface.co/datasets/alexandrainst/m_arc), [m_mmlu](https://huggingface.co/datasets/alexandrainst/m_mmlu), [m_hellaswag](https://huggingface.co/datasets/alexandrainst/m_hellaswag), [m_truthfulqa](https://huggingface.co/datasets/alexandrainst/m_truthfulqa) | Translated versions of English datasets intended for model evaluation for these domains                                     |
 
-
-<!-- 
-temp. removed (see DDSC slack channel: NLP)
-
-| [dagw_reddit_filtered_v1.0.0](https://huggingface.co/datasets/DDSC/dagw_reddit_filtered_v1.0.0)                        | A filtered version of the Danish Gigaword, including reddit   | 
-| **Lexical Resources**                                                                                                  |                                                               |
-| [Detailed Word Frequencies](https://huggingface.co/collections/chcaa/danish-word-frequencies-65ba3f61875c73327d1691b2) | Detailed word frequencies across domain and pos-tags          |
-
--->
 
 ## Improving the Danish Language Technology Landscape
 
 The Danish Foundations models is a collaboration across Danish universities and research organizations. The project engages with data science communities and initiatives ([Danish Data Science Community](https://danskdatascience.dk/)), to promote the development of Danish language tools. We continually gather information about how to improve the Danish language technologies and how to best support the community. If you want to highlight missing pieces in Danish NLP we invite you to open a thread on the [forum](https://github.com/centre-for-humanities-computing/danish-foundation-models/discussions/categories/missing-pieces-for-danish-nlp) stating the problems and potential solutions.
 
-## Contributors
-
 ## The Core Team
 Those with data access, who contribute to the project, including data management, model development, project management, and more.
 
-From [the Center for Humanities Computing at Aarhus University](https://chc.au.dk/):
+<style>
+.logo-carousel {
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
 
-  - Kenneth Enevoldsen ([kenneth.enevoldsen@cas.au.dk](mailto:kenneth.enevoldsen@cas.au.dk))
- - Marton Kardos ([martonkardos@cas.au.dk](mailto:martonkardos@cas.au.dk))
-  - Jan Kostkan ([jan.kostkan@cas.au.dk](mailto:jan.kostkan@cas.au.dk))
-  - Peter Vahlstrup ([imvpbv@cc.au.dk](mailto:imvpbv@cc.au.dk))
-  - Per Møldrup-Dalum ([per@cas.au.dk](mailto:per@cas.au.dk))
-  - Kristoffer Laigaard Nielbo ([kln@cas.au.dk](mailto:kln@cas.au.dk))
+.logo-carousel-track {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
 
-From [the Alexandra Institute](https://alexandra.dk/):
+.logo-carousel-track:hover {
+  animation-play-state: paused;
+}
 
-  - Rasmus Larsen ([rasmus.larsen@alexandra.dk](mailto:rasmus.larsen@alexandra.dk))
-  - Dan Saattrup Nielsen ([dan.nielsen@alexandra.dk](mailto:dan.nielsen@alexandra.dk))
-  - Andreas Nugaard Holm ([andreas.holm@alexandra.dk](mailto:andreas.holm@alexandra.dk))
-  - Kristian Nørgaaard Jensen ([kristian.n.jensen@alexandra.dk](mailto:kristian.n.jensen@alexandra.dk))
-  - Torben Blach ([torben.blach@alexandra.dk](mailto:torben.blach@alexandra.dk))
-  - Jens Kaas Benner ([jens.benner@alexandra.dk](mailto:jens.benner@alexandra.dk))
+.logo-carousel a {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
 
-From [the Center for Machine Learning at the University of Southern Denmark](https://www.sdu.dk/en/forskning/machine-learning):
+.logo-carousel img {
+  display: block;
+  object-fit: contain;
+}
 
-  - Peter Schneider-Kamp ([petersk@imada.sdu.dk](mailto:petersk@imada.sdu.dk))
-  - Lukas Galke ([galke@imada.sdu.dk](mailto:galke@imada.sdu.dk))
-  - Andrea Blasi Núñez ([abln@mmmi.sdu.dk](mailto:abln@mmmi.sdu.dk))
-  - Gianluca Barmina ([gbarmina@imada.sdu.dk](mailto:gbarmina@imada.sdu.dk))
-  - Jacob Nielsen ([jacn@imada.sdu.dk](mailto:jacn@imada.sdu.dk))
-  - Mogens Henrik From ([from@imada.sdu.dk](mailto:from@imada.sdu.dk))
-  - Stine Lyngsø Beltoft ([stinelb@imada.sdu.dk](mailto:stinelb@imada.sdu.dk))
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 2rem));
+  }
+}
 
-From [the Department of Computer Science at the University of Copenhagen](https://di.ku.dk/):
+</style>
 
-  - Desmond Elliott ([de@di.ku.dk](mailto:de@di.ku.dk))
+<div class="logo-carousel">
+  <div class="logo-carousel-track">
+    <a href="https://www.sdu.dk">
+      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
+    </a>
+    <a href="https://chc.au.dk/">
+      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
+    </a>
+    <a href="https://www.ku.dk">
+      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
+    </a>
+    <a href="https://alexandra.dk/">
+      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
+    </a>
+    <a href="https://chc.au.dk/">
+      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
+    </a>
+    <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
+        <a href="https://www.sdu.dk">
+      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
+    </a>
+    <a href="https://chc.au.dk/">
+      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
+    </a>
+    <a href="https://www.ku.dk">
+      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
+    </a>
+    <a href="https://alexandra.dk/">
+      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
+    </a>
+    <a href="https://chc.au.dk/">
+      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
+    </a>
+  </div>
+</div>
 
-From [Center for Sprogteknologi at the University of Copenhagen](https://cst.ku.dk):
 
-  - Bolette Sandford Pedersen ([bspedersen@hum.ku.dk](mailto:bspedersen@hum.ku.dk))
-  - Ali Basirat ([alib@hum.ku.dk](mailto:alib@hum.ku.dk))
+## Collaborators and Contributors
 
-<details>
-<summary>Project Alumnis</summary>
-<br>
+Collaborators and contributors who have supported the project through data contributions, model evaluations, benchmarking, and other valuable inputs. This does not include funding bodies.
 
-Lasse Hansen, Martin Bernstorff, Tao Tang
+<div class="logo-carousel">
+  <div class="logo-carousel-track">
+    <a href="https://www.alvenir.ai/">
+      <img src="./_static/collaborators-logos/alvenir.png" alt="Alvenir" style="height: 60px; width: auto;">
+    </a>
+    <a href="https://www.ordbogen.com/">
+      <img src="./_static/collaborators-logos/ordbogen_com.png" alt="Ordbogen.com" style="height: 65px; width: auto;">
+    </a>
+    <a href="https://digst.dk/">
+      <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
+    </a>
+        <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
+        <a href="https://www.alvenir.ai/">
+      <img src="./_static/collaborators-logos/alvenir.png" alt="Alvenir" style="height: 60px; width: auto;">
+    </a>
+    <a href="https://www.ordbogen.com/">
+      <img src="./_static/collaborators-logos/ordbogen_com.png" alt="Ordbogen.com" style="height: 65px; width: auto;">
+    </a>
+    <a href="https://digst.dk/">
+      <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
+    </a>
+        <a href="https://www.alvenir.ai/">
+      <img src="./_static/collaborators-logos/alvenir.png" alt="Alvenir" style="height: 60px; width: auto;">
+    </a>
+    <a href="https://www.ordbogen.com/">
+      <img src="./_static/collaborators-logos/ordbogen_com.png" alt="Ordbogen.com" style="height: 65px; width: auto;">
+    </a>
+    <a href="https://digst.dk/">
+      <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
+    </a>
+  </div>
+</div>
 
-</details>
-
-
-### Core Contributors
-Those without data access, but who have contributed substantially to the project including code contributions, model development, and experiment planning.
-
-From [Alvenir](https://www.alvenir.ai/):
-
-  - Martin Carsten Nielsen ([martin@alvenir.ai](mailto:martin@alvenir.ai))
-  - Søren Vejlgaard Holm ([swh@alvenir.ai](mailto:swh@alvenir.ai))
 
 ## Join Us
 
