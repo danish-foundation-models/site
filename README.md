@@ -20,10 +20,10 @@ For more information please check out the following links:
 
 |                                                                                                         |                                                                                                         |
 | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 📑 [**About**](https://centre-for-humanities-computing.github.io/danish-foundation-models/)              | A overview of the DFM project                                                                           |
+| 📑 [**About**](https://www.foundationmodels.dk/index.html)                                              | A overview of the DFM project                                                                           |
 | [**Research Paper**](https://arxiv.org/abs/2311.07264)                                                  | An paper introducing DFM and its rationale                                                              |
-| 🚀 [**Models**](https://centre-for-humanities-computing.github.io/danish-foundation-models/models_text/) | A overview of current models available through the DFM project                                          |
-| 💽 [**Datasets**](https://centre-for-humanities-computing.github.io/danish-foundation-models/dcc/)       | Includes datasheets about the datasets which includes preprocessing, reason for constructions and more. |
+| 🚀 [**Models**](https://www.foundationmodels.dk/models.html)                                            | A overview of current models available through the DFM project                                          |
+| 💽 [**Datasets**](https://www.foundationmodels.dk/dfm_data.html)                                        | Includes datasheets about the datasets which includes preprocessing, reason for constructions and more. |
 
 
 
@@ -32,9 +32,9 @@ DFM is considered a collaborative project for training and maintaining Danish La
 
 |                                                                                                                      |                                                               |
 | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 🗣 [**DDSC Slack**](https://join.slack.com/t/danskdatascie-o8m9638/shared_invite/zt-1jh2dwmj4-D_mjywfXERvVP75n9O0ykg) | Join the discussion in the "danish-foundation-models"-channel |
-| 💬 [**GitHub Discussion**](https://github.com/centre-for-humanities-computing/danish-foundation-models/discussions)   | Ask questions or start a discussion                           |
-| 🚨 [**GitHub Issues**](https://github.com/centre-for-humanities-computing/danish-foundation-models/issues)            | Notices a bug in the code? Please create an issue             |
+| 🗣 [**DDSC Slack**](https://join.slack.com/t/danskdatascie-o8m9638/shared_invite/zt-1jh2dwmj4-D_mjywfXERvVP75n9O0ykg)| Join the discussion in the "danish-foundation-models"-channel |
+| 💬 [**GitHub Discussion**](https://github.com/danish-foundation-models/site/discussions)                             | Ask questions or start a discussion                           |
+| 🚨 [**GitHub Issues**](https://github.com/danish-foundation-models/site/issues)                                      | Notices a bug in the code? Please create an issue             |
 
 You can contribute both:
 
