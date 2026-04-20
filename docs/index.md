@@ -5,6 +5,24 @@ hide:
 ---
 
 <style>
+.md-content__inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.md-main__inner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.md-content {
+  padding-top: 0 !important;
+}
+
+.md-typeset > :first-child {
+  margin-top: 0 !important;
+}
+
 .hero {
   text-align: center;
   padding: 6rem 2rem 5rem;
@@ -113,6 +131,11 @@ hide:
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  transition: color 0.2s;
+}
+
+.story-card:hover .story-card-title {
   color: #c8102e;
 }
 
@@ -150,8 +173,13 @@ hide:
   display: block;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #c8102e;
+  color: #1a1a1a;
   margin-bottom: 0.4rem;
+  transition: color 0.2s;
+}
+
+.resource-card:hover .resource-card-title {
+  color: #c8102e;
 }
 
 .resource-card-desc {
@@ -213,22 +241,48 @@ hide:
 
 <div class="pillars">
   <div class="pillar">
-    <span class="pillar-icon">🌍</span>
+    <span class="pillar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </span>
     <span class="pillar-title">National Initiative, International Reach</span>
     <span class="pillar-desc">Danish in focus — but our models, benchmarks, and tools contribute to the broader European and global open-source AI community.</span>
   </div>
   <div class="pillar">
-    <span class="pillar-icon">⚙️</span>
+    <span class="pillar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="6" height="6" rx="1"/>
+        <rect x="9" y="3" width="6" height="6" rx="1"/>
+        <rect x="16" y="3" width="6" height="6" rx="1"/>
+        <rect x="2" y="12" width="6" height="6" rx="1"/>
+        <rect x="9" y="12" width="6" height="6" rx="1"/>
+        <rect x="16" y="12" width="6" height="6" rx="1"/>
+      </svg>
+    </span>
     <span class="pillar-title">The Full AI Stack</span>
     <span class="pillar-desc">From training data and model development to evaluation benchmarks and real-world adaptation — we cover the entire pipeline.</span>
   </div>
   <div class="pillar">
-    <span class="pillar-icon">💡</span>
+    <span class="pillar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a7 7 0 0 1 7 7c0 3-1.8 5.4-4.5 6.5V17a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-1.5C6.8 14.4 5 12 5 9a7 7 0 0 1 7-7z"/>
+        <line x1="9" y1="21" x2="15" y2="21"/>
+        <line x1="10" y1="18" x2="14" y2="18"/>
+      </svg>
+    </span>
     <span class="pillar-title">20+ Industry Use Cases</span>
     <span class="pillar-desc">Built in close partnership with Danish industry and public institutions to ensure the infrastructure is relevant where it matters.</span>
   </div>
   <div class="pillar">
-    <span class="pillar-icon">📖</span>
+    <span class="pillar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+    </span>
     <span class="pillar-title">Open by Design</span>
     <span class="pillar-desc">All models, datasets, and research are freely available — enabling transparency, reproducibility, and broad access.</span>
   </div>
