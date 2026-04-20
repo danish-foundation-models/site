@@ -5,21 +5,7 @@ description = "The website for Danish Foundation Models"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "mkdocs-jupyter==0.24.6",
-    "mkdocs-material==9.5.3",
-    "mkdocstrings[python]==0.24.0",
-    "flask==3.1.1",
-    "flask-cors==6.0.0",
-    "flask-limiter==3.12",
-    "flask-mail==0.10.0",
-    "gunicorn==23.0.0",
-    "uv==0.7.6",
+    "mkdocs-material==9.7.6",
 ]
 license = "MIT"
 license-files = ["LICENSE"]
-
-[tool.setuptools]
-packages = ["dfm_backend"]
-
-[tool.setuptools.data-files]
-bin = ["scripts/dfm-backend"]

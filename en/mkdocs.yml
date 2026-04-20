@@ -1,13 +1,15 @@
 site_name: Danish Foundation Models
-site_url: https://foundationmodels.dk
+site_url: https://foundationmodels.dk/
+site_dir: ../site
 use_directory_urls: false
 
-docs_dir: "docs/"
+docs_dir: docs
 watch: [docs/]
 
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: ../overrides
+  language: en
   favicon: _static/icon.png
   logo: _static/icon.png
   features:
@@ -28,7 +30,6 @@ theme:
   palette:
     primary: white
     accent: custom
-    # automatic dark mode is
 
 markdown_extensions:
   - pymdownx.superfences
@@ -38,11 +39,10 @@ markdown_extensions:
       permalink: true
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
 
 extra_css:
   - _static/extra.css
@@ -54,12 +54,18 @@ nav:
   - News: news
 
 plugins:
-  - mkdocs-jupyter
   - search
   - tags:
       tags_file: news/tags.md
   - blog:
       blog_dir: news
 
-extra: 
+extra:
   generator: false
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Dansk
+      link: /da/
+      lang: da
