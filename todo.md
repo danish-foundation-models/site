@@ -1,0 +1,3 @@
+- Clean up news stories
+- Add langauge support for Danish
+- Add more of a visual flair to the front - maybe with some logos

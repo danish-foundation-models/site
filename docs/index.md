@@ -4,11 +4,138 @@ hide:
   - toc
 ---
 
-# Empowering the Danish Language in the Digital Age
-
-Welcome to the Danish Foundation Models (DFM) project, a pioneering initiative in the field of machine learning and natural language processing (NLP) dedicated to the Danish language. Our mission is to develop, maintain, and provide open access to high-quality foundation models tailored for Danish, promoting innovation and inclusivity in language technologies.
-
 <style>
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0 0;
+  margin-bottom: 1rem;
+}
+
+.pillar {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pillar-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.pillar-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.story-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow 0.2s;
+}
+
+.story-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+}
+
+.story-card-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #c8102e;
+}
+
+.story-card-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+}
+
+.resource-card-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c8102e;
+  margin-bottom: 0.4rem;
+}
+
+.resource-card-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+}
+
 .logo-carousel {
   overflow: hidden;
   padding: 2rem 0;
@@ -53,8 +180,31 @@ Welcome to the Danish Foundation Models (DFM) project, a pioneering initiative i
     transform: translateX(-50%);
   }
 }
-
 </style>
+
+<div class="hero">
+  <h1>Building the Foundation of Danish AI</h1>
+  <p>Language models have become critical infrastructure — but smaller languages like Danish risk being left behind. Danish Foundation Models is a collaborative effort across Danish universities and research institutions to develop, evaluate, and adapt open language AI that serves Danish society.</p>
+</div>
+
+<div class="pillars">
+  <div class="pillar">
+    <span class="pillar-title">National Initiative, International Reach</span>
+    <span class="pillar-desc">Danish in focus — but our models, benchmarks, and tools contribute to the broader European and global open-source AI community.</span>
+  </div>
+  <div class="pillar">
+    <span class="pillar-title">The Full AI Stack</span>
+    <span class="pillar-desc">From training data and model development to evaluation benchmarks and real-world adaptation — we cover the entire pipeline.</span>
+  </div>
+  <div class="pillar">
+    <span class="pillar-title">20+ Industry Use Cases</span>
+    <span class="pillar-desc">Built in close partnership with Danish industry and public institutions to ensure the infrastructure is relevant where it matters.</span>
+  </div>
+  <div class="pillar">
+    <span class="pillar-title">Open by Design</span>
+    <span class="pillar-desc">All models, datasets, and research are freely available — enabling transparency, reproducibility, and broad access.</span>
+  </div>
+</div>
 
 <div class="logo-carousel">
   <div class="logo-carousel-track">
@@ -74,7 +224,7 @@ Welcome to the Danish Foundation Models (DFM) project, a pioneering initiative i
       <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
     </a>
     <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
-        <a href="https://www.sdu.dk">
+    <a href="https://www.sdu.dk">
       <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
     </a>
     <a href="https://chc.au.dk/">
@@ -92,66 +242,43 @@ Welcome to the Danish Foundation Models (DFM) project, a pioneering initiative i
   </div>
 </div>
 
-!!! abstract "Read the paper"
+## Our Work
 
-    You can read more about the argument for Danish Language models in our [publication](https://arxiv.org/abs/2311.07264).
+<div class="stories">
+  <a class="story-card" href="https://huggingface.co/collections/danish-foundation-models/dynawords">
+    <span class="story-card-title">Dynaword</span>
+    <span class="story-card-desc">A continuously updated collection of Danish word resources and linguistic infrastructure, built to support the next generation of Danish NLP.</span>
+  </a>
+  <a class="story-card" href="https://euroeval.com">
+    <span class="story-card-title">Evaluation for European AI</span>
+    <span class="story-card-desc">Through EuroEval and MTEB we develop and maintain evaluation benchmarks for both generative and search models — across Danish and other European languages.</span>
+  </a>
+  <a class="story-card" href="https://github.com/centre-for-humanities-computing/danish-foundation-models">
+    <span class="story-card-title">Open Source Contributions</span>
+    <span class="story-card-desc">From deduplication pipelines to multilingual benchmarks — DFM contributes tools and datasets used well beyond the Danish language community.</span>
+  </a>
+  <a class="story-card" href="./news/">
+    <span class="story-card-title">Latest News</span>
+    <span class="story-card-desc">Follow our work — from new model releases and dataset updates to research findings and community contributions.</span>
+  </a>
+</div>
 
-## Why Danish Foundation Models?
+## Explore Our Resources
 
-### Bridging the Digital Language Divide
+<div class="resources">
+  <a class="resource-card" href="https://huggingface.co/danish-foundation-models">
+    <span class="resource-card-title">Models</span>
+    <span class="resource-card-desc">Browse and download all of our models on Hugging Face</span>
+  </a>
+  <a class="resource-card" href="https://huggingface.co/datasets?search=danish-foundation-models">
+    <span class="resource-card-title">Datasets</span>
+    <span class="resource-card-desc">Explore the datasets we use to train and evaluate our models</span>
+  </a>
+</div>
 
-- **Global Gap**: The rise of large language models has transformed research and technology, but smaller languages like Danish risk falling behind both in development, evaluation and application.
-- **Local Focus**: We combat this by focusing on the Danish language, ensuring that it is well-represented in the digital landscape.
-- **Broad Collaboration**: Our project unites public and private institutions, ensuring high data quality and practical applicability of our models.
+## Adoption and Collaboration
 
-## Our Objectives
-
-1. To develop and maintain **state-of-the-art language models for Danish** for applications within both text and speech.
-2. To extensively **validate** foundation models for Danish in a representative set of tasks.
-3. To maintain a high standard of **documentation** of models such as model cards \[[Mitchell et al., 2019](https://arxiv.org/abs/1810.03993)\] and datasheets \[[Gebru et al., 2021](https://cacm.acm.org/magazines/2021/12/256932-datasheets-for-datasets/abstract)\].
-4. To **open-source** not only the models but also all components required for reproducibility such as pre-processing, training, and validation code.
-
-
-
-## Open-source
-
-###  Open-source Development with Privacy-Focused Data Handling
-
-In our commitment to advancing open-source development, we strongly emphasise the ethical handling of data, particularly when it involves personally sensitive information or material under copyright. This ensures that we share as much as possible while protecting privacy.
-
-To achieve this, our project is structured to differentiate between data that can be shared openly and that which cannot. 
-This demarcation is documented through detailed datasheets and training logs, thereby ensuring transparency in our processes.
-
-Additionally, we prioritise the security of the data during its processing and training phases. All data is stored on UCloud, a platform that upholds the recognised highest standards in information security management. This commitment to data security is exemplified by UCloud's adherence to ISO27001, a globally recognised standard, ensuring that our data handling practices meet rigorous international criteria. For more information on our security measures, please visit UCloud's security [documentation](https://docs.cloud.sdu.dk/intro/security.html).
-
-![](_static/structure.png)
-
-### Contributions
-
-Besides our [models](https://www.foundationmodels.dk/models/) DFM has led to a series of positive open-source contributions, the following table include some of these contributions:
-
-
-| Project                                                                                                                                                                                                                                                                            | Contribution                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **Packages**                                                                                                                                                                                                                                                                       |                                                                                                                             |
-| [NLPDedup](https://github.com/saattrupdan/NLPDedup)                                                                                                                                                                                                                                | A deduplication library derived from DFM's deduplication code                                                               |
-| **Code contributions**                                                                                                                                                                                                                                                             |                                                                                                                             |
-| [TextDescriptives](https://hlasse.github.io/TextDescriptives/)                                                                                                                                                                                                                     | Added heuristic quality measure for texts                                                                                   |
-| [dolma](https://github.com/allenai/dolma)                                                                                                                                                                                                                                          | Bugfixes and addition of taggers for filtering                                                                              |
-| **Benchmarks**                                                                                                                                                                                                                                                                     |                                                                                                                             |
-| [ScandEval](https://scandeval.com)                                                                                                                                                                                                                                                 | Co-contributors have significant contributions to developing NLU and NLG benchmarks for Scandinavian and Germanic languages |
-| [Scandinavian Embedding Benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark/)                                                                                                                                                                          | The benchmark for evaluating Scandinavian embedding has been created as a part of DFM                                       |
-| **Datasets**                                                                                                                                                                                                                                                                       |                                                                                                                             |
-| [m_arc](https://huggingface.co/datasets/alexandrainst/m_arc), [m_mmlu](https://huggingface.co/datasets/alexandrainst/m_mmlu), [m_hellaswag](https://huggingface.co/datasets/alexandrainst/m_hellaswag), [m_truthfulqa](https://huggingface.co/datasets/alexandrainst/m_truthfulqa) | Translated versions of English datasets intended for model evaluation for these domains                                     |
-
-
-## Improving the Danish Language Technology Landscape
-
-The Danish Foundations models is a collaboration across Danish universities and research organizations. The project engages with data science communities and initiatives ([Danish Data Science Community](https://danskdatascience.dk/)), to promote the development of Danish language tools. We continually gather information about how to improve the Danish language technologies and how to best support the community. If you want to highlight missing pieces in Danish NLP we invite you to open a thread on the [forum](https://github.com/centre-for-humanities-computing/danish-foundation-models/discussions/categories/missing-pieces-for-danish-nlp) stating the problems and potential solutions.
-
-## Collaborators and Contributors
-
-Collaborators and contributors who have supported the project through data contributions, model evaluations, benchmarking, and other valuable inputs. This does not include funding bodies.
+Real-world use is what makes AI infrastructure matter. The organisations below represent both active collaborators and adopters of DFM's work — spanning industry, public institutions, and cultural heritage. Their involvement shapes what we build and ensures it is relevant where it counts.
 
 <div class="logo-carousel">
   <div class="logo-carousel-track">
