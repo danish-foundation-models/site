@@ -26,7 +26,6 @@ theme:
     - toc.follow
     - pymdownx.caret
     - pymdownx.tilde
-    - content.action.edit
   palette:
     primary: white
     accent: light blue
@@ -46,7 +45,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
-copyright: Copyright &copy; 2023 Danish Foundation Models Project
+copyright: This site made available under a Creative Commons Attribution 4.0 license
 
 nav:
   - About: index.md
