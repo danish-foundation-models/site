@@ -139,6 +139,30 @@ hide:
   color: #c8102e;
 }
 
+.story-card-more {
+  background: transparent;
+  box-shadow: none;
+  border-top: none;
+  border: 2px dashed #ddd;
+  justify-content: center;
+}
+
+.story-card-more:hover {
+  border-color: #c8102e;
+  box-shadow: none;
+  transform: none;
+}
+
+.story-card-more .story-card-title {
+  color: #c8102e;
+  font-size: 0.95rem;
+}
+
+.story-card-more .story-card-desc {
+  font-size: 0.85rem;
+  color: #888;
+}
+
 .story-card-desc {
   display: block;
   font-size: 0.9rem;
@@ -339,9 +363,9 @@ hide:
     <span class="story-card-title">Open source-bidrag</span>
     <span class="story-card-desc">Fra deduplikeringspipelines til flersprogede benchmarks — DFM bidrager med værktøjer og datasæt der bruges langt ud over den dansksprogede fællesskab.</span>
   </a>
-  <a class="story-card" href="./news/">
-    <span class="story-card-title">Seneste nyheder</span>
-    <span class="story-card-desc">Følg vores arbejde — fra nye modeludgivelser og datasætopdateringer til forskningsresultater og bidrag til fællesskabet.</span>
+  <a class="story-card story-card-more" href="./news/">
+    <span class="story-card-title">Se alle nyheder →</span>
+    <span class="story-card-desc">Modeludgivelser, artikler og opdateringer fra projektet.</span>
   </a>
 </div>
 

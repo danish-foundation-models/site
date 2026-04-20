@@ -139,6 +139,30 @@ hide:
   color: #c8102e;
 }
 
+.story-card-more {
+  background: transparent;
+  box-shadow: none;
+  border-top: none;
+  border: 2px dashed #ddd;
+  justify-content: center;
+}
+
+.story-card-more:hover {
+  border-color: #c8102e;
+  box-shadow: none;
+  transform: none;
+}
+
+.story-card-more .story-card-title {
+  color: #c8102e;
+  font-size: 0.95rem;
+}
+
+.story-card-more .story-card-desc {
+  font-size: 0.85rem;
+  color: #888;
+}
+
 .story-card-desc {
   display: block;
   font-size: 0.9rem;
@@ -339,9 +363,9 @@ hide:
     <span class="story-card-title">Open Source Contributions</span>
     <span class="story-card-desc">From deduplication pipelines to multilingual benchmarks — DFM contributes tools and datasets used well beyond the Danish language community.</span>
   </a>
-  <a class="story-card" href="./news/">
-    <span class="story-card-title">Latest News</span>
-    <span class="story-card-desc">Follow our work — from new model releases and dataset updates to research findings and community contributions.</span>
+  <a class="story-card story-card-more" href="./news/">
+    <span class="story-card-title">See all news →</span>
+    <span class="story-card-desc">Model releases, papers, and updates from the project.</span>
   </a>
 </div>
 
