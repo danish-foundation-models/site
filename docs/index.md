@@ -7,7 +7,12 @@ hide:
 <style>
 .hero {
   text-align: center;
-  padding: 5rem 2rem 3rem;
+  padding: 6rem 2rem 5rem;
+  background: linear-gradient(135deg, #6b0010 0%, #c8102e 100%);
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
 }
 
 .hero h1 {
@@ -15,13 +20,14 @@ hide:
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.25rem;
+  color: white !important;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 1100px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   line-height: 1.7;
 }
 
@@ -45,6 +51,22 @@ hide:
   border-radius: 12px;
   padding: 1.75rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pillar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #fce8eb;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .pillar-title {
@@ -77,11 +99,13 @@ hide:
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-top: 3px solid #c8102e;
 }
 
 .story-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
 }
 
 .story-card-title {
@@ -189,18 +213,22 @@ hide:
 
 <div class="pillars">
   <div class="pillar">
+    <span class="pillar-icon">🌍</span>
     <span class="pillar-title">National Initiative, International Reach</span>
     <span class="pillar-desc">Danish in focus — but our models, benchmarks, and tools contribute to the broader European and global open-source AI community.</span>
   </div>
   <div class="pillar">
+    <span class="pillar-icon">⚙️</span>
     <span class="pillar-title">The Full AI Stack</span>
     <span class="pillar-desc">From training data and model development to evaluation benchmarks and real-world adaptation — we cover the entire pipeline.</span>
   </div>
   <div class="pillar">
+    <span class="pillar-icon">💡</span>
     <span class="pillar-title">20+ Industry Use Cases</span>
     <span class="pillar-desc">Built in close partnership with Danish industry and public institutions to ensure the infrastructure is relevant where it matters.</span>
   </div>
   <div class="pillar">
+    <span class="pillar-icon">📖</span>
     <span class="pillar-title">Open by Design</span>
     <span class="pillar-desc">All models, datasets, and research are freely available — enabling transparency, reproducibility, and broad access.</span>
   </div>
