@@ -70,8 +70,10 @@ Those with data access, who contribute to the project, including data management
   width: 100%;
   background: white;
   border-radius: 12px;
-  margin: 2rem 0;
+  margin: 4rem 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .logo-carousel-track {
@@ -102,7 +104,7 @@ Those with data access, who contribute to the project, including data management
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 2rem));
+    transform: translateX(-50%);
   }
 }
 
@@ -160,8 +162,11 @@ Collaborators and contributors who have supported the project through data contr
     <a href="https://digst.dk/">
       <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
     </a>
-        <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
-        <a href="https://www.alvenir.ai/">
+    <a href="https://lex.dk/">
+      <img src="./_static/collaborators-logos/lex.png" alt="Lex.dk" style="height: 55px; width: auto;">
+    </a>
+    <!-- Duplicated to make seamless loop -->
+    <a href="https://www.alvenir.ai/">
       <img src="./_static/collaborators-logos/alvenir.png" alt="Alvenir" style="height: 60px; width: auto;">
     </a>
     <a href="https://www.ordbogen.com/">
@@ -170,14 +175,8 @@ Collaborators and contributors who have supported the project through data contr
     <a href="https://digst.dk/">
       <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
     </a>
-        <a href="https://www.alvenir.ai/">
-      <img src="./_static/collaborators-logos/alvenir.png" alt="Alvenir" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ordbogen.com/">
-      <img src="./_static/collaborators-logos/ordbogen_com.png" alt="Ordbogen.com" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://digst.dk/">
-      <img src="./_static/collaborators-logos/digst.webp" alt="Agency for Digital Government" style="height: 55px; width: auto;">
+    <a href="https://lex.dk/">
+      <img src="./_static/collaborators-logos/lex.png" alt="Lex.dk" style="height: 55px; width: auto;">
     </a>
   </div>
 </div>
