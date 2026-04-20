@@ -30,11 +30,7 @@ jobs:
         run: uv sync
 
       - name: Build MkDocs
-        run: make build-docs
-
-      - name: Prepare landing page
-        if: github.event_name == 'push'
-        run: make build-site
+        run: make build
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push'
