@@ -3,9 +3,7 @@ site_url: https://foundationmodels.dk
 use_directory_urls: false
 
 docs_dir: "docs/"
-repo_url: https://github.com/danish-foundation-models/site
 watch: [docs/]
-edit_uri: "blob/main/docs/"
 
 theme:
   name: material
