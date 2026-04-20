@@ -1,40 +1,32 @@
-all: prepare-build build-docs build-site
+all: install build
 
-prepare-build:
-	@echo "--- 🛠️ Preparing build ---"
-	@echo "This will install the dependencies"
+install:
+	@echo "--- 🛠️  Installing dependencies ---"
 	@if [ "$(shell which uv)" = "" ]; then \
 		curl -LsSf https://astral.sh/uv/install.sh | sh; \
-			echo "Installed uv."; \
-		else \
-			echo "Updating uv..."; \
-			uv self update; \
+	else \
+		uv self update; \
 	fi
 	uv python install 3.12
-	uv sync --all-extras --python 3.12
+	uv sync --python 3.12
 
-build-docs:
+build:
+	@echo "--- 📚 Building English docs ---"
+	cd en && uv run mkdocs build
+	@echo "--- 📚 Building Danish docs ---"
+	cd da && uv run mkdocs build
+
+serve:
 	@echo "--- 📚 Building docs ---"
-	@echo "Builds the docs and puts them in the 'site' folder"
-	@echo "You might need to also update the table with the desc. stats you can do this by running 'make update-table-in-docs'"
-	uv run mkdocs build
+	cd en && uv run mkdocs build
+	cd da && uv run mkdocs build
+	@echo "--- 🌐 Serving at http://127.0.0.1:8000 ---"
+	cd site && uv run python -m http.server 8000 & sleep 1 && open http://127.0.0.1:8000
 
-view-docs:
-	@echo "--- 👀 Viewing docs ---"
-	uv run mkdocs serve
+serve-en:
+	@echo "--- 👀 Serving English docs with live reload ---"
+	cd en && uv run mkdocs serve
 
-build-css:
-	@echo "--- 🎨 Building CSS ---"
-	@echo "Builds the CSS and puts it in the 'landing' folder"
-	scripts/landing.sh
-
-build-site: build-css
-	@echo "--- 🏗️ Building site ---"
-	@echo "Builds the site and puts it in the 'site' folder"
-	mkdir -p site
-	touch site/.nojekyll
-	cp -rv landing/* site/
-
-start-backend:
-	@echo "--- 🚀 Starting backend ---"
-	scripts/dfm-backend
+serve-da:
+	@echo "--- 👀 Serving Danish docs with live reload ---"
+	cd da && uv run mkdocs serve

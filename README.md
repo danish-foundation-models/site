@@ -1,44 +1,70 @@
+# Danish Foundation Models — Site
 
+This repository contains the source for [foundationmodels.dk](https://foundationmodels.dk), built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
-![](docs/_static/logo.png)
+## Prerequisites
 
-[![Code style: black](https://img.shields.io/badge/Code%20Style-Black-black)](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)
+- [uv](https://docs.astral.sh/uv/) (Python package manager)
 
+If you don't have `uv` installed, running `make install` will install it automatically.
 
-A collaborative project for training foundational Danish language model. Which seeks to:
+## Getting started
 
-- Develop and maintain **state-of-the-art models** for Danish, 
-- which are **well-validated** across a wide range of tasks.
-- Furthermore, we wish to **ensure good documentation**, which allows users to assess the model for their use-case critically
-- **Open-source**, both model and source code
+Install dependencies:
 
-*Note*: This repository is intended for the text model of DFM.
+```bash
+make install
+```
 
+Serve locally with live reload:
 
-### More information:
-For more information please check out the following links:
+```bash
+make serve
+```
 
-|                                                                                                         |                                                                                                         |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 📑 [**About**](https://www.foundationmodels.dk/index.html)                                              | A overview of the DFM project                                                                           |
-| [**Research Paper**](https://arxiv.org/abs/2311.07264)                                                  | An paper introducing DFM and its rationale                                                              |
-| 🚀 [**Models**](https://www.foundationmodels.dk/models.html)                                            | A overview of current models available through the DFM project                                          |
-| 💽 [**Datasets**](https://www.foundationmodels.dk/dfm_data.html)                                        | Includes datasheets about the datasets which includes preprocessing, reason for constructions and more. |
+The site will be available at `http://127.0.0.1:8000`.
 
+## Build
 
+Build the static site into `site/`:
 
-# Wish to contribute?
-DFM is considered a collaborative project for training and maintaining Danish Language models. If you wish to contribute don't hesitate to reach out using one of the following channels:
+```bash
+make build
+```
 
-|                                                                                                                      |                                                               |
-| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 🗣 [**DDSC Slack**](https://join.slack.com/t/danskdatascie-o8m9638/shared_invite/zt-1jh2dwmj4-D_mjywfXERvVP75n9O0ykg)| Join the discussion in the "danish-foundation-models"-channel |
-| 💬 [**GitHub Discussion**](https://github.com/danish-foundation-models/site/discussions)                             | Ask questions or start a discussion                           |
-| 🚨 [**GitHub Issues**](https://github.com/danish-foundation-models/site/issues)                                      | Notices a bug in the code? Please create an issue             |
+## Structure
 
-You can contribute both:
+```
+docs/           # Site content (Markdown)
+  index.md      # Front page
+  news/         # News/blog posts
+  _static/      # Images, CSS, logos
+overrides/      # MkDocs theme overrides
+mkdocs.yml      # MkDocs configuration
+```
 
--  Developer time, the lifeblood of any open-source project
--  Pre-training datasets you wish to include in the model training
--  Validation tasks can even be private benchmarks where you only wish to share the performance metrics.
-- And probably in many other ways
+## Adding a news post
+
+Create a new Markdown file in `docs/news/posts/` with the following frontmatter:
+
+```markdown
+---
+draft: false
+date: YYYY-MM-DD
+tags:
+  - Model Release   # or: Paper, News, Behind the Scenes
+---
+
+# Post title
+
+Intro paragraph (shown in the post listing).
+
+<!-- more -->
+
+Full post content here.
+```
+
+## References
+
+- [MkDocs Material documentation](https://squidfunk.github.io/mkdocs-material/)
+- [MkDocs blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/)

@@ -1,0 +1,8 @@
+---
+hide:
+  - toc
+---
+
+# Tags
+
+[TAGS]

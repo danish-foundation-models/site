@@ -1,0 +1,71 @@
+site_name: Danske Grundmodeller
+site_url: https://foundationmodels.dk/da/
+site_dir: ../site/da
+use_directory_urls: false
+
+docs_dir: docs
+watch: [docs/]
+
+theme:
+  name: material
+  custom_dir: ../overrides
+  language: da
+  favicon: _static/icon.png
+  logo: _static/icon.png
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - pymdownx.caret
+    - pymdownx.tilde
+  palette:
+    primary: white
+    accent: custom
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+
+extra_css:
+  - _static/extra.css
+
+copyright: Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens
+
+nav:
+  - Om: index.md
+  - Nyheder: news
+
+plugins:
+  - search
+  - tags:
+      tags_file: news/tags.md
+  - blog:
+      blog_dir: news
+
+extra:
+  generator: false
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Dansk
+      link: /da/
+      lang: da

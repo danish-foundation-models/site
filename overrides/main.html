@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inner = document.querySelector(".md-header__inner");
+  if (!inner) return;
+  var lang = document.documentElement.lang || "en";
+  var btn = document.createElement("a");
+  btn.href = "mailto:Torben.blach@alexandra.dk";
+  btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
+  btn.className = "dfm-contact-btn";
+  inner.appendChild(btn);
+});
+</script>
+{% endblock %}
