@@ -1,0 +1,36 @@
+.md-header__button.md-logo img {
+  height: 2rem;
+}
+
+.md-tabs__link {
+  font-size: 0.85rem;
+}
+
+.md-main {
+  margin-top: 0 !important;
+}
+
+.headerlink {
+  display: none;
+}
+
+.dfm-contact-btn {
+  color: var(--md-default-fg-color) !important;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  text-decoration: none !important;
+  align-self: center;
+  opacity: 0.7;
+}
+
+.dfm-contact-btn:hover {
+  opacity: 1;
+  color: var(--md-accent-fg-color) !important;
+}
+
+:root {
+  --md-accent-fg-color: #c8102e;
+  --md-accent-fg-color--transparent: rgba(200, 16, 46, 0.1);
+  --md-typeset-a-color: #c8102e;
+}

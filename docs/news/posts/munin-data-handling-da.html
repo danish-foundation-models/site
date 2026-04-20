@@ -1,0 +1,535 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://foundationmodels.dk/docs/news/posts/munin-data-handling-da.html">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/da/" hreflang="da">
+        
+      
+      
+      <link rel="icon" href="../../../_static/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Datahåndtering - Danish Foundation Models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../_static/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#datahandtering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="Danish Foundation Models" class="md-header__button md-logo" aria-label="Danish Foundation Models" data-md-component="logo">
+      
+  <img src="../../../_static/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Danish Foundation Models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Datahåndtering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/da/" hreflang="da" class="md-select__link">
+              Dansk
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../news" class="md-tabs__link">
+        
+  
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Danish Foundation Models" class="md-nav__button md-logo" aria-label="Danish Foundation Models" data-md-component="logo">
+      
+  <img src="../../../_static/icon.png" alt="logo">
+
+    </a>
+    Danish Foundation Models
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../news" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../news/tags.html#tag:behind-the-scenes" class="md-tag">Behind the Scenes</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="datahandtering">Datahåndtering<a class="headerlink" href="#datahandtering" title="Permanent link">&para;</a></h1>
+<p>For at kunne træne sprogmodeller (Large Language Models, LLM) skal der store mængder af data til. Fra vi modtager rådata til at de kan bruges til at træne sprogmodeller på, gennemgår de en transformationsprocess.</p>
+<p>Følgende er en overordnet beskrivelse af denne processen. Vi udvikler og forbedre løbende processen, for at sikre at vi bruger state-pf-the-art metoder og praksis.</p>
+<!-- more -->
+<h2 id="sikker-handtering">Sikker håndtering<a class="headerlink" href="#sikker-handtering" title="Permanent link">&para;</a></h2>
+<p>I Danish Foundation Model bruger vi Danish e-infrastructure Consortium <a href="https://www.deic.dk/da/om-deic">DeiC</a> og <a href="https://docs.cloud.sdu.dk/intro/security.html">UCloud</a> til data håndtering. UCloud platformen er <a href="https://www.iso.org/standard/27001">ISO27001</a> godkendt. Det er globalt anerkendt standard, der sikrer at vores datahåndteringspraksis opfylder strenge internationale kriterier. For mere information om vores sikkerhedsforanstaltninger, se UClouds <a href="https://docs.cloud.sdu.dk/intro/security.html">sikkerhedsdokumentation</a>.</p>
+<h2 id="dataklargrelse">Dataklargørelse<a class="headerlink" href="#dataklargrelse" title="Permanent link">&para;</a></h2>
+<p>Alt dataklargørelse foregår på UCloud. Figuren viser den proces alt data skal igennem før det bruges til træning af sprogmodellen. Det rå data beholdes i sin oprindelige form på UCloud. Derefter annoteres de rå data med metadata.</p>
+<p>Dette datasæt overføres til en GPU-accelereret supercomputer igennem en sikker forbindelse, hvorefter selve træningen af modellen begyndes. Under træningen gemmes flere checkpoints med modelvægte. De gemte checkpoints med modelvægte publiceres sammen med modelkode og anvendes til at køre modellen. De tre processer er beskrevet i detalje nedenfor.</p>
+<p><img alt="" src="../../_static/munin-data-pipeline-da-simplified.drawio.png" /></p>
+<h2 id="metadata-og-formatering">Metadata og formatering<a class="headerlink" href="#metadata-og-formatering" title="Permanent link">&para;</a></h2>
+<p>Det rå data annoteres med to typer af metadata. Den første type er et datablad (i Markdown, som i <a href="https://huggingface.co/docs/hub/en/datasets-cards">HuggingFace dataset cards</a> der opsummerer hele datasættet og beskriver bl.a. proveniens og hvilken licens der er pålagt det givne datasæt. Et udsnit af et databladseksempel er vist nedenfor. Den første del af databladet er annoteret i et maskinvenligt format, som gør det muligt automatisk at udvælge datasættet blandt en større samling. Resten af databladet giver en dybere beskrivelse af datasættet i fritekst.</p>
+<div class="highlight"><pre><span></span><code>---
+pretty_name:  Scrape from Hovedstaden
+language:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>da
+license: cc0-1.0
+license_name: Creative Commons Zero v1.0 Universal
+size_categories:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>10K&lt;n&lt;100K
+task_categories:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>text-generation
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>fill-mask
+task_ids:
+<span class="gu">  - language-modeling</span>
+<span class="gu">---</span>
+<span class="gh"># Dataset Card for scape_hovedstaden</span>
+<span class="gu">## Dataset Description</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Number of records:**</span> 24752
+<span class="k">-</span><span class="w"> </span><span class="gs">**Languages:**</span> Danish
+</code></pre></div>
+<p>Den anden type af metadata er per-dokument metadata, der beskriver hvilket datasæt dokumentet hører til, hvor det stammer fra, hvornår det er tilføjet, samt andre metadata som f.eks. fra hvilken URL dokumentet kommer fra. Per-dokument metadata gemmes sammen med dokumentet i et standardiseret jsonl format. Et eksempel på et enkelt dokument inklusiv metadata fra datasættet "Scrape from Hovedstaden" er vist nedenfor. Disse metadata følger dokumentet igennem hele processeringen, så det er muligt at spore dokumenterne tilbage til kilden fra det endelige træningskorpus. For hvert rå datasæt vedligeholdes et script der kan bruges til konvertering af de rå data til det standardiserede format.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span>
+<span class="w">    </span><span class="s">&#39;id&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;doc_hovedstaden_Rigshospitalet_BedЫvelse</span><span class="nv"> </span><span class="s">og</span><span class="nv"> </span><span class="s">Intensiv</span><span class="nv"> </span><span class="s">Behandling</span><span class="nv"> </span><span class="s">(NEU)_Transkraniel</span><span class="nv"> </span><span class="s">Doppler</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">NIA</span><span class="nv"> </span><span class="s">6021&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">    </span><span class="s">&#39;text&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;Transkraniel</span><span class="nv"> </span><span class="s">Doppler</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">NIA</span><span class="nv"> </span><span class="s">6021\n\nMålgrupper</span><span class="nv"> </span><span class="s">og</span><span class="nv"> </span><span class="s">anv...&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">    </span><span class="s">&#39;source&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;scrape_hovedstaden&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">    </span><span class="s">&#39;added&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;2024-05-23&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">    </span><span class="s">&#39;created&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;2023-11-16,</span><span class="nv"> </span><span class="s">2024-04-04&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">    </span><span class="s">&#39;metadata&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="w">        </span><span class="s">&#39;subject&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;health&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">        </span><span class="s">&#39;language&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;danish&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">        </span><span class="s">&#39;organization&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;The</span><span class="nv"> </span><span class="s">Danish</span><span class="nv"> </span><span class="s">Agency</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Digitalisation&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">        </span><span class="s">&#39;source-pretty&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;University</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Southern</span><span class="nv"> </span><span class="s">Denmark</span><span class="nv"> </span><span class="s">(SDU)</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Capital</span><span class="nv"> </span><span class="s">Region&#39;</span><span class="p p-Indicator">,</span>
+<span class="w">        </span><span class="s">&#39;URL&#39;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;https://sprogteknologi.dk/dataset/1076892a-14ee-4f14-a9db-32efb03c40c9&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">}</span>
+</code></pre></div>
+<p>Flere detaljer om formatet er beskrevet <a href="https://github.com/centre-for-humanities-computing/danish-foundation-models/blob/main/docs/Adding_a_new_dataset">her</a>.</p>
+<h2 id="filtrering">Filtrering<a class="headerlink" href="#filtrering" title="Permanent link">&para;</a></h2>
+<p>Det standardiserede format muliggør en ensartet processering af dokumenterne. De enkelte filtreringstrin kan inddeles i følgende kategorier:
+ - URL-filter (kun for web-data)
+ - Linje-deduplikering
+ - Kvalitetsfilter
+ - Fjernelse af personoplysninger
+ - Dokument-deduplikering</p>
+<p>De enkelte trin er beskrevet i nedenstående afsnit. Efter filtreringstrinene bliver vores tekstdata tokenized, dvs. konverteret til et binært format der kan læses af modellen.</p>
+<p><img alt="" src="../../_static/munin-data-pipeline-da.drawio.png" /></p>
+<h3 id="url-filtrering">URL-filtrering<a class="headerlink" href="#url-filtrering" title="Permanent link">&para;</a></h3>
+<p>Data som kommer fra offentlige hjemmesider og dermed har en URL som metadata, bliver først processeret af et URL-filter.</p>
+<p>For alle domæner i datasættet hentes domænets robots.txt og ai.txt periodisk. Hvis disse ikke tillader CommonCrawl eller andre sprogmodel-crawlers tilføjes domænet til en blokeringsliste og dokumenter der stammer fra disse domæner filtreres væk, selv om de pågældende sider måtte være hentet på et tidspunkt, hvor robots.txt/ai.txt ikke blokerede for denne type for crawling.</p>
+<p>Derudover anvendes blokeringslister fra forskellige offentligt tilgængelige databaser over skadeligt indhold. Vi bruger <a href="https://github.com/huggingface/datatrove/blob/main/src/datatrove/pipeline/filters/url_filter.py">datatrove's indbyggede filter</a> samt <a href="https://github.com/allenai/dolma/blob/main/python/dolma/taggers/url.py">Dolma's samling af blokeringslister</a>. Disse lister omfatter bl.a. følgende kategorier:</p>
+<ul>
+<li>Porno (både via lister og via ord der indgår i domæne-navnet)</li>
+<li>Phishing</li>
+<li>Reklamer</li>
+<li>Kriminelle sider</li>
+<li>Abuse</li>
+<li>Fraud</li>
+<li>Malware</li>
+<li>Pirat</li>
+<li>Ransomware</li>
+<li>Scam</li>
+<li>Redirect</li>
+<li>Crypto</li>
+<li>Drugs</li>
+<li>Gambling</li>
+<li>Vaping</li>
+<li>Social Networks</li>
+</ul>
+<h3 id="deduplikering">Deduplikering<a class="headerlink" href="#deduplikering" title="Permanent link">&para;</a></h3>
+<p>Deduplikering anvendes til at fjerne gentagelser. Gentagelser i træningsdata kan påvirke modellen i en uønsket retning. Der anvendes to typer af deduplikering linje-deduplikering og dokument-deduplikering</p>
+<p>Linje-deduplikering er en proces hvor gentagne linjer fjernes på tværs af dokumenter. Dette er især anvendeligt på web-data, hvor f.eks. cookie notifikationer og menuer gentages på tværs af mange sider. Denne type af deduplikering implementeres effektivt vha. et såkaldt Bloom filter. Visse typer af datasæt kan med fordel fritages for linje-deduplikering. F.eks. vil der i juridiske dokumenter ofte indgå en række standard formuleringer og deduplikering af disse kan ødelægge dokumenternes betydning.</p>
+<p>I dokument-deduplikering sammenlignes alle dokumenter på tværs af det rensede dokumentkorpus og dokumenter der indholdsmæssigt er tilpas tæt på hinanden grupperes i en klynge. Fra hver klynge udtrækkes ét enkelt dokument. På den måde undgås at visse dokumenter bliver overrepræsenteret i det endelige datasæt. </p>
+<h3 id="kvalitetsfilter">Kvalitetsfilter<a class="headerlink" href="#kvalitetsfilter" title="Permanent link">&para;</a></h3>
+<p>Web-data kan indeholde meget støj i form af stumper af HTML eller andet kode og ufuldstændige sætninger. Der anvendes forskellige heuristikker, som er baseret på statistik for almindelig tekst, der fanger disse dokumenter af dårlig kvalitet. Vi bruger p.t. samme filtre som Gopher og C4, men der undersøges også mulighed for filtrering baseret på perpleksitet og andre metrikker.</p>
+<h3 id="personhenfrbar-information">Personhenførbar Information<a class="headerlink" href="#personhenfrbar-information" title="Permanent link">&para;</a></h3>
+<p>Når en model trænes på data, som indeholder personhenførbar information, medfører det en risiko for at modellen reproducerer denne information under kørsler. Så vidt det er muligt detekteres disse kategorier og erstattes med generiske erstatninger af samme type. Eksempler på personhenførbar information er: Navne, e-mails, telefonnumre, CPR-numre.</p>
+<p>En udfordring er at hverken menneskelig eller maskinel fjernelse af personhenførbar information er 100% nøjagtigt, så datasæt uden disse er at foretrække. </p>
+<h2 id="dialog-om-data">Dialog om data<a class="headerlink" href="#dialog-om-data" title="Permanent link">&para;</a></h2>
+<p>Vi har den største respekt for dem, der ejer data. Vi forstår, hvor vigtigt det er at beskytte og respektere dataejeres ønsker om hvad og hvordan deres data må bruges til. </p>
+<p>Hvis du har nogen spørgsmål vedrørende de data vi bruger, er du altid velkommen til at kontakte os. Vi er meget åbne for dialog og sætter pris på input, da det hjælper os med at forbedre vores praksis og sikre, at vi lever op til dataejeres ønsker. </p>
+<p>Din feedback er vigtig for os, og vi ser frem til at høre fra dig.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This site made available under a Creative Commons Attribution 4.0 license
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "toc.follow", "pymdownx.caret", "pymdownx.tilde"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inner = document.querySelector(".md-header__inner");
+  if (!inner) return;
+  var lang = document.documentElement.lang || "en";
+  var btn = document.createElement("a");
+  btn.href = "mailto:Torben.blach@alexandra.dk";
+  btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
+  btn.className = "dfm-contact-btn";
+  inner.appendChild(btn);
+});
+</script>
+
+  </body>
+</html>
