@@ -137,7 +137,7 @@ nav:
         - Wikisource: data/wikisource/wikisource.md
         - Wikiteam: data/wikiteam_filtered/wikiteam_filtered.md
         - Creative Commons Youtube: data/youtube_filtered/youtube_filtered.md
-  - Blog: blog
+  - News: blog
 
 plugins:
   - mkdocs-jupyter

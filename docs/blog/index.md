@@ -1,1 +1,1 @@
-# Posts
+# News
