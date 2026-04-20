@@ -353,7 +353,7 @@ hide:
 <div class="stories">
   <a class="story-card" href="https://huggingface.co/collections/danish-foundation-models/dynawords">
     <span class="story-card-title">Dynaword</span>
-    <span class="story-card-desc">A continuously updated collection of Danish word resources and linguistic infrastructure, built to support the next generation of Danish NLP.</span>
+    <span class="story-card-desc">A framework for developing open Danish datasets, enabling contributions from municipalities, industry, and research into shared linguistic infrastructure.</span>
   </a>
   <a class="story-card" href="https://euroeval.com">
     <span class="story-card-title">Evaluation for European AI</span>
@@ -361,7 +361,7 @@ hide:
   </a>
   <a class="story-card" href="https://github.com/centre-for-humanities-computing/danish-foundation-models">
     <span class="story-card-title">Open Source Contributions</span>
-    <span class="story-card-desc">From deduplication pipelines to multilingual benchmarks — DFM contributes tools and datasets used well beyond the Danish language community.</span>
+    <span class="story-card-desc">From multilingual to multimodal evaluation — DFM contributes tools and datasets used well beyond the Danish language community.</span>
   </a>
   <a class="story-card story-card-more" href="./news/">
     <span class="story-card-title">See all news →</span>

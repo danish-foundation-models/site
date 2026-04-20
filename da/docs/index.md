@@ -260,7 +260,7 @@ hide:
 
 <div class="hero">
   <h1>Vi bygger fundamentet for dansk AI</h1>
-  <p>Sprogmodeller er blevet kritisk infrastruktur — men mindre sprog som dansk risikerer at blive efterladt. Danish Foundation Models er et samarbejde på tværs af danske universiteter og forskningsinstitutioner om at udvikle, evaluere og tilpasse åben sprog-AI, der tjener det danske samfund.</p>
+  <p>Sprogmodeller er blevet kritisk infrastruktur — men mindre sprog som dansk risikerer at blive efterladt. Danish Foundation Models er et samarbejde på tværs af danske universiteter og forskningsinstitutioner om at udvikle, evaluere og tilpasse sprog-AI til gavn for det danske samfund.</p>
 </div>
 
 <div class="pillars">
@@ -272,7 +272,7 @@ hide:
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
       </svg>
     </span>
-    <span class="pillar-title">Nationalt initiativ, international rækkevidde</span>
+    <span class="pillar-title">Nationalt initiativ, global rækkevidde</span>
     <span class="pillar-desc">Dansk i fokus — men vores modeller, benchmarks og værktøjer bidrager til det bredere europæiske og globale open source AI-fællesskab.</span>
   </div>
   <div class="pillar">
@@ -298,7 +298,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">20+ industrielle anvendelsesscenarier</span>
-    <span class="pillar-desc">Bygget i tæt samarbejde med dansk industri og offentlige institutioner for at sikre, at infrastrukturen er relevant der, hvor det tæller.</span>
+    <span class="pillar-desc">Bygget i tæt samarbejde med dansk industri og offentlige institutioner for at sikre infrastrukturens relevans i praksis.</span>
   </div>
   <div class="pillar">
     <span class="pillar-icon">
@@ -307,7 +307,7 @@ hide:
         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
       </svg>
     </span>
-    <span class="pillar-title">Åbent af design</span>
+    <span class="pillar-title">Åbenhed som grundprincip</span>
     <span class="pillar-desc">Alle modeller, datasæt og forskning er frit tilgængelige — for at sikre transparens, reproducerbarhed og bred adgang.</span>
   </div>
 </div>
@@ -353,15 +353,15 @@ hide:
 <div class="stories">
   <a class="story-card" href="https://huggingface.co/collections/danish-foundation-models/dynawords">
     <span class="story-card-title">Dynaword</span>
-    <span class="story-card-desc">En løbende opdateret samling af danske ordressourcer og sproglig infrastruktur, bygget til at understøtte næste generation af dansk NLP.</span>
+    <span class="story-card-desc">En ramme for udvikling af åbne danske datasæt, der har muliggjort bidrag fra kommuner, erhvervsliv og forskning til fælles sproglig infrastruktur.</span>
   </a>
   <a class="story-card" href="https://euroeval.com">
     <span class="story-card-title">Evaluering til europæisk AI</span>
-    <span class="story-card-desc">Gennem EuroEval og MTEB sikrer vi, at dansk er repræsenteret i de mest anvendte benchmarks — både i Europa og internationalt — for generative modeller og søgemodeller.</span>
+    <span class="story-card-desc">Gennem EuroEval og MTEB sikrer vi, at dansk er repræsenteret i de vigtigste benchmarks — på tværs af Europa og internationalt.</span>
   </a>
   <a class="story-card" href="https://github.com/centre-for-humanities-computing/danish-foundation-models">
     <span class="story-card-title">Open source-bidrag</span>
-    <span class="story-card-desc">Fra deduplikeringspipelines til flersprogede benchmarks — DFM bidrager med værktøjer og datasæt der bruges langt ud over den dansksprogede fællesskab.</span>
+    <span class="story-card-desc">Fra flersproget til multimodal evaluering — DFM bidrager med værktøjer og datasæt brugt langt ud over det dansksprogede miljø.</span>
   </a>
   <a class="story-card story-card-more" href="./news/">
     <span class="story-card-title">Se alle nyheder →</span>
@@ -382,9 +382,9 @@ hide:
   </a>
 </div>
 
-## Adoption og samarbejde
+## Samarbejde og anvendelse
 
-Anvendelse i den virkelige verden er det, der gør AI-infrastruktur vigtig. Organisationerne nedenfor repræsenterer både aktive samarbejdspartnere og brugere af DFM's arbejde — på tværs af industri, offentlige institutioner og kulturarv. Deres involvering former, hvad vi bygger, og sikrer at det er relevant der, hvor det tæller.
+Praktisk brug er det, der giver AI-infrastruktur mening. Organisationerne nedenfor er både aktive samarbejdspartnere og brugere af DFM's arbejde — på tværs af erhvervsliv, offentlige institutioner og kulturarv. Deres deltagelse former, hvad vi bygger, og sikrer at det er relevant der, hvor det tæller.
 
 <div class="logo-carousel">
   <div class="logo-carousel-track">

@@ -19,11 +19,11 @@ Sprogmodeller er ved at blive kritisk infrastruktur — men langt de fleste ress
 
 ## De fire søjler i DFM
 
-Danish Foundation Models-projektet adresserer dette gennem fire primære mål:
+Danish Foundation Models-projektet imødegår dette med fire primære mål:
 
 1. **Udvikling af state-of-the-art modeller** — skabelse og vedligeholdelse af avancerede sprogmodeller til danske tekst- og taleapplikationer
 2. **Grundig validering** — streng testning på tværs af et repræsentativt sæt af opgaver
-3. **Høj kvalitet dokumentation** — transparente model cards og datasheets for alle modeller
+3. **Dokumentation af høj kvalitet** — transparente model cards og datasheets for alle modeller
 4. **Open source-samarbejde** — alle modeller og træningsprocesser er frit tilgængelige
 
 ## Fremtidig retning
