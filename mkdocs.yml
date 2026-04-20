@@ -146,7 +146,3 @@ plugins:
   - search
   - blog
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/centre-for-humanities-computing/danish-foundation-models
