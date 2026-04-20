@@ -1,6 +1,8 @@
 ---
 draft: false
 date: 2024-01-11
+tags:
+  - Model Release
 ---
 
 # Releasing Munin 7B Alpha - A Danish LLM

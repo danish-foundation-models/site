@@ -1,6 +1,8 @@
 ---
 draft: false
 date: 2024-07-21
+tags:
+  - Paper
 ---
 
 # The Imperative of Danish Foundation Models: Bridging the Linguistic AI Divide

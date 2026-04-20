@@ -1,3 +1,5 @@
 - Clean up news stories
 - Add langauge support for Danish
 - Add more of a visual flair to the front - maybe with some logos
+- redo the main readme as a technical documentation, that tasks more about the paer
+- would it be better to have both news and blog?

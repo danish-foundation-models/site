@@ -1,6 +1,8 @@
 ---
 draft: false
 date: 2024-07-09
+tags:
+  - Behind the Scenes
 ---
 
 # Datahåndtering
