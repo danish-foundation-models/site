@@ -1,0 +1,819 @@
+
+<!doctype html>
+<html lang="da" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://foundationmodels.dk/da/news/2026/06/11/munin-10-udgivelsesnote.html">
+      
+      
+        <link rel="prev" href="../../../2024/11/15/danmarks-strategiske-indsats-for-kunstig-intelligens.html">
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/da/" hreflang="da">
+        
+      
+      
+      <link rel="icon" href="../../../../_static/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Munin 1.0-udgivelsesnote - Danske Grundmodeller</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../_static/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#munin-10-udgivelsesnote" class="md-skip">
+          Gå til indholdet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidehoved">
+    <a href="../../../../index.html" title="Danske Grundmodeller" class="md-header__button md-logo" aria-label="Danske Grundmodeller" data-md-component="logo">
+      
+  <img src="../../../../_static/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Danske Grundmodeller
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Munin 1.0-udgivelsesnote
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Vælg sprog">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/da/" hreflang="da" class="md-select__link">
+              Dansk
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Søg" placeholder="Søg" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Søg">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Nulstil søgning" aria-label="Nulstil søgning" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Start søgning
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Faner" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Om
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Nyheder
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.html" title="Danske Grundmodeller" class="md-nav__button md-logo" aria-label="Danske Grundmodeller" data-md-component="logo">
+      
+  <img src="../../../../_static/icon.png" alt="logo">
+
+    </a>
+    Danske Grundmodeller
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Om
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nyheder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Gå tilbage
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-11 00:00:00+00:00" class="md-ellipsis">11. juni 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 minutters læsetid
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Indholdsfortegnelse">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indholdsfortegnelse
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeller-og-resultater" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modeller og resultater
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidragydere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bidragydere
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anerkendelser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anerkendelser
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../tags.html#tag:modeludgivelse" class="md-tag">Modeludgivelse</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="munin-10-udgivelsesnote">Munin 1.0-udgivelsesnote<a class="headerlink" href="#munin-10-udgivelsesnote" title="Permanent link">&para;</a></h1>
+<p class="dfm-post-byline"><strong>Forfattere:</strong> Rasmus Larsen, Torben Blach – Alexandra Instituttet A/S</p>
+
+<p>I dag udgiver Danish Foundation Models <a href="https://huggingface.co/collections/danish-foundation-models/munin-10">Munin 1.0-familien af sprogmodeller</a>, som er post-trænet oven på nogle af de stærkeste åbne modeller i deres klasse. Modellerne er trænet på en kombination af eksisterende åbne og nyudviklede datasæt.</p>
+<!-- more -->
+
+<h2 id="modeller-og-resultater">Modeller og resultater<a class="headerlink" href="#modeller-og-resultater" title="Permanent link">&para;</a></h2>
+<p>Munin 1.0-familien er post-trænet på modeller med åbne vægte fra <a href="https://huggingface.co/swiss-ai">Swiss AI</a>, <a href="https://huggingface.co/mistralai">Mistral</a> og <a href="https://huggingface.co/Qwen">Qwen</a>. Alle basismodellerne er oprindeligt udgivet under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0-licensen</a>, og vores modeller har samme licens.</p>
+<table>
+<thead>
+<tr>
+<th>Udvikler</th>
+<th>Basismodel</th>
+<th>Munin-model</th>
+<th>Land</th>
+<th>Åbenhed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swiss AI</td>
+<td><a href="https://huggingface.co/swiss-ai/Apertus-8B-2509"><code>swiss-ai/Apertus-8B-2509</code></a></td>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-apertus-8b"><code>munin-apertus-8b</code></a></td>
+<td>Europa/Schweiz</td>
+<td>Fuldt åben</td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td><a href="https://huggingface.co/mistralai/Ministral-3-8B-Base-2512"><code>mistralai/Ministral-3-8B-Base-2512</code></a></td>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-ministral3-8B"><code>munin-ministral3-8B</code></a></td>
+<td>Europa/Frankrig</td>
+<td>Åbne vægte</td>
+</tr>
+<tr>
+<td>Qwen 3.5 9B</td>
+<td><a href="https://huggingface.co/Qwen/Qwen3.5-9B-Base"><code>Qwen/Qwen3.5-9B-Base</code></a></td>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-qwen3.5-9B"><code>munin-qwen3.5-9B</code></a></td>
+<td>Kina</td>
+<td>Åbne vægte</td>
+</tr>
+</tbody>
+</table>
+<p>Munin 1.0 er en tekstbaseret post-træningsudgivelse, så sammenligningerne nedenfor fokuserer på tekstbenchmarks. Nogle af de oprindelige instruktionsmodeller har billede-til-tekst eller andre multimodale evner, men de evner understøttes ikke af de modeller, der udgives her.</p>
+<p>Vi evaluerer Munin-modellerne mod de instruktions-tunede modeller udgivet af de oprindelige modeludviklere. Da Munin er trænet fra de samme basismodeller, er det en direkte sammenligning af to uafhængige post-træningsindsatser: den oprindelige udviklers post-træning og vores danskfokuserede Munin-træning.</p>
+<p>De aggregerede resultater nedenfor er uvægtede gennemsnit på tværs af evalueringer i hver opgavegruppe. Scores er procenter, og standardfejl er procentpoint. Blå markerer den bedste Original/Munin-score inden for hver modelfamilie, eller begge hvis de er lige gode inden for usikkerheden. Fed skrift markerer scores, der ikke er signifikant under den bedste score i rækken. Se de <a href="/news/results/munin-10-full-results.html">fulde benchmarkresultater</a> for de enkelte evalueringer bag hvert aggregat.</p>
+<div class="md-typeset__table dfm-eval-table-wrap">
+  <table class="dfm-eval-table">
+    <caption>Aggregerede opgavescores</caption>
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Suite</th>
+        <th scope="col" rowspan="2">Opgave</th>
+        <th scope="col" rowspan="2">Metrik</th>
+        <th scope="col" colspan="2">Apertus 8B</th>
+        <th scope="col" colspan="2">Ministral 8B</th>
+        <th scope="col" colspan="2">Qwen 9B</th>
+      </tr>
+      <tr>
+        <th scope="col">Original</th>
+        <th scope="col">Munin</th>
+        <th scope="col">Original</th>
+        <th scope="col">Munin</th>
+        <th scope="col">Original</th>
+        <th scope="col">Munin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="dfm-suite-start dfm-suite-danish hl-apertus-original hl-ministral-original hl-ministral-munin hl-qwen-original"><td>Dansk</td><td>Common-sense Reasoning</td><td>MCC</td><td>33,1 ± 0,9</td><td>29,4 ± 1,3</td><td>52,4 ± 1,2</td><td>50,2 ± 1,3</td><td><strong>64,6 ± 0,7</strong></td><td>62,2 ± 0,9</td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Grammatical Error Detection</td><td>micro-F1</td><td><strong>18,0 ± 1,3</strong></td><td><strong>17,4 ± 1,1</strong></td><td><strong>21,7 ± 2,0</strong></td><td><strong>17,7 ± 0,7</strong></td><td><strong>20,4 ± 1,2</strong></td><td><strong>20,7 ± 1,1</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-ministral-munin hl-qwen-original"><td>Dansk</td><td>Instruction-following</td><td>Accuracy</td><td>69,0 ± 1,1</td><td>51,4 ± 1,4</td><td>66,7 ± 1,3</td><td>74,4 ± 0,9</td><td><strong>81,6 ± 0,8</strong></td><td>77,9 ± 0,9</td></tr>
+      <tr class="dfm-suite-danish hl-apertus-munin hl-ministral-original hl-qwen-munin"><td>Dansk</td><td>Knowledge</td><td>MCC</td><td>58,9 ± 0,7</td><td>62,3 ± 0,7</td><td>73,6 ± 0,5</td><td>68,5 ± 0,6</td><td>76,0 ± 0,5</td><td><strong>77,6 ± 0,5</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Linguistic Acceptability</td><td>MCC</td><td>33,0 ± 1,2</td><td>29,3 ± 2,4</td><td>43,4 ± 1,9</td><td>18,9 ± 3,1</td><td><strong>49,2 ± 1,7</strong></td><td><strong>52,2 ± 1,3</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Multiple-choice Reading Comprehension</td><td>MCC</td><td>67,1 ± 1,0</td><td>66,0 ± 2,0</td><td><strong>85,9 ± 1,4</strong></td><td><strong>84,4 ± 1,1</strong></td><td><strong>87,2 ± 1,2</strong></td><td><strong>87,3 ± 1,3</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Named Entity Recognition</td><td>micro-F1</td><td>49,3 ± 1,4</td><td>47,6 ± 1,3</td><td>61,1 ± 1,0</td><td>51,4 ± 1,8</td><td><strong>69,1 ± 1,2</strong></td><td><strong>69,6 ± 1,2</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-munin hl-qwen-munin"><td>Dansk</td><td>Natural Language Inference</td><td>MCC</td><td>48,8 ± 2,3</td><td>52,1 ± 2,6</td><td>25,8 ± 1,6</td><td>58,2 ± 2,2</td><td>53,8 ± 1,9</td><td><strong>65,6 ± 2,0</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Reading Comprehension</td><td>F1</td><td><strong>70,8 ± 0,5</strong></td><td>69,4 ± 0,6</td><td>69,7 ± 0,7</td><td><strong>71,2 ± 0,8</strong></td><td><strong>70,8 ± 0,6</strong></td><td><strong>72,0 ± 0,7</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Sentiment Classification</td><td>MCC</td><td>57,9 ± 1,0</td><td>54,3 ± 1,1</td><td>60,4 ± 1,0</td><td>59,6 ± 1,4</td><td><strong>64,9 ± 0,9</strong></td><td><strong>64,7 ± 1,0</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Summarization</td><td>chrF++</td><td><strong>37,6 ± 0,2</strong></td><td>36,9 ± 0,2</td><td>35,1 ± 0,3</td><td>37,0 ± 0,2</td><td>36,5 ± 0,3</td><td><strong>36,7 ± 0,4</strong></td></tr>
+      <tr class="dfm-suite-danish hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Dansk</td><td>Word-in-Context</td><td>MCC</td><td>11,8 ± 2,2</td><td>8,7 ± 3,5</td><td>29,9 ± 1,7</td><td>23,3 ± 3,2</td><td><strong>44,6 ± 2,1</strong></td><td><strong>40,1 ± 3,5</strong></td></tr>
+      <tr class="dfm-suite-start dfm-suite-english hl-apertus-original hl-ministral-original hl-qwen-original"><td>Engelsk</td><td>Common-sense Reasoning</td><td>Accuracy</td><td>58,7 ± 0,5</td><td>23,2 ± 0,4</td><td>73,1 ± 0,4</td><td>59,6 ± 0,5</td><td><strong>90,0 ± 0,3</strong></td><td>85,7 ± 0,3</td></tr>
+      <tr class="dfm-suite-english hl-apertus-original hl-ministral-original hl-ministral-munin hl-qwen-original"><td>Engelsk</td><td>Instruction-following</td><td>Accuracy</td><td>73,3 ± 1,9</td><td>54,7 ± 2,0</td><td>70,4 ± 1,8</td><td>69,8 ± 1,9</td><td><strong>89,6 ± 1,5</strong></td><td>78,6 ± 1,8</td></tr>
+      <tr class="dfm-suite-english hl-apertus-original hl-ministral-original hl-qwen-munin"><td>Engelsk</td><td>Knowledge</td><td>Accuracy</td><td>50,3 ± 0,5</td><td>41,9 ± 0,5</td><td><strong>81,7 ± 0,3</strong></td><td>73,0 ± 0,3</td><td>79,2 ± 0,2</td><td><strong>82,4 ± 0,2</strong></td></tr>
+      <tr class="dfm-suite-english hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original"><td>Engelsk</td><td>Long-context</td><td>Accuracy</td><td>34,6 ± 2,1</td><td>35,8 ± 2,1</td><td>51,4 ± 2,2</td><td>49,4 ± 2,2</td><td><strong>67,2 ± 2,1</strong></td><td>54,6 ± 2,2</td></tr>
+      <tr class="dfm-suite-english hl-apertus-original hl-ministral-original hl-qwen-original"><td>Engelsk</td><td>Math</td><td>Accuracy</td><td>68,1 ± 1,3</td><td>56,7 ± 1,4</td><td>92,2 ± 0,7</td><td>82,3 ± 1,1</td><td><strong>94,8 ± 0,6</strong></td><td>92,2 ± 0,7</td></tr>
+      <tr class="dfm-suite-english hl-apertus-original hl-apertus-munin hl-ministral-original hl-ministral-munin hl-qwen-original hl-qwen-munin"><td>Engelsk</td><td>Truthfulness</td><td>Accuracy</td><td>16,8 ± 1,3</td><td>15,7 ± 1,3</td><td>64,7 ± 1,7</td><td>63,3 ± 1,7</td><td><strong>78,1 ± 1,4</strong></td><td><strong>74,2 ± 1,5</strong></td></tr>
+      <tr class="dfm-suite-start dfm-suite-agentic hl-apertus-original hl-ministral-original hl-qwen-original"><td>Agentisk</td><td>Code</td><td>pass@1</td><td>46,8 ± 2,5</td><td>39,2 ± 2,4</td><td>75,0 ± 2,1</td><td>49,2 ± 2,3</td><td><strong>83,0 ± 1,8</strong></td><td>77,2 ± 2,1</td></tr>
+      <tr class="dfm-suite-agentic hl-apertus-original hl-ministral-original hl-qwen-original"><td>Agentisk</td><td>Tool Calling</td><td>Accuracy</td><td>52,4 ± 0,8</td><td>43,1 ± 0,8</td><td>75,0 ± 0,7</td><td>49,2 ± 0,8</td><td><strong>79,4 ± 0,6</strong></td><td>75,8 ± 0,7</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<details class="info">
+<summary>Hvad indgår i hvert aggregat?</summary>
+<p>De danske opgavegrupper følger EuroEvals danske opgavetaksonomi. Links peger på artikler, hvor de findes, ellers på offentlige datasæt, upstream-repositorier eller de EuroEval-scripts, der bruges til at konstruere benchmarkdatasættet. For flere entries, der ender på <code>-da</code>, går linket til artiklen for det oprindelige benchmark, fordi den evaluerede ressource er en dansk oversat eller på anden måde lokaliseret variant. Nogle danske varianter, herunder <code>ifeval-da</code>, er tilpasninger snarere end simple direkte oversættelser.</p>
+<table>
+<thead>
+<tr>
+<th>Suite</th>
+<th>Aggregeret opgave</th>
+<th>Benchmarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dansk</td>
+<td>Common-sense Reasoning</td>
+<td><a href="https://arxiv.org/abs/2504.07825"><code>goldenswag-da</code></a>, <a href="https://arxiv.org/abs/1905.07830"><code>hellaswag-da</code></a>, <a href="https://arxiv.org/abs/1907.10641"><code>winogrande-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Grammatical Error Detection</td>
+<td><a href="https://github.com/noahmanu/gerlangmod"><code>gerlangmod-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Instruction-following</td>
+<td><a href="https://arxiv.org/abs/2311.07911"><code>ifeval-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Knowledge</td>
+<td><a href="https://arxiv.org/abs/1803.05457"><code>arc-da</code></a>, <a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark"><code>dameta</code></a>, <a href="https://huggingface.co/datasets/alexandrainst/danish-citizen-tests"><code>danish-citizen-tests</code></a>, <a href="https://huggingface.co/datasets/Juunge/danske-talemaader"><code>danske-talemaader</code></a>, <a href="https://arxiv.org/abs/2009.03300"><code>mmlu-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Linguistic Acceptability</td>
+<td><a href="https://arxiv.org/abs/2512.04799"><code>dala</code></a>, <a href="https://arxiv.org/abs/2304.00906"><code>scala-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Multiple-choice Reading Comprehension</td>
+<td><a href="https://arxiv.org/abs/2308.16884"><code>belebele-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Named Entity Recognition</td>
+<td><a href="https://arxiv.org/abs/2107.05295"><code>dane</code></a>, <a href="https://arxiv.org/abs/2402.18209"><code>dansk</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Natural Language Inference</td>
+<td><a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark"><code>danish-entailment</code></a>, <a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark"><code>danish-lexical-inference</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Reading Comprehension</td>
+<td><a href="https://arxiv.org/abs/2509.04111"><code>multi-wiki-qa-da</code></a>, <a href="https://arxiv.org/abs/2304.00906"><code>scandiqa-da</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Sentiment Classification</td>
+<td><a href="https://huggingface.co/datasets/DDSC/angry-tweets"><code>angry-tweets</code></a>, <a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark"><code>danish-sentiment-in-context</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Summarization</td>
+<td><a href="https://huggingface.co/datasets/alexandrainst/nordjylland-news-summarization"><code>nordjylland-news</code></a></td>
+</tr>
+<tr>
+<td>Dansk</td>
+<td>Word-in-Context</td>
+<td><a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark"><code>danwic</code></a></td>
+</tr>
+<tr>
+<td>Engelsk</td>
+<td>Knowledge</td>
+<td><a href="https://arxiv.org/abs/1803.05457"><code>ARC-C</code></a>, <a href="https://arxiv.org/abs/1803.05457"><code>ARC-E</code></a>, <a href="https://arxiv.org/abs/2009.03300"><code>MMLU</code></a>, <a href="https://arxiv.org/abs/2406.01574"><code>MMLU-Pro</code></a></td>
+</tr>
+<tr>
+<td>Engelsk</td>
+<td>Other task groups</td>
+<td><a href="https://arxiv.org/abs/1905.07830"><code>HellaSwag</code></a>, <a href="https://arxiv.org/abs/2311.07911"><code>IFEval</code></a>, <a href="https://arxiv.org/abs/2404.06654"><code>RULER 32k</code></a>, <a href="https://arxiv.org/abs/2110.14168"><code>GSM8K</code></a>, <a href="https://arxiv.org/abs/2109.07958"><code>TruthfulQA</code></a></td>
+</tr>
+<tr>
+<td>Agentisk</td>
+<td>Code and Tool Calling</td>
+<td><a href="https://arxiv.org/abs/2107.03374"><code>HumanEval</code></a>, <a href="https://arxiv.org/abs/2108.07732"><code>MBPP p@1</code></a>, <a href="https://arxiv.org/abs/2407.07770"><code>BFCL</code></a></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Hovedresultatet er, at Munin er stærkt konkurrencedygtig på de danske evalueringer, og at vores post-trænede modeller i flere opgavegrupper matcher eller forbedrer de oprindelige instruktionsmodeller. De stærkeste resultater er på dansk Knowledge, Reading Comprehension, Summarization og Natural Language Inference, hvor nogle Munin-modeller ligger foran selv med usikkerheden taget i betragtning. Dermed kan det ses at post-træningen flytter modellerne mod stærkere dansk performance, samtidig med at de bevarer en brugbar generel kapabilitetsprofil.</p>
+<p>Resultaterne på engelsk og agentiske opgaver er mere blandede. De oprindelige instruktionsmodeller er generelt stærkere på kode, værktøjskald og flere engelske benchmarks, hvilket afspejler, at Munin 1.0 nu primært fokuserer på danske tekstkapabiliteter. De forskelle er vigtige, fordi de peger direkte på næste fase af arbejdet: at bevare de danske forbedringer, samtidig med at der investeres mere målrettet i reasoning, multilingvalitet og agentiske kapabiliteter.</p>
+<p>Vi kørte også en fokuseret dansk turnering i kreativ skrivning på tværs af 360 bedømte kampe, vurderet af Qwen3.5-397B-A17B. Vi valgte denne dommer på grund af dens stærke dansksproglige evner.</p>
+<p>Turneringen er ikke et bredt benchmark for modelkvalitet, men den er nyttig, fordi kreativ skrivning er en dansk opgave med højt signal: Den tester sproglig flydendehed, register, kohærens, og om modellen kan producere tekst, der føles naturlig frem for blot korrekt. <a href="https://huggingface.co/danish-foundation-models/munin-qwen3.5-9B">Munin Qwen 9B</a> skiller sig tydeligt ud fra resten af feltet med en 96-9 rekord, mens <a href="https://huggingface.co/danish-foundation-models/munin-apertus-8b">Munin Apertus 8B</a> placerer sig som nummer to, og <a href="https://huggingface.co/danish-foundation-models/munin-ministral3-8B">Munin Ministral 8B</a> også slår sin oprindelige modpart.</p>
+<div class="md-typeset__table">
+  <table class="dfm-tournament-table">
+    <caption>Rangering i dansk kreativ skriveturnering; V-T er samlet vundet-tabt</caption>
+    <thead>
+      <tr>
+        <th scope="col">Placering</th>
+        <th scope="col">Model</th>
+        <th scope="col">V-T</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="dfm-model-munin">
+        <td>1</td>
+        <td><strong><a href="https://huggingface.co/danish-foundation-models/munin-qwen3.5-9B">Munin Qwen 9B</a></strong></td>
+        <td>96-9</td>
+      </tr>
+      <tr class="dfm-model-munin">
+        <td>2</td>
+        <td><strong><a href="https://huggingface.co/danish-foundation-models/munin-apertus-8b">Munin Apertus 8B</a></strong></td>
+        <td>56-45</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Original Qwen 9B</td>
+        <td>43-53</td>
+      </tr>
+      <tr class="dfm-model-munin">
+        <td>4</td>
+        <td><strong><a href="https://huggingface.co/danish-foundation-models/munin-ministral3-8B">Munin Ministral 8B</a></strong></td>
+        <td>43-54</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Original Apertus 8B</td>
+        <td>30-65</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Original Ministral 8B</td>
+        <td>26-68</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="bidragydere">Bidragydere<a class="headerlink" href="#bidragydere" title="Permanent link">&para;</a></h2>
+<p>Rasmus Larsen ledte træningen, udførte eksperimenter, byggede syntetiske datasæt og benchmarks, og skrev udkastet til udgivelsesannonceringen.</p>
+<p>Oliver Kinch byggede syntetiske datasæt og benchmarks.</p>
+<p>Vladimir Salnikov og Jacob Nielsen bidrog til datasæt.</p>
+<p>Dan Saattrup Smart udviklede benchmarks og ledte integrationen i EuroEval.</p>
+<p>Torben Blach bidrog med projektledelse og koordinering.</p>
+<h2 id="anerkendelser">Anerkendelser<a class="headerlink" href="#anerkendelser" title="Permanent link">&para;</a></h2>
+<p>Arbejdet blev støttet af Danish Foundation Models-projektet, finansieret af den danske regering. Arbejdet blev delvist støttet af DeiC National HPC (grant agreement DeiC-SDU-N5-2025162).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tilbage til start
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Sidefod" >
+        
+          
+          <a href="../../../2024/11/15/danmarks-strategiske-indsats-for-kunstig-intelligens.html" class="md-footer__link md-footer__link--prev" aria-label="Forrige: Danmarks strategiske indsats for kunstig intelligens">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Forrige
+              </span>
+              <div class="md-ellipsis">
+                Danmarks strategiske indsats for kunstig intelligens
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "toc.follow", "pymdownx.caret", "pymdownx.tilde"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopieret til udklipsholderen", "clipboard.copy": "Kopi\u00e9r til udklipsholderen", "search.result.more.one": "1 resultat mere p\u00e5 denne side", "search.result.more.other": "# resultater mere p\u00e5 denne side", "search.result.none": "Ingen resultater fundet", "search.result.one": "1 resultat", "search.result.other": "# resultater", "search.result.placeholder": "Indtast s\u00f8geord", "search.result.term.missing": "Mangler", "select.version": "V\u00e6lg version"}, "version": null}</script>
+    
+    
+
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inner = document.querySelector(".md-header__inner");
+  if (!inner) return;
+  var lang = document.documentElement.lang || "en";
+  var btn = document.createElement("a");
+  btn.href = "mailto:Torben.blach@alexandra.dk";
+  btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
+  btn.className = "dfm-contact-btn";
+  inner.appendChild(btn);
+});
+</script>
+
+  </body>
+</html>

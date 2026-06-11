@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://foundationmodels.dk/news/results/munin-10-full-results.html">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/da/" hreflang="da">
+        
+      
+      
+      <link rel="icon" href="../../_static/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Munin 1.0 Full Evaluation Results - Danish Foundation Models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#munin-10-full-evaluation-results" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Danish Foundation Models" class="md-header__button md-logo" aria-label="Danish Foundation Models" data-md-component="logo">
+      
+  <img src="../../_static/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Danish Foundation Models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Munin 1.0 Full Evaluation Results
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/da/" hreflang="da" class="md-select__link">
+              Dansk
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  News
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Danish Foundation Models" class="md-nav__button md-logo" aria-label="Danish Foundation Models" data-md-component="logo">
+      
+  <img src="../../_static/icon.png" alt="logo">
+
+    </a>
+    Danish Foundation Models
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="munin-10-full-evaluation-results">Munin 1.0 Full Evaluation Results<a class="headerlink" href="#munin-10-full-evaluation-results" title="Permanent link">&para;</a></h1>
+<p>Scores are percentages. Standard errors are percentage points. Deltas are <code>Munin - Original</code>; Danish deltas were computed from the reported scores with propagated standard errors.</p>
+<p>Task groupings use the EuroEval Danish task taxonomy for Danish datasets. Aggregate rows are unweighted means across evals in the task; aggregate standard error is <code>sqrt(sum(SE_i^2)) / n</code>, assuming independent evaluation estimates.</p>
+<table>
+<thead>
+<tr>
+<th>Suite</th>
+<th>Task</th>
+<th>Metric</th>
+<th>Benchmark</th>
+<th>Apertus Original ± SE</th>
+<th>Apertus Munin ± SE</th>
+<th>Apertus Δ ± SE</th>
+<th>Ministral Original ± SE</th>
+<th>Ministral Munin ± SE</th>
+<th>Ministral Δ ± SE</th>
+<th>Qwen Original ± SE</th>
+<th>Qwen Munin ± SE</th>
+<th>Qwen Δ ± SE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Danish</td>
+<td>Common-sense Reasoning</td>
+<td>MCC</td>
+<td>Average (3 evals)</td>
+<td>33.11 ± 0.86</td>
+<td>29.40 ± 1.28</td>
+<td>-3.71 ± 1.54</td>
+<td>52.37 ± 1.19</td>
+<td>50.21 ± 1.29</td>
+<td>-2.16 ± 1.76</td>
+<td>64.64 ± 0.72</td>
+<td>62.22 ± 0.88</td>
+<td>-2.42 ± 1.14</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Common-sense Reasoning</td>
+<td>MCC</td>
+<td>goldenswag-da</td>
+<td>47.66 ± 1.23</td>
+<td>38.65 ± 2.50</td>
+<td>-9.01 ± 2.79</td>
+<td>68.89 ± 1.49</td>
+<td>64.52 ± 1.51</td>
+<td>-4.37 ± 2.12</td>
+<td>85.94 ± 0.79</td>
+<td>78.94 ± 1.19</td>
+<td>-7.00 ± 1.43</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Common-sense Reasoning</td>
+<td>MCC</td>
+<td>hellaswag-da</td>
+<td>39.19 ± 1.01</td>
+<td>36.89 ± 1.88</td>
+<td>-2.30 ± 2.13</td>
+<td>55.79 ± 2.04</td>
+<td>51.80 ± 2.79</td>
+<td>-3.99 ± 3.46</td>
+<td>73.28 ± 0.99</td>
+<td>67.50 ± 1.35</td>
+<td>-5.78 ± 1.67</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Common-sense Reasoning</td>
+<td>MCC</td>
+<td>winogrande-da</td>
+<td>12.48 ± 2.02</td>
+<td>12.65 ± 2.25</td>
+<td>+0.17 ± 3.02</td>
+<td>32.43 ± 2.54</td>
+<td>34.32 ± 2.21</td>
+<td>+1.89 ± 3.37</td>
+<td>34.71 ± 1.75</td>
+<td>40.22 ± 1.93</td>
+<td>+5.51 ± 2.61</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Grammatical Error Detection</td>
+<td>micro-F1</td>
+<td>Average (1 eval)</td>
+<td>18.00 ± 1.31</td>
+<td>17.35 ± 1.06</td>
+<td>-0.65 ± 1.69</td>
+<td>21.72 ± 2.04</td>
+<td>17.66 ± 0.74</td>
+<td>-4.06 ± 2.17</td>
+<td>20.37 ± 1.25</td>
+<td>20.74 ± 1.14</td>
+<td>+0.37 ± 1.69</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Grammatical Error Detection</td>
+<td>micro-F1</td>
+<td>gerlangmod-da</td>
+<td>18.00 ± 1.31</td>
+<td>17.35 ± 1.06</td>
+<td>-0.65 ± 1.69</td>
+<td>21.72 ± 2.04</td>
+<td>17.66 ± 0.74</td>
+<td>-4.06 ± 2.17</td>
+<td>20.37 ± 1.25</td>
+<td>20.74 ± 1.14</td>
+<td>+0.37 ± 1.69</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Instruction-following</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>69.00 ± 1.06</td>
+<td>51.43 ± 1.38</td>
+<td>-17.57 ± 1.74</td>
+<td>66.67 ± 1.31</td>
+<td>74.38 ± 0.94</td>
+<td>+7.71 ± 1.61</td>
+<td>81.56 ± 0.85</td>
+<td>77.88 ± 0.89</td>
+<td>-3.68 ± 1.23</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Instruction-following</td>
+<td>Accuracy</td>
+<td>ifeval-da</td>
+<td>69.00 ± 1.06</td>
+<td>51.43 ± 1.38</td>
+<td>-17.57 ± 1.74</td>
+<td>66.67 ± 1.31</td>
+<td>74.38 ± 0.94</td>
+<td>+7.71 ± 1.61</td>
+<td>81.56 ± 0.85</td>
+<td>77.88 ± 0.89</td>
+<td>-3.68 ± 1.23</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>Average (5 evals)</td>
+<td>58.89 ± 0.73</td>
+<td>62.29 ± 0.72</td>
+<td>+3.41 ± 1.03</td>
+<td>73.58 ± 0.52</td>
+<td>68.48 ± 0.58</td>
+<td>-5.09 ± 0.78</td>
+<td>75.98 ± 0.52</td>
+<td>77.64 ± 0.50</td>
+<td>+1.67 ± 0.72</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>arc-da</td>
+<td>63.02 ± 1.58</td>
+<td>65.87 ± 1.43</td>
+<td>+2.85 ± 2.13</td>
+<td>84.17 ± 0.80</td>
+<td>81.86 ± 0.77</td>
+<td>-2.31 ± 1.11</td>
+<td>88.30 ± 0.80</td>
+<td>88.82 ± 0.72</td>
+<td>+0.52 ± 1.08</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>dameta</td>
+<td>62.52 ± 1.58</td>
+<td>67.63 ± 1.66</td>
+<td>+5.11 ± 2.29</td>
+<td>74.93 ± 1.21</td>
+<td>66.52 ± 1.48</td>
+<td>-8.41 ± 1.91</td>
+<td>76.70 ± 0.68</td>
+<td>78.14 ± 1.01</td>
+<td>+1.44 ± 1.22</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>danish-citizen-tests</td>
+<td>72.31 ± 2.18</td>
+<td>73.25 ± 2.06</td>
+<td>+0.94 ± 3.00</td>
+<td>78.01 ± 0.94</td>
+<td>71.59 ± 1.71</td>
+<td>-6.42 ± 1.95</td>
+<td>76.92 ± 1.67</td>
+<td>82.16 ± 1.53</td>
+<td>+5.24 ± 2.26</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>danske-talemaader</td>
+<td>55.11 ± 1.80</td>
+<td>62.44 ± 1.68</td>
+<td>+7.33 ± 2.46</td>
+<td>73.14 ± 1.56</td>
+<td>68.47 ± 1.40</td>
+<td>-4.67 ± 2.10</td>
+<td>75.67 ± 1.43</td>
+<td>76.72 ± 0.92</td>
+<td>+1.05 ± 1.70</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Knowledge</td>
+<td>MCC</td>
+<td>mmlu-da</td>
+<td>41.47 ± 0.58</td>
+<td>42.27 ± 1.11</td>
+<td>+0.80 ± 1.25</td>
+<td>57.63 ± 1.11</td>
+<td>53.97 ± 0.94</td>
+<td>-3.66 ± 1.45</td>
+<td>62.30 ± 0.90</td>
+<td>62.38 ± 1.20</td>
+<td>+0.08 ± 1.50</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Linguistic Acceptability</td>
+<td>MCC</td>
+<td>Average (2 evals)</td>
+<td>32.95 ± 1.19</td>
+<td>29.34 ± 2.38</td>
+<td>-3.62 ± 2.66</td>
+<td>43.37 ± 1.85</td>
+<td>18.89 ± 3.06</td>
+<td>-24.48 ± 3.57</td>
+<td>49.25 ± 1.68</td>
+<td>52.19 ± 1.30</td>
+<td>+2.95 ± 2.12</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Linguistic Acceptability</td>
+<td>MCC</td>
+<td>dala</td>
+<td>29.38 ± 1.82</td>
+<td>25.56 ± 3.12</td>
+<td>-3.82 ± 3.61</td>
+<td>39.49 ± 2.66</td>
+<td>16.99 ± 4.12</td>
+<td>-22.50 ± 4.90</td>
+<td>45.65 ± 2.09</td>
+<td>49.07 ± 1.55</td>
+<td>+3.42 ± 2.60</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Linguistic Acceptability</td>
+<td>MCC</td>
+<td>scala-da</td>
+<td>36.53 ± 1.53</td>
+<td>33.11 ± 3.60</td>
+<td>-3.42 ± 3.91</td>
+<td>47.25 ± 2.58</td>
+<td>20.79 ± 4.52</td>
+<td>-26.46 ± 5.20</td>
+<td>52.84 ± 2.62</td>
+<td>55.31 ± 2.08</td>
+<td>+2.47 ± 3.35</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Multiple-choice Reading Comprehension</td>
+<td>MCC</td>
+<td>Average (1 eval)</td>
+<td>67.09 ± 1.02</td>
+<td>65.99 ± 2.04</td>
+<td>-1.10 ± 2.28</td>
+<td>85.94 ± 1.39</td>
+<td>84.42 ± 1.12</td>
+<td>-1.52 ± 1.79</td>
+<td>87.19 ± 1.17</td>
+<td>87.35 ± 1.27</td>
+<td>+0.16 ± 1.73</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Multiple-choice Reading Comprehension</td>
+<td>MCC</td>
+<td>belebele-da</td>
+<td>67.09 ± 1.02</td>
+<td>65.99 ± 2.04</td>
+<td>-1.10 ± 2.28</td>
+<td>85.94 ± 1.39</td>
+<td>84.42 ± 1.12</td>
+<td>-1.52 ± 1.79</td>
+<td>87.19 ± 1.17</td>
+<td>87.35 ± 1.27</td>
+<td>+0.16 ± 1.73</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Named Entity Recognition</td>
+<td>micro-F1</td>
+<td>Average (2 evals)</td>
+<td>49.33 ± 1.40</td>
+<td>47.60 ± 1.33</td>
+<td>-1.72 ± 1.93</td>
+<td>61.13 ± 1.01</td>
+<td>51.41 ± 1.76</td>
+<td>-9.72 ± 2.03</td>
+<td>69.12 ± 1.16</td>
+<td>69.63 ± 1.23</td>
+<td>+0.51 ± 1.69</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Named Entity Recognition</td>
+<td>micro-F1</td>
+<td>dane</td>
+<td>51.69 ± 1.30</td>
+<td>48.66 ± 1.53</td>
+<td>-3.03 ± 2.01</td>
+<td>66.16 ± 1.42</td>
+<td>53.80 ± 1.51</td>
+<td>-12.36 ± 2.07</td>
+<td>74.51 ± 0.75</td>
+<td>76.33 ± 0.85</td>
+<td>+1.82 ± 1.13</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Named Entity Recognition</td>
+<td>micro-F1</td>
+<td>dansk</td>
+<td>46.97 ± 2.48</td>
+<td>46.55 ± 2.18</td>
+<td>-0.42 ± 3.30</td>
+<td>56.11 ± 1.44</td>
+<td>49.02 ± 3.19</td>
+<td>-7.09 ± 3.50</td>
+<td>63.74 ± 2.20</td>
+<td>62.94 ± 2.31</td>
+<td>-0.80 ± 3.19</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Natural Language Inference</td>
+<td>MCC</td>
+<td>Average (2 evals)</td>
+<td>48.80 ± 2.34</td>
+<td>52.09 ± 2.62</td>
+<td>+3.29 ± 3.51</td>
+<td>25.75 ± 1.58</td>
+<td>58.18 ± 2.22</td>
+<td>+32.42 ± 2.73</td>
+<td>53.80 ± 1.93</td>
+<td>65.63 ± 2.01</td>
+<td>+11.83 ± 2.79</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Natural Language Inference</td>
+<td>MCC</td>
+<td>danish-entailment</td>
+<td>57.24 ± 3.67</td>
+<td>64.03 ± 4.45</td>
+<td>+6.79 ± 5.77</td>
+<td>51.51 ± 3.17</td>
+<td>55.54 ± 3.61</td>
+<td>+4.03 ± 4.80</td>
+<td>62.10 ± 2.55</td>
+<td>67.72 ± 1.46</td>
+<td>+5.62 ± 2.94</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Natural Language Inference</td>
+<td>MCC</td>
+<td>danish-lexical-inference</td>
+<td>40.37 ± 2.90</td>
+<td>40.15 ± 2.76</td>
+<td>-0.22 ± 4.00</td>
+<td>0.00 ± 0.00</td>
+<td>60.82 ± 2.59</td>
+<td>+60.82 ± 2.59</td>
+<td>45.51 ± 2.91</td>
+<td>63.55 ± 3.75</td>
+<td>+18.04 ± 4.75</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Reading Comprehension</td>
+<td>F1</td>
+<td>Average (2 evals)</td>
+<td>70.75 ± 0.51</td>
+<td>69.41 ± 0.56</td>
+<td>-1.35 ± 0.76</td>
+<td>69.71 ± 0.72</td>
+<td>71.23 ± 0.81</td>
+<td>+1.52 ± 1.08</td>
+<td>70.84 ± 0.55</td>
+<td>71.96 ± 0.68</td>
+<td>+1.12 ± 0.88</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Reading Comprehension</td>
+<td>F1</td>
+<td>multi-wiki-qa-da</td>
+<td>77.94 ± 0.97</td>
+<td>74.11 ± 1.10</td>
+<td>-3.83 ± 1.47</td>
+<td>75.77 ± 1.34</td>
+<td>79.52 ± 1.43</td>
+<td>+3.75 ± 1.96</td>
+<td>79.28 ± 0.78</td>
+<td>79.51 ± 1.20</td>
+<td>+0.23 ± 1.43</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Reading Comprehension</td>
+<td>F1</td>
+<td>scandiqa-da</td>
+<td>63.57 ± 0.34</td>
+<td>64.70 ± 0.25</td>
+<td>+1.13 ± 0.42</td>
+<td>63.65 ± 0.52</td>
+<td>62.95 ± 0.76</td>
+<td>-0.70 ± 0.92</td>
+<td>62.39 ± 0.78</td>
+<td>64.40 ± 0.66</td>
+<td>+2.01 ± 1.02</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Sentiment Classification</td>
+<td>MCC</td>
+<td>Average (2 evals)</td>
+<td>57.89 ± 0.97</td>
+<td>54.30 ± 1.10</td>
+<td>-3.59 ± 1.46</td>
+<td>60.37 ± 0.97</td>
+<td>59.56 ± 1.41</td>
+<td>-0.81 ± 1.71</td>
+<td>64.89 ± 0.93</td>
+<td>64.69 ± 1.00</td>
+<td>-0.20 ± 1.36</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Sentiment Classification</td>
+<td>MCC</td>
+<td>angry-tweets</td>
+<td>52.17 ± 0.96</td>
+<td>48.76 ± 0.94</td>
+<td>-3.41 ± 1.34</td>
+<td>52.91 ± 0.72</td>
+<td>52.71 ± 1.32</td>
+<td>-0.20 ± 1.50</td>
+<td>55.73 ± 1.16</td>
+<td>56.26 ± 1.07</td>
+<td>+0.53 ± 1.58</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Sentiment Classification</td>
+<td>MCC</td>
+<td>danish-sentiment-in-context</td>
+<td>63.61 ± 1.68</td>
+<td>59.84 ± 1.99</td>
+<td>-3.77 ± 2.60</td>
+<td>67.83 ± 1.81</td>
+<td>66.40 ± 2.49</td>
+<td>-1.43 ± 3.08</td>
+<td>74.05 ± 1.45</td>
+<td>73.11 ± 1.68</td>
+<td>-0.94 ± 2.22</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Summarization</td>
+<td>chrF++</td>
+<td>Average (1 eval)</td>
+<td>37.56 ± 0.20</td>
+<td>36.88 ± 0.20</td>
+<td>-0.68 ± 0.28</td>
+<td>35.09 ± 0.35</td>
+<td>36.97 ± 0.21</td>
+<td>+1.88 ± 0.41</td>
+<td>36.51 ± 0.28</td>
+<td>36.66 ± 0.44</td>
+<td>+0.15 ± 0.52</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Summarization</td>
+<td>chrF++</td>
+<td>nordjylland-news</td>
+<td>37.56 ± 0.20</td>
+<td>36.88 ± 0.20</td>
+<td>-0.68 ± 0.28</td>
+<td>35.09 ± 0.35</td>
+<td>36.97 ± 0.21</td>
+<td>+1.88 ± 0.41</td>
+<td>36.51 ± 0.28</td>
+<td>36.66 ± 0.44</td>
+<td>+0.15 ± 0.52</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Word-in-Context</td>
+<td>MCC</td>
+<td>Average (1 eval)</td>
+<td>11.83 ± 2.20</td>
+<td>8.71 ± 3.46</td>
+<td>-3.12 ± 4.10</td>
+<td>29.87 ± 1.70</td>
+<td>23.27 ± 3.18</td>
+<td>-6.60 ± 3.61</td>
+<td>44.60 ± 2.06</td>
+<td>40.11 ± 3.46</td>
+<td>-4.49 ± 4.03</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Word-in-Context</td>
+<td>MCC</td>
+<td>danwic</td>
+<td>11.83 ± 2.20</td>
+<td>8.71 ± 3.46</td>
+<td>-3.12 ± 4.10</td>
+<td>29.87 ± 1.70</td>
+<td>23.27 ± 3.18</td>
+<td>-6.60 ± 3.61</td>
+<td>44.60 ± 2.06</td>
+<td>40.11 ± 3.46</td>
+<td>-4.49 ± 4.03</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Common-sense Reasoning</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>58.70 ± 0.50</td>
+<td>23.20 ± 0.40</td>
+<td>-35.50 ± 0.60</td>
+<td>73.10 ± 0.40</td>
+<td>59.60 ± 0.50</td>
+<td>-13.50 ± 0.70</td>
+<td>90.00 ± 0.30</td>
+<td>85.70 ± 0.30</td>
+<td>-4.30 ± 0.50</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Common-sense Reasoning</td>
+<td>Accuracy</td>
+<td>HellaSwag</td>
+<td>58.7 ± 0.5</td>
+<td>23.2 ± 0.4</td>
+<td>-35.5 ± 0.6</td>
+<td>73.1 ± 0.4</td>
+<td>59.6 ± 0.5</td>
+<td>-13.5 ± 0.7</td>
+<td>90.0 ± 0.3</td>
+<td>85.7 ± 0.3</td>
+<td>-4.3 ± 0.5</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Instruction-following</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>73.30 ± 1.90</td>
+<td>54.70 ± 2.00</td>
+<td>-18.50 ± 2.70</td>
+<td>70.40 ± 1.80</td>
+<td>69.80 ± 1.90</td>
+<td>-0.60 ± 2.70</td>
+<td>89.60 ± 1.50</td>
+<td>78.60 ± 1.80</td>
+<td>-11.00 ± 2.30</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Instruction-following</td>
+<td>Accuracy</td>
+<td>IFEval</td>
+<td>73.3 ± 1.9</td>
+<td>54.7 ± 2.0</td>
+<td>-18.5 ± 2.7</td>
+<td>70.4 ± 1.8</td>
+<td>69.8 ± 1.9</td>
+<td>-0.6 ± 2.7</td>
+<td>89.6 ± 1.5</td>
+<td>78.6 ± 1.8</td>
+<td>-11.0 ± 2.3</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Knowledge</td>
+<td>Accuracy</td>
+<td>Average (4 evals)</td>
+<td>50.27 ± 0.46</td>
+<td>41.92 ± 0.45</td>
+<td>-8.35 ± 0.65</td>
+<td>81.72 ± 0.26</td>
+<td>72.97 ± 0.29</td>
+<td>-8.75 ± 0.42</td>
+<td>79.15 ± 0.22</td>
+<td>82.40 ± 0.24</td>
+<td>+3.23 ± 0.33</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Knowledge</td>
+<td>Accuracy</td>
+<td>ARC-C</td>
+<td>55.5 ± 1.5</td>
+<td>55.0 ± 1.5</td>
+<td>-0.5 ± 2.1</td>
+<td>90.8 ± 0.8</td>
+<td>88.5 ± 0.9</td>
+<td>-2.3 ± 1.3</td>
+<td>96.1 ± 0.6</td>
+<td>93.8 ± 0.7</td>
+<td>-2.3 ± 0.9</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Knowledge</td>
+<td>Accuracy</td>
+<td>ARC-E</td>
+<td>72.9 ± 0.9</td>
+<td>74.2 ± 0.9</td>
+<td>+1.3 ± 1.3</td>
+<td>96.3 ± 0.4</td>
+<td>94.6 ± 0.5</td>
+<td>-1.7 ± 0.6</td>
+<td>98.5 ± 0.3</td>
+<td>98.3 ± 0.3</td>
+<td>-0.2 ± 0.4</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Knowledge</td>
+<td>Accuracy</td>
+<td>MMLU</td>
+<td>39.8 ± 0.4</td>
+<td>31.7 ± 0.4</td>
+<td>-8.1 ± 0.6</td>
+<td>71.3 ± 0.4</td>
+<td>67.8 ± 0.4</td>
+<td>-3.6 ± 0.6</td>
+<td>41.4 ± 0.4</td>
+<td>76.6 ± 0.4</td>
+<td>+35.2 ± 0.6</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Knowledge</td>
+<td>Accuracy</td>
+<td>MMLU-Pro</td>
+<td>32.9 ± 0.4</td>
+<td>6.8 ± 0.2</td>
+<td>-26.1 ± 0.5</td>
+<td>68.5 ± 0.4</td>
+<td>41.0 ± 0.4</td>
+<td>-27.4 ± 0.6</td>
+<td>80.6 ± 0.4</td>
+<td>60.9 ± 0.4</td>
+<td>-19.8 ± 0.6</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Long-context</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>34.60 ± 2.10</td>
+<td>35.80 ± 2.10</td>
+<td>+1.20 ± 3.00</td>
+<td>51.40 ± 2.20</td>
+<td>49.40 ± 2.20</td>
+<td>-2.00 ± 3.20</td>
+<td>67.20 ± 2.10</td>
+<td>54.60 ± 2.20</td>
+<td>-12.60 ± 3.10</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Long-context</td>
+<td>Accuracy</td>
+<td>RULER 32k</td>
+<td>34.6 ± 2.1</td>
+<td>35.8 ± 2.1</td>
+<td>+1.2 ± 3.0</td>
+<td>51.4 ± 2.2</td>
+<td>49.4 ± 2.2</td>
+<td>-2.0 ± 3.2</td>
+<td>67.2 ± 2.1</td>
+<td>54.6 ± 2.2</td>
+<td>-12.6 ± 3.1</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Math</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>68.10 ± 1.30</td>
+<td>56.70 ± 1.40</td>
+<td>-11.40 ± 1.90</td>
+<td>92.20 ± 0.70</td>
+<td>82.30 ± 1.10</td>
+<td>-9.90 ± 1.30</td>
+<td>94.80 ± 0.60</td>
+<td>92.20 ± 0.70</td>
+<td>-2.60 ± 1.00</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Math</td>
+<td>Accuracy</td>
+<td>GSM8K</td>
+<td>68.1 ± 1.3</td>
+<td>56.7 ± 1.4</td>
+<td>-11.4 ± 1.9</td>
+<td>92.2 ± 0.7</td>
+<td>82.3 ± 1.1</td>
+<td>-9.9 ± 1.3</td>
+<td>94.8 ± 0.6</td>
+<td>92.2 ± 0.7</td>
+<td>-2.6 ± 1.0</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Truthfulness</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>16.80 ± 1.30</td>
+<td>15.70 ± 1.30</td>
+<td>-1.10 ± 1.80</td>
+<td>64.70 ± 1.70</td>
+<td>63.30 ± 1.70</td>
+<td>-1.50 ± 2.40</td>
+<td>78.10 ± 1.40</td>
+<td>74.20 ± 1.50</td>
+<td>-3.90 ± 2.10</td>
+</tr>
+<tr>
+<td>English</td>
+<td>Truthfulness</td>
+<td>Accuracy</td>
+<td>TruthfulQA</td>
+<td>16.8 ± 1.3</td>
+<td>15.7 ± 1.3</td>
+<td>-1.1 ± 1.8</td>
+<td>64.7 ± 1.7</td>
+<td>63.3 ± 1.7</td>
+<td>-1.5 ± 2.4</td>
+<td>78.1 ± 1.4</td>
+<td>74.2 ± 1.5</td>
+<td>-3.9 ± 2.1</td>
+</tr>
+<tr>
+<td>Agentic</td>
+<td>Code</td>
+<td>pass@1</td>
+<td>Average (2 evals)</td>
+<td>46.75 ± 2.49</td>
+<td>39.20 ± 2.38</td>
+<td>-7.55 ± 3.44</td>
+<td>75.05 ± 2.13</td>
+<td>49.20 ± 2.31</td>
+<td>-25.85 ± 3.13</td>
+<td>82.95 ± 1.84</td>
+<td>77.20 ± 2.06</td>
+<td>-5.75 ± 2.72</td>
+</tr>
+<tr>
+<td>Agentic</td>
+<td>Code</td>
+<td>pass@1</td>
+<td>HumanEval</td>
+<td>42.1 ± 3.9</td>
+<td>29.9 ± 3.6</td>
+<td>-12.2 ± 5.3</td>
+<td>76.2 ± 3.3</td>
+<td>29.3 ± 3.6</td>
+<td>-47.0 ± 4.9</td>
+<td>87.8 ± 2.6</td>
+<td>80.5 ± 3.1</td>
+<td>-7.3 ± 4.0</td>
+</tr>
+<tr>
+<td>Agentic</td>
+<td>Code</td>
+<td>pass@1</td>
+<td>MBPP p@1</td>
+<td>51.4 ± 3.1</td>
+<td>48.5 ± 3.1</td>
+<td>-2.9 ± 4.4</td>
+<td>73.9 ± 2.7</td>
+<td>69.1 ± 2.9</td>
+<td>-4.7 ± 3.9</td>
+<td>78.1 ± 2.6</td>
+<td>73.9 ± 2.7</td>
+<td>-4.2 ± 3.7</td>
+</tr>
+<tr>
+<td>Agentic</td>
+<td>Tool Calling</td>
+<td>Accuracy</td>
+<td>Average (1 eval)</td>
+<td>52.40 ± 0.80</td>
+<td>43.10 ± 0.80</td>
+<td>-9.30 ± 1.10</td>
+<td>75.00 ± 0.70</td>
+<td>49.20 ± 0.80</td>
+<td>-25.80 ± 1.00</td>
+<td>79.40 ± 0.60</td>
+<td>75.80 ± 0.70</td>
+<td>-3.60 ± 0.90</td>
+</tr>
+<tr>
+<td>Agentic</td>
+<td>Tool Calling</td>
+<td>Accuracy</td>
+<td>BFCL</td>
+<td>52.4 ± 0.8</td>
+<td>43.1 ± 0.8</td>
+<td>-9.3 ± 1.1</td>
+<td>75.0 ± 0.7</td>
+<td>49.2 ± 0.8</td>
+<td>-25.8 ± 1.0</td>
+<td>79.4 ± 0.6</td>
+<td>75.8 ± 0.7</td>
+<td>-3.6 ± 0.9</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      This site made available under a Creative Commons Attribution 4.0 license
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "toc.follow", "pymdownx.caret", "pymdownx.tilde"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inner = document.querySelector(".md-header__inner");
+  if (!inner) return;
+  var lang = document.documentElement.lang || "en";
+  var btn = document.createElement("a");
+  btn.href = "mailto:Torben.blach@alexandra.dk";
+  btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
+  btn.className = "dfm-contact-btn";
+  inner.appendChild(btn);
+});
+</script>
+
+  </body>
+</html>
