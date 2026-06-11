@@ -139,6 +139,23 @@ hide:
   color: #c8102e;
 }
 
+.story-card-featured {
+  margin: 2rem 0 0;
+  border-top: none;
+  padding: 2rem;
+}
+
+.story-card-featured .story-card-title {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.story-card-featured .story-card-desc {
+  max-width: 56rem;
+  font-size: 0.98rem;
+}
+
 .story-card-more {
   background: transparent;
   box-shadow: none;
@@ -262,6 +279,11 @@ hide:
   <h1>Building the Foundation of Danish AI</h1>
   <p>Language models have become critical infrastructure — but smaller languages like Danish risk being left behind. Danish Foundation Models is a collaborative effort across Danish universities and research institutions to develop, evaluate, and adapt open language AI that serves Danish society.</p>
 </div>
+
+<a class="story-card story-card-featured" href="./news/2026/06/11/munin-10-release-note.html">
+  <span class="story-card-title">Munin 1.0 release note</span>
+  <span class="story-card-desc">A family of Danish-focused post-trained language models built on top of strong open base models.</span>
+</a>
 
 <div class="pillars">
   <div class="pillar">
