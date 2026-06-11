@@ -139,6 +139,23 @@ hide:
   color: #c8102e;
 }
 
+.story-card-featured {
+  margin: 2rem 0 0;
+  border-top: none;
+  padding: 2rem;
+}
+
+.story-card-featured .story-card-title {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.story-card-featured .story-card-desc {
+  max-width: 56rem;
+  font-size: 0.98rem;
+}
+
 .story-card-more {
   background: transparent;
   box-shadow: none;
@@ -262,6 +279,11 @@ hide:
   <h1>Vi bygger fundamentet for dansk AI</h1>
   <p>Sprogmodeller er blevet kritisk infrastruktur — men mindre sprog som dansk risikerer at blive efterladt. Danish Foundation Models er et samarbejde på tværs af danske universiteter og forskningsinstitutioner om at udvikle, evaluere og tilpasse sprog-AI til gavn for det danske samfund.</p>
 </div>
+
+<a class="story-card story-card-featured" href="./news/2026/06/11/munin-10-udgivelsesnote.html">
+  <span class="story-card-title">Munin 1.0-udgivelsesnote</span>
+  <span class="story-card-desc">En familie af danskfokuserede post-trænede sprogmodeller bygget oven på stærke åbne basismodeller.</span>
+</a>
 
 <div class="pillars">
   <div class="pillar">

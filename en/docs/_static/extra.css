@@ -34,3 +34,216 @@
   --md-accent-fg-color--transparent: rgba(200, 16, 46, 0.1);
   --md-typeset-a-color: #c8102e;
 }
+
+.dfm-post-byline {
+  margin-top: -0.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.dfm-eval-table-wrap {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dfm-eval-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  font-size: 0.58rem;
+  line-height: 1.18;
+}
+
+.dfm-eval-table caption {
+  caption-side: top;
+  margin-bottom: 0.4rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.dfm-eval-table th {
+  background: #f4f7fb;
+  color: #4b5563;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.34rem 0.24rem;
+}
+
+.dfm-eval-table td {
+  padding: 0.28rem 0.22rem;
+  vertical-align: middle;
+}
+
+.dfm-eval-table th:nth-child(1),
+.dfm-eval-table td:nth-child(1) {
+  width: 7%;
+}
+
+.dfm-eval-table td:nth-child(2) {
+  width: 23%;
+  font-weight: 700;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.dfm-eval-table th:nth-child(3),
+.dfm-eval-table td:nth-child(3) {
+  width: 7%;
+  color: #6b7280;
+  text-align: center;
+}
+
+.dfm-eval-table td:nth-child(n+4) {
+  width: 10.5%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dfm-eval-table thead tr:first-child th:nth-child(4),
+.dfm-eval-table thead tr:first-child th:nth-child(5),
+.dfm-eval-table thead tr:first-child th:nth-child(6),
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(1),
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(3),
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(5),
+.dfm-eval-table tbody td:nth-child(4),
+.dfm-eval-table tbody td:nth-child(6),
+.dfm-eval-table tbody td:nth-child(8) {
+  border-left: 0.08rem solid #d9dee7;
+}
+
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(2),
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(4),
+.dfm-eval-table thead tr:nth-child(2) th:nth-child(6),
+.dfm-eval-table tbody td:nth-child(5),
+.dfm-eval-table tbody td:nth-child(7),
+.dfm-eval-table tbody td:nth-child(9) {
+  border-left: 0.05rem solid #eef1f5;
+}
+
+.dfm-eval-table .dfm-suite-start td {
+  border-top: 0.11rem solid #687385;
+}
+
+.dfm-eval-table .dfm-suite-danish td:first-child {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.dfm-eval-table .dfm-suite-english td:first-child {
+  color: #374151;
+  font-weight: 700;
+}
+
+.dfm-eval-table .dfm-suite-agentic td:first-child {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.dfm-eval-table .hl-apertus-original td:nth-child(4),
+.dfm-eval-table .hl-apertus-munin td:nth-child(5),
+.dfm-eval-table .hl-ministral-original td:nth-child(6),
+.dfm-eval-table .hl-ministral-munin td:nth-child(7),
+.dfm-eval-table .hl-qwen-original td:nth-child(8),
+.dfm-eval-table .hl-qwen-munin td:nth-child(9) {
+  background: #dcecff;
+  background-clip: padding-box;
+  box-shadow: inset 0 0 0 0.18rem var(--md-default-bg-color);
+}
+
+@media screen and (max-width: 76.1875em) {
+  .dfm-eval-table {
+    font-size: 0.48rem;
+  }
+
+  .dfm-eval-table th {
+    padding: 0.22rem 0.12rem;
+  }
+
+  .dfm-eval-table td {
+    padding: 0.2rem 0.1rem;
+  }
+
+  .dfm-eval-table th:nth-child(1),
+  .dfm-eval-table td:nth-child(1) {
+    width: 7.5%;
+  }
+
+  .dfm-eval-table td:nth-child(2) {
+    width: 22.5%;
+  }
+
+  .dfm-eval-table th:nth-child(3),
+  .dfm-eval-table td:nth-child(3) {
+    width: 7%;
+  }
+
+  .dfm-eval-table td:nth-child(n+4) {
+    width: 10.5%;
+  }
+}
+
+.dfm-tournament-table {
+  width: 100%;
+  max-width: 42rem;
+  table-layout: fixed;
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.dfm-tournament-table caption {
+  caption-side: top;
+  margin-bottom: 0.4rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.dfm-tournament-table th {
+  background: #f4f7fb;
+  color: #4b5563;
+  font-weight: 700;
+  padding: 0.42rem 0.5rem;
+  vertical-align: middle;
+}
+
+.dfm-tournament-table td {
+  padding: 0.42rem 0.5rem;
+  vertical-align: middle;
+}
+
+.dfm-tournament-table th:nth-child(1),
+.dfm-tournament-table td:nth-child(1) {
+  width: 18%;
+  text-align: center;
+}
+
+.dfm-tournament-table th:nth-child(2),
+.dfm-tournament-table td:nth-child(2) {
+  width: 58%;
+}
+
+.dfm-tournament-table th:nth-child(3),
+.dfm-tournament-table td:nth-child(3) {
+  width: 24%;
+  text-align: center;
+}
+
+.dfm-tournament-table th:nth-child(2),
+.dfm-tournament-table th:nth-child(3),
+.dfm-tournament-table td:nth-child(2),
+.dfm-tournament-table td:nth-child(3) {
+  border-left: 0.08rem solid #d9dee7;
+}
+
+.dfm-tournament-table tr.dfm-model-munin td:nth-child(2) {
+  background: #dcecff;
+  background-clip: padding-box;
+  box-shadow: inset 0 0 0 0.18rem var(--md-default-bg-color);
+  color: #1d4ed8;
+  font-weight: 700;
+}
