@@ -2,13 +2,14 @@
 draft: false
 date: 2026-06-11
 slug: munin-10-udgivelsesnote
+authors:
+  - rasmus
+  - torben
 tags:
   - Modeludgivelse
 ---
 
 # Munin 1.0-udgivelsesnote
-
-<p class="dfm-post-byline"><strong>Forfattere:</strong> Rasmus Larsen, Torben Blach – Alexandra Instituttet A/S</p>
 
 I dag udgiver Danish Foundation Models [Munin 1.0-familien af sprogmodeller](https://huggingface.co/collections/danish-foundation-models/munin-10), som er post-trænet oven på nogle af de stærkeste åbne modeller i deres klasse. Modellerne er trænet på en kombination af eksisterende åbne og nyudviklede datasæt.
 

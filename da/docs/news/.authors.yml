@@ -4,3 +4,11 @@ authors:
     description: Kommunikationsrådgiver, Holmgaard Media
     avatar: news/images/anders-holmgaard.jpg
     url: https://holmgaardmedia.dk/
+  rasmus:
+    name: Rasmus Larsen
+    description: Alexandra Instituttet A/S
+    avatar: news/images/rasmus-larsen.jpg
+  torben:
+    name: Torben Blach
+    description: Alexandra Instituttet A/S
+    avatar: news/images/torben-blach.jpg
