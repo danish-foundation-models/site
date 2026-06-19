@@ -2,13 +2,14 @@
 draft: false
 date: 2026-06-11
 slug: munin-10-release-note
+authors:
+  - rasmus
+  - torben
 tags:
   - Model Release
 ---
 
 # Munin 1.0 release note
-
-<p class="dfm-post-byline"><strong>Authors:</strong> Rasmus Larsen, Torben Blach – Alexandra Instituttet A/S</p>
 
 Today, Danish Foundation Models releases the [Munin 1.0 family of language models](https://huggingface.co/collections/danish-foundation-models/munin-10), post-trained on top of several best-in-class open models. These models are trained using a combination of existing open and newly developed datasets.
 
