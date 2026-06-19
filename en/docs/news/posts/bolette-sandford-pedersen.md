@@ -9,9 +9,11 @@ tags:
 
 # Bolette fights for the Danish language in the age of algorithms
 
-**Bolette Sandford Pedersen has been working with language models since 1989. Back then it was called machine translation systems, and artificial intelligence was not part of the equation. Today the field has exploded, and the professor from the University of Copenhagen has just been named to Denmark's Top 100 Women in AI. Meet the computational linguist from DFM who refuses to let closed, foreign models define our Danish language community.**
+Bolette Sandford Pedersen has been working with language models since 1989. Back then it was called machine translation systems, and artificial intelligence was not part of the equation. Today the field has exploded, and the professor from the University of Copenhagen has just been named to Denmark's Top 100 Women in AI. Meet the computational linguist from DFM who refuses to let closed, foreign models define our Danish language community.
 
 <!-- more -->
+
+---
 
 <figure style="float: right; margin: 0 0 1.5rem 2rem; max-width: 280px;">
   <img src="../../../images/BolettePedersenfigurbillede2.jpg" alt="Bolette Sandford Pedersen" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
