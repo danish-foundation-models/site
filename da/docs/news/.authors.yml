@@ -12,3 +12,7 @@ authors:
     name: Torben Blach
     description: Alexandra Instituttet A/S
     avatar: news/images/torben-blach.jpg
+  peter:
+    name: Peter Schneider-Kamp
+    description: University of Southern Denmark
+    avatar: news/images/peter-schneider-kamp.jpg
