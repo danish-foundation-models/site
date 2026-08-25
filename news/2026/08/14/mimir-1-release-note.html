@@ -479,20 +479,20 @@
 
 
 <h1 id="dfm-mimir-release-note">DFM Mimir release note<a class="headerlink" href="#dfm-mimir-release-note" title="Permanent link">&para;</a></h1>
-<p>Today, Danish Foundation Models releases <strong>Mimir v1</strong>, a 1-billion-parameter Hierarchical Reasoning Model (HRM-Text) trained from scratch using the <a href="https://arxiv.org/abs/2506.20072">HRM-Text framework</a>. Mimir v1 is optimised for Danish and English tasks and is trained exclusively on permissible and openly licensed data, staying true to the DFM philosophy.</p>
+<p>Today, Danish Foundation Models releases <strong>Mimir v1</strong>, a 1-billion-parameter HRM language model (HRM-Text), trained from scratch using the <a href="https://arxiv.org/abs/2605.20613">HRM-Text framework</a>. Mimir v1 is optimised for Danish and English tasks and trained exclusively on permissible and openly licensed data, in line with the DFM philosophy.</p>
 <div style="text-align: center;">
-  <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark comparison of DFM Mimir against HRM-Text, Qwen 3.5 2B, and Gemma 4 E2B IT" style="width: 100%;">
+  <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark comparison of DFM Mimir against HRM-Text, Qwen 3.5 2B, and Gemma 4 E2B" style="width: 100%;">
 </div>
 <p style="text-align: center; font-size: 0.85em; color: #6b7280;">
-  Comparing DFM Mimir against the original HRM-Text, Qwen 3.5 4B and Gemma 4 E2B, demonstrating strong performance across a broad set of benchmarks.
+  Comparing DFM Mimir against the original HRM-Text, Qwen 3.5 2B, and Gemma 4 E2B, demonstrating strong performance across a broad set of benchmarks.
 </p>
 
 <!-- more -->
 
 <h2 id="why-mimir">Why Mimir?<a class="headerlink" href="#why-mimir" title="Permanent link">&para;</a></h2>
-<p>Current large language model development relies on massive, often non-permissible datasets, creating a high barrier for researchers committed to open-source and ethically sourced data. We introduce Mimir v1, a 1-billion-parameter language model based on the Hierarchical Reasoning Model (HRM) architecture, that is trained from scratch and delivers highly competitive performance for English and sets a new state of the art for Danish using only permissible post-training data. Trained on a mixture of 161 datasets, Mimir outperforms the original HRM-Text 1B and competes with larger frontier models like Qwen 3.5 4B and Gemma 4 E2B, tested across 20 benchmarks for English, Math &amp; Code and Danish. </p>
+<p>Current large language model development relies on massive, often non-permissible datasets, creating a high barrier for researchers committed to open source and ethically sourced data. We introduce Mimir v1, a 1-billion-parameter language model based on the Hierarchical Reasoning Model (HRM) architecture, which is trained from scratch and delivers highly competitive performance in English while setting a new state of the art for Danish using only permissible post-training data. Trained on a mixture of 161 datasets, Mimir outperforms the original HRM-Text 1B and competes with larger frontier models such as Qwen 3.5 4B and Gemma 4 E2B, tested across 20 benchmarks for English, Math &amp; Code, and Danish.</p>
 <h2 id="technical-report">Technical Report<a class="headerlink" href="#technical-report" title="Permanent link">&para;</a></h2>
-<p>Mirmir provides strong capabilites in both the Danish and English domains. See all our results in technical report <a href="https://arxiv.org/pdf/2608.13517">here</a> and access the model on the Huggingface Hub <a href="https://huggingface.co/danish-foundation-models/DFM-Mimir">here</a>. </p>
+<p>Mimir provides strong capabilities in both the Danish and English domains. See all results in the technical report <a href="https://arxiv.org/pdf/2608.13517">here</a>, and find the model on the Hugging Face Hub <a href="https://huggingface.co/danish-foundation-models/DFM-Mimir">here</a>.</p>
 <h1 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h1>
 <p>We list contributions according to the <a href="https://credit.niso.org">Contributor Roles Taxonomy (CRediT)</a>:</p>
 <ul>
@@ -502,19 +502,21 @@
 <li><strong>Gianluca Barmina</strong>: <em>Data curation</em>, <em>Investigation</em>, <em>Writing – review &amp; editing</em></li>
 <li><strong>Kenneth Enevoldsen</strong>: <em>Data curation</em>, <em>Resources</em>, <em>Writing – review &amp; editing</em></li>
 </ul>
-<p><em>Additional Contributors</em>:
-- <strong>Mogens Henrik From</strong>: <em>Investigation</em>, <em>Project administration</em>, <em>Software</em>
-- <strong>Andrea Blasi Núñez</strong>: <em>Formal analysis</em>, <em>Software</em>, <em>Visualization</em>
-- <strong>Annemette Brok Pirchert</strong>: <em>Formal analysis</em>, <em>Software</em>, <em>Visualization</em>
-- <strong>Stine Lyngsø Beltoft</strong>: <em>Data curation</em>, <em>Resources</em>
-- <strong>Torben Blach</strong>: <em>Project administration</em>, <em>Funding acquisition</em>
-- <strong>Sofie Helene Bruun</strong>: <em>Data curation</em>, <em>Resources</em>
-- <strong>Oliver Kinch</strong>: <em>Data curation</em>, <em>Resources</em>
-- <strong>Rasmus Larsen</strong>: <em>Data curation</em>, <em>Resources</em>
-- <strong>Dan Saattrup Smart</strong>: <em>Data curation</em>, <em>Resources</em>
-- <strong>Kristoffer Laigaard Nielbo</strong>: <em>Funding acquisition</em></p>
+<p><em>Additional Contributors</em>:</p>
+<ul>
+<li><strong>Mogens Henrik From</strong>: <em>Investigation</em>, <em>Project administration</em>, <em>Software</em></li>
+<li><strong>Andrea Blasi Núñez</strong>: <em>Formal analysis</em>, <em>Software</em>, <em>Visualization</em></li>
+<li><strong>Annemette Brok Pirchert</strong>: <em>Formal analysis</em>, <em>Software</em>, <em>Visualization</em></li>
+<li><strong>Stine Lyngsø Beltoft</strong>: <em>Data curation</em>, <em>Resources</em></li>
+<li><strong>Torben Blach</strong>: <em>Project administration</em>, <em>Funding acquisition</em></li>
+<li><strong>Sofie Helene Bruun</strong>: <em>Data curation</em>, <em>Resources</em></li>
+<li><strong>Oliver Kinch</strong>: <em>Data curation</em>, <em>Resources</em></li>
+<li><strong>Rasmus Larsen</strong>: <em>Data curation</em>, <em>Resources</em></li>
+<li><strong>Dan Saattrup Smart</strong>: <em>Data curation</em>, <em>Resources</em></li>
+<li><strong>Kristoffer Laigaard Nielbo</strong>: <em>Funding acquisition</em></li>
+</ul>
 <h1 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h1>
-<p>This work originated within <a href="https://odensenlp.github.io">OdenseNLP</a> and was supported by the Danish Foundation Models project — a collaboration between the University of Southern Denmark, Aarhus University, the Alexandra Institute, and the University of Copenhagen — funded by the Ministry of Science, Higher Education and Digital Affairs. We thank all members of the Danish Foundation Models project and the OdenseNLP research group for many fruitful discussions and their continued support.</p>
+<p>This work originated within <a href="https://odensenlp.github.io">OdenseNLP</a> and was supported by the Danish Foundation Models project, a collaboration between the University of Southern Denmark, Aarhus University, the Alexandra Institute, and the University of Copenhagen, funded by the Ministry of Science, Higher Education and Digital Affairs. We thank all members of the Danish Foundation Models project and the OdenseNLP research group for many fruitful discussions and their continued support.</p>
 
 
 
