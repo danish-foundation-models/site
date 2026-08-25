@@ -10,7 +10,7 @@ tags:
 
 # DFM Mimir release note
 
-Today, Danish Foundation Models releases **Mimir v1**, a 1-billion-parameter HRM language model (HRM-Text), trained from scratch using the [HRM-Text framework](https://arxiv.org/abs/2605.20613). Mimir v1 is optimised for Danish and English tasks and trained exclusively on permissible data, using openly licensed data whenever possible, in line with the DFM philosophy.
+Today, Danish Foundation Models releases **Mimir v1**, a 1-billion-parameter HRM language model (HRM-Text), trained from scratch using the [HRM-Text framework](https://arxiv.org/abs/2605.20613). Mimir v1 is optimised for Danish and English tasks and trained exclusively on permissible and openly licensed data, in line with the DFM philosophy.
 
 <div style="text-align: center;">
   <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark comparison of DFM Mimir against HRM-Text, Qwen 3.5 2B, and Gemma 4 E2B" style="width: 100%;">

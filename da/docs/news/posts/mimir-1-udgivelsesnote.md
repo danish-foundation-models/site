@@ -10,7 +10,7 @@ tags:
 
 # DFM Mimir-udgivelsesnote
 
-I dag udgiver Danish Foundation Models **Mimir v1**, en HRM-sprogmodel med 1 milliard parametre (HRM-Text), trænet fra bunden med [HRM-Text-rammeværket](https://arxiv.org/abs/2605.20613). Mimir v1 er optimeret til danske og engelske opgaver og trænet udelukkende på tilladelige data med brug af åbent licenserede data, hvor det er muligt, i tråd med DFM-filosofien.
+I dag udgiver Danish Foundation Models **Mimir v1**, en HRM-sprogmodel med 1 milliard parametre (HRM-Text), trænet fra bunden med [HRM-Text-rammeværket](https://arxiv.org/abs/2605.20613). Mimir v1 er optimeret til danske og engelske opgaver og trænet udelukkende på tilladelige og åbent licenserede data, i tråd med DFM-filosofien.
 
 <div style="text-align: center;">
   <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark-sammenligning af DFM Mimir med HRM-Text, Qwen 3.5 2B og Gemma 4 E2B" style="width: 100%;">
