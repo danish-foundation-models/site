@@ -10,13 +10,13 @@ tags:
 
 # DFM Mimir-udgivelsesnote
 
-I dag udgiver Danish Foundation Models **Mimir v1**, en HRM-sprogmodel med 1 milliard parametre (HRM-Text), trænet fra bunden med [HRM-Text-rammeværket](https://arxiv.org/abs/2506.20072). Mimir v1 er optimeret til danske og engelske opgaver og trænet udelukkende på tilladelige og åbent licenserede data i tråd med DFM-filosofien.
+I dag udgiver Danish Foundation Models **Mimir v1**, en HRM-sprogmodel med 1 milliard parametre (HRM-Text), trænet fra bunden med [HRM-Text-rammeværket](https://arxiv.org/abs/2605.20613). Mimir v1 er optimeret til danske og engelske opgaver og trænet udelukkende på tilladelige og åbent licenserede data, i tråd med DFM-filosofien.
 
 <div style="text-align: center;">
-  <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark-sammenligning af DFM Mimir med HRM-Text, Qwen 3.5 4B og Gemma 4 E2B" style="width: 100%;">
+  <img src="/_static/mimir-benchmark-comparison.png" alt="Benchmark-sammenligning af DFM Mimir med HRM-Text, Qwen 3.5 2B og Gemma 4 E2B" style="width: 100%;">
 </div>
 <p style="text-align: center; font-size: 0.85em; color: #6b7280;">
-  Sammenligning af DFM Mimir med den oprindelige HRM-Text, Qwen 3.5 4B og Gemma 4 E2B, som viser stærk performance på tværs af et bredt sæt af benchmarks.
+  Sammenligning af DFM Mimir med den oprindelige HRM-Text, Qwen 3.5 2B og Gemma 4 E2B, som viser stærk performance på tværs af et bredt sæt af benchmarks.
 </p>
 
 <!-- more -->
@@ -41,6 +41,7 @@ Vi angiver bidrag i henhold til [Contributor Roles Taxonomy (CRediT)](https://cr
 - **Kenneth Enevoldsen**: *Data curation*, *Resources*, *Writing – review & editing*
 
 *Yderligere bidragydere*:
+
 - **Mogens Henrik From**: *Investigation*, *Project administration*, *Software*
 - **Andrea Blasi Núñez**: *Formal analysis*, *Software*, *Visualization*
 - **Annemette Brok Pirchert**: *Formal analysis*, *Software*, *Visualization*
