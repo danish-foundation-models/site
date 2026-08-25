@@ -41,6 +41,7 @@ Vi angiver bidrag i henhold til [Contributor Roles Taxonomy (CRediT)](https://cr
 - **Kenneth Enevoldsen**: *Data curation*, *Resources*, *Writing – review & editing*
 
 *Yderligere bidragydere*:
+
 - **Mogens Henrik From**: *Investigation*, *Project administration*, *Software*
 - **Andrea Blasi Núñez**: *Formal analysis*, *Software*, *Visualization*
 - **Annemette Brok Pirchert**: *Formal analysis*, *Software*, *Visualization*

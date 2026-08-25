@@ -41,6 +41,7 @@ We list contributions according to the [Contributor Roles Taxonomy (CRediT)](htt
 - **Kenneth Enevoldsen**: *Data curation*, *Resources*, *Writing – review & editing*
 
 *Additional Contributors*:
+
 - **Mogens Henrik From**: *Investigation*, *Project administration*, *Software*
 - **Andrea Blasi Núñez**: *Formal analysis*, *Software*, *Visualization*
 - **Annemette Brok Pirchert**: *Formal analysis*, *Software*, *Visualization*
