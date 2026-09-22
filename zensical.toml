@@ -1,0 +1,67 @@
+# English site, served at the root of foundationmodels.dk.
+# The Danish site lives in zensical.da.toml and is built into site/da/.
+
+[project]
+site_name = "Danish Foundation Models"
+site_description = "Danish Foundation Models develops, evaluates and adapts open language models, datasets and benchmarks for Danish."
+site_url = "https://foundationmodels.dk/"
+docs_dir = "en/docs"
+site_dir = "site"
+use_directory_urls = false
+copyright = "This site made available under a Creative Commons Attribution 4.0 license"
+extra_css = ["_static/extra.css"]
+nav = [
+  { "About" = "index.md" },
+  { "News" = "news/index.md" },
+  { "Models" = "https://huggingface.co/danish-foundation-models/models" },
+  { "Datasets" = "https://huggingface.co/danish-foundation-models/datasets" },
+]
+
+[project.theme]
+variant = "classic"
+custom_dir = "overrides"
+language = "en"
+favicon = "_static/icon.png"
+logo = "_static/icon.png"
+features = [
+  "navigation.tracking",
+  "navigation.tabs",
+  "navigation.sections",
+  "toc.integrate",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "toc.follow",
+]
+
+[project.theme.palette]
+primary = "white"
+accent = "custom"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+toc.permalink = true
+pymdownx.details = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.plugins.blog]
+blog_dir = "news"
+
+[project.plugins.tags]
+
+[project.extra]
+generator = false
+# Link-preview image (og:image), relative to site_url
+social_card = "_static/social-card.png"
+alternate = [
+  { name = "English", link = "/", lang = "en" },
+  { name = "Dansk", link = "/da/", lang = "da" },
+]

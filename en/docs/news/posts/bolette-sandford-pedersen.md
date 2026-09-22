@@ -16,7 +16,7 @@ Bolette Sandford Pedersen has been working with language models since 1989. Back
 ---
 
 <figure style="float: right; margin: 0 0 1.5rem 2rem; max-width: 280px;">
-  <img src="../../../images/BolettePedersenfigurbillede2.jpg" alt="Bolette Sandford Pedersen" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="../images/BolettePedersenfigurbillede2.jpg" alt="Bolette Sandford Pedersen" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </figure>
 
 Something has changed when Bolette Sandford Pedersen attends family gatherings. It is not the terrible uncle jokes or the homemade songs. What has changed is that she no longer has to spend half an hour explaining what she does for a living. Today her field of research — language models — has become common knowledge.
@@ -51,4 +51,4 @@ Her advice to the curious dinner companions at family gatherings — and to Dane
 
 ---
 
-*Danish Foundation Models is part of the Danish government's strategic AI initiative. The goal is to post-train, evaluate, maintain, and provide open access to large Danish language models. The project is a collaboration between Aarhus University, the University of Southern Denmark, the University of Copenhagen, and the Alexandra Institute. [Read more about DFM here](https://danish-foundation-models.github.io/site/).*
+*Danish Foundation Models is part of the Danish government's strategic AI initiative. The goal is to train, align, evaluate, maintain, and provide open access to large Danish language models. The project is a collaboration between Aarhus University, the University of Southern Denmark, the University of Copenhagen, and the Alexandra Institute. [Read more about DFM here](https://danish-foundation-models.github.io/site/).*

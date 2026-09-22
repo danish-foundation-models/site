@@ -11,22 +11,24 @@ install:
 	uv sync --python 3.12
 
 build:
+	rm -rf site
 	@echo "--- 📚 Building English docs ---"
-	cd en && uv run mkdocs build
+	uv run zensical build
 	@echo "--- 📚 Building Danish docs ---"
-	cd da && uv run mkdocs build
+	uv run zensical build --config-file zensical.da.toml
+	@# Zensical does not follow symlinks, so copy the assets shared with en/
+	cp -R site/_static site/da/_static
+	cp -R site/news/images site/da/news/images
 
-serve:
-	@echo "--- 📚 Building docs ---"
-	cd en && uv run mkdocs build
-	cd da && uv run mkdocs build
+serve: build
 	@echo "--- 🌐 Serving at http://127.0.0.1:8000 ---"
-	cd site && uv run python -m http.server 8000 & sleep 1 && open http://127.0.0.1:8000
+	(sleep 1 && open http://127.0.0.1:8000) &
+	uv run python -m http.server 8000 --directory site
 
 serve-en:
 	@echo "--- 👀 Serving English docs with live reload ---"
-	cd en && uv run mkdocs serve
+	uv run zensical serve
 
 serve-da:
 	@echo "--- 👀 Serving Danish docs with live reload ---"
-	cd da && uv run mkdocs serve
+	uv run zensical serve --config-file zensical.da.toml

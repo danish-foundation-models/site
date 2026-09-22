@@ -16,7 +16,7 @@ DFM researcher Peter Schneider-Kamp has spent 30 years automating the human thou
 ---
 
 <figure style="float: right; margin: 0 0 1.5rem 2rem; max-width: 280px;">
-  <img src="../../../images/peter-schneider-kamp.jpg" alt="Peter Schneider-Kamp" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="../images/peter-schneider-kamp.jpg" alt="Peter Schneider-Kamp" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </figure>
 
 There was a moment in the 1990s when the computer began to do something it should not have been able to do. It played chess. Well enough to beat grandmaster Garry Kasparov. And certainly well enough for a young man in Germany to make a choice that would consume him for the next 30 years.
@@ -73,4 +73,4 @@ That is also why he believes the work in DFM must be developed and expanded.
 
 ---
 
-*Danish Foundation Models is part of the Danish government's strategic AI initiative. The goal is to post-train, evaluate, maintain, and provide open access to large Danish language models. The project is a collaboration between Aarhus University, the University of Southern Denmark, the University of Copenhagen, and the Alexandra Institute. [Read more about DFM here](https://danish-foundation-models.github.io/site/).*
+*Danish Foundation Models is part of the Danish government's strategic AI initiative. The goal is to train, align, evaluate, maintain, and provide open access to large Danish language models. The project is a collaboration between Aarhus University, the University of Southern Denmark, the University of Copenhagen, and the Alexandra Institute. [Read more about DFM here](https://danish-foundation-models.github.io/site/).*

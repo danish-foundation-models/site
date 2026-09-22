@@ -16,7 +16,7 @@ DFM-forsker Peter Schneider-Kamp har brugt 30 år på at automatisere den mennes
 ---
 
 <figure style="float: right; margin: 0 0 1.5rem 2rem; max-width: 280px;">
-  <img src="../../../images/peter-schneider-kamp.jpg" alt="Peter Schneider-Kamp" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="../images/peter-schneider-kamp.jpg" alt="Peter Schneider-Kamp" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </figure>
 
 Der var et øjeblik i 1990'erne, hvor computeren begyndte at kunne noget, den ikke burde kunne. Den spillede skak. Godt nok til at slå stormester Garry Kasparov. Og absolut godt nok til, at en ung mand i Tyskland traf et valg, der kom til at opsluge ham de næste 30 år.
@@ -73,4 +73,4 @@ Derfor mener han også, at arbejdet i DFM skal udvikles og udbygges.
 
 ---
 
-*Danish Foundation Models er en del af regeringens strategiske AI-indsats. Målet er at post-træne, evaluere, vedligeholde og give åben adgang til store danske sprogmodeller. Projektet er et samarbejde mellem Aarhus Universitet, Syddansk Universitet, Københavns Universitet og Alexandra Instituttet. [Læs mere om DFM her](https://danish-foundation-models.github.io/site/).*
+*Danish Foundation Models er en del af regeringens strategiske AI-indsats. Målet er at træne, evaluere, vedligeholde og give åben adgang til store danske sprogmodeller. Projektet er et samarbejde mellem Aarhus Universitet, Syddansk Universitet, Københavns Universitet og Alexandra Instituttet. [Læs mere om DFM her](https://danish-foundation-models.github.io/site/).*

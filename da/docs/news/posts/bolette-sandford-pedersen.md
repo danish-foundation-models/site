@@ -16,7 +16,7 @@ Bolette Sandford Pedersen har arbejdet med sprogmodeller siden 1989. Dengang hed
 ---
 
 <figure style="float: right; margin: 0 0 1.5rem 2rem; max-width: 280px;">
-  <img src="../../../images/BolettePedersenfigurbillede2.jpg" alt="Bolette Sandford Pedersen" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="../images/BolettePedersenfigurbillede2.jpg" alt="Bolette Sandford Pedersen" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </figure>
 
 

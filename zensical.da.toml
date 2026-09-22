@@ -1,0 +1,69 @@
+# Danish site, served at foundationmodels.dk/da/.
+# The English site lives in zensical.toml. Shared assets (_static, news/images)
+# are symlinked from en/docs and copied into site/da/ by the Makefile, since
+# Zensical does not follow symlinks.
+
+[project]
+site_name = "Danske Grundmodeller"
+site_description = "Danish Foundation Models udvikler, evaluerer og tilpasser åbne sprogmodeller, datasæt og benchmarks til dansk."
+site_url = "https://foundationmodels.dk/da/"
+docs_dir = "da/docs"
+site_dir = "site/da"
+use_directory_urls = false
+copyright = "Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens"
+extra_css = ["_static/extra.css"]
+nav = [
+  { "Om" = "index.md" },
+  { "Nyheder" = "news/index.md" },
+  { "Modeller" = "https://huggingface.co/danish-foundation-models/models" },
+  { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets" },
+]
+
+[project.theme]
+variant = "classic"
+custom_dir = "overrides"
+language = "da"
+favicon = "_static/icon.png"
+logo = "_static/icon.png"
+features = [
+  "navigation.tracking",
+  "navigation.tabs",
+  "navigation.sections",
+  "toc.integrate",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "toc.follow",
+]
+
+[project.theme.palette]
+primary = "white"
+accent = "custom"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+toc.permalink = true
+pymdownx.details = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.plugins.blog]
+blog_dir = "news"
+
+[project.plugins.tags]
+
+[project.extra]
+generator = false
+# Link-preview image (og:image), relative to site_url
+social_card = "_static/social-card-da.png"
+alternate = [
+  { name = "English", link = "/", lang = "en" },
+  { name = "Dansk", link = "/da/", lang = "da" },
+]
