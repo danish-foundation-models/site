@@ -280,9 +280,9 @@ hide:
   <p>Sprogmodeller er blevet kritisk infrastruktur — men mindre sprog som dansk risikerer at blive efterladt. Danish Foundation Models er et samarbejde på tværs af danske universiteter og forskningsinstitutioner om at udvikle, evaluere og tilpasse sprog-AI til gavn for det danske samfund.</p>
 </div>
 
-<a class="story-card story-card-featured" href="./news/2026/06/11/munin-10-udgivelsesnote.html">
-  <span class="story-card-title">Munin 1.0-udgivelsesnote</span>
-  <span class="story-card-desc">En familie af danskfokuserede post-trænede sprogmodeller bygget oven på stærke åbne basismodeller.</span>
+<a class="story-card story-card-featured" href="./news/2026/08/14/mimir-1-udgivelsesnote.html">
+  <span class="story-card-title">DFM Mimir v1-udgivelsesnote</span>
+  <span class="story-card-desc">En 1B-parameter HRM-sprogmodel trænet fra bunden på fuldt tilladelige data, der leverer frontier-performance for dansk og engelsk.</span>
 </a>
 
 <div class="pillars">

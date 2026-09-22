@@ -158,6 +158,8 @@ Rasmus Larsen led training, performed experiments, built synthetic datasets and 
 
 Oliver Kinch built synthetic datasets and benchmarks.
 
+Andreas Holm contributed to experiments.
+
 Vladimir Salnikov and Jacob Nielsen contributed to datasets.
 
 Dan Saattrup Smart developed benchmarks and led the integration into EuroEval.

@@ -158,6 +158,8 @@ Rasmus Larsen ledte træningen, udførte eksperimenter, byggede syntetiske datas
 
 Oliver Kinch byggede syntetiske datasæt og benchmarks.
 
+Andreas Holm bidrog til eksperimenter.
+
 Vladimir Salnikov og Jacob Nielsen bidrog til datasæt.
 
 Dan Saattrup Smart udviklede benchmarks og ledte integrationen i EuroEval.
