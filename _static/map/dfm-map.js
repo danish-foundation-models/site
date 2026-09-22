@@ -34,6 +34,7 @@
     elexai: { w: 116.5, h: 54.9 }, latvia: { w: 80.0, h: 80.0 }, oslo: { w: 80.0, h: 80.0 },
     gothenburg: { w: 80.0, h: 80.0 }, esilv: { w: 80.0, h: 80.0 },
     polimi: { w: 154.0, h: 44.1 }, openeurollm: { w: 134.0, h: 61.0, ext: "svg" },
+    ucloud: { w: 40.0, h: 43.6, ext: "svg" },
   };
   const logoUrl = (id) => `${BASE}logos/${id}.${LOGOS[id].ext || "png"}`;
 
@@ -52,6 +53,7 @@
     datasets: { en: "Datasets", da: "Datasæt" },
     research: { en: "Research", da: "Forskning" },
     phd: { en: "Industrial PhDs", da: "Erhvervs-ph.d.er" },
+    compute: { en: "Compute", da: "Beregningskraft" },
     lexicography: { en: "Lexicography", da: "Leksikografi" },
     openmodels: { en: "Open models", da: "Åbne modeller" },
     basemodel: { en: "Base model", da: "Basismodel" },
@@ -96,7 +98,14 @@
     { id: "sdu", logo: "sdu", mode: "wordmark", role: "member",
       name: { en: "University of Southern Denmark", da: "Syddansk Universitet" },
       kicker: [k(W.partner, "Odense")],
-      lat: 55.3617, lon: 10.4295, dx: -310, dy: 100 },
+      lat: 55.3617, lon: 10.4295, dx: -310, dy: 60 },
+    { id: "ucloud", logo: "ucloud", mode: "mark",
+      name: "UCloud", kicker: [k(W.compute, "Sønderborg")],
+      lat: 54.9138, lon: 9.7922, dx: -250, dy: 75,
+      detail: {
+        en: "DFM uses UCloud, the national interactive HPC platform (DeiC Interactive HPC) run by the SDU eScience Center, for compute. Its hardware is housed in a new green data centre in Sønderborg.",
+        da: "DFM bruger UCloud, den nationale interaktive HPC-platform (DeiC Interactive HPC) drevet af SDU eScience Center, til beregningskraft. Hardwaren står i et nyt grønt datacenter i Sønderborg.",
+      } },
     { id: "lex", logo: "lex", mode: "mark",
       name: "Lex.dk", kicker: [k(W.usecase, W.copenhagen)],
       lat: 55.6790, lon: 12.5760, dx: 60, dy: 72,
