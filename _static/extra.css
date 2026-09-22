@@ -15,24 +15,109 @@
 }
 
 .dfm-contact-btn {
-  color: var(--md-default-fg-color) !important;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  margin-left: 0.5rem;
-  text-decoration: none !important;
+  flex-shrink: 0;
   align-self: center;
-  opacity: 0.7;
+  margin: 0 0.2rem 0 0.8rem;
+  padding: 0.35rem 0.8rem;
+  border: 0.05rem solid var(--md-accent-fg-color);
+  border-radius: 1rem;
+  color: var(--md-accent-fg-color) !important;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.dfm-contact-btn:hover {
-  opacity: 1;
-  color: var(--md-accent-fg-color) !important;
+.dfm-contact-btn:hover,
+.dfm-contact-btn:focus-visible {
+  background-color: var(--md-accent-fg-color);
+  color: #fff !important;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-header__title {
+    min-width: 0;
+  }
+
+  .dfm-contact-btn {
+    margin-left: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+}
+
+/* No repository is configured, so drop the empty slot reserved for it and
+   keep search next to the contact button */
+.md-header__source {
+  display: none;
+}
+
+/* Search: the theme styles the search button for a coloured header, which
+   renders as a muddy grey block on our white one */
+@media screen and (min-width: 45em) {
+  .md-search__button {
+    width: 11rem;
+    color: var(--md-default-fg-color--light);
+    background-color: var(--md-default-fg-color--lightest);
+    border: 0.05rem solid transparent;
+    border-radius: 1rem;
+  }
+
+  .md-search__button:hover,
+  .md-search__button:focus {
+    color: var(--md-default-fg-color);
+    background-color: var(--md-default-bg-color);
+    border-color: var(--md-default-fg-color--lighter);
+  }
+
+  .md-search__button::before,
+  .md-search__button::after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .md-search__button::before {
+    background-color: currentColor;
+  }
+
+  [dir=ltr] .md-search__button::after {
+    right: 0.8rem;
+  }
+
+  .md-search__button::after {
+    line-height: 1;
+    color: var(--md-default-fg-color--light);
+    background: var(--md-default-bg-color);
+    border: 0.05rem solid var(--md-default-fg-color--lightest);
+  }
+}
+
+/* Hide the sidebar entry for a top-level page without children (e.g. the
+   news index), which otherwise shows as a lone link duplicating the tab */
+@media screen and (min-width: 76.25em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active:not(:has(> .md-nav)) {
+    display: none;
+  }
 }
 
 :root {
   --md-accent-fg-color: #c8102e;
   --md-accent-fg-color--transparent: rgba(200, 16, 46, 0.1);
   --md-typeset-a-color: #c8102e;
+}
+
+/* The white palette sets its own (blue) link colour on <body>, which
+   overrides :root; set ours at the same level so the DFM red wins */
+[data-md-color-primary] {
+  --md-typeset-a-color: #c8102e;
+}
+
+/* Links already turn the accent colour on hover, which is now the same red,
+   so underline links in running text instead */
+.md-typeset :is(p, li) a:hover {
+  text-decoration: underline;
 }
 
 .dfm-post-byline {
@@ -246,4 +331,15 @@
   box-shadow: inset 0 0 0 0.18rem var(--md-default-bg-color);
   color: #1d4ed8;
   font-weight: 700;
+}
+
+/* Tabs as in Zensical's modern theme (we use the classic variant): a hairline
+   under the tab bar and an underline on the selected tab */
+.md-tabs {
+  box-shadow: 0 -0.05rem 0 inset var(--md-default-fg-color--lightest);
+}
+
+.md-tabs__item--active {
+  font-weight: 500;
+  border-bottom: 0.1rem solid currentcolor;
 }
