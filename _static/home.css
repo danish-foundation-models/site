@@ -81,18 +81,6 @@
   line-height: 1.6;
 }
 
-.md-typeset .pillar-link {
-  margin-top: 0.7rem;
-  color: #c8102e;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.md-typeset .pillar-link:hover {
-  color: #9e0c24;
-}
-
 .logo-carousel {
   overflow: hidden;
   padding: 2rem 0;
