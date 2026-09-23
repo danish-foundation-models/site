@@ -49,9 +49,6 @@ hide:
     <a href="https://alexandra.dk/">
       <img src="./_static/core-team/alexandra.webp" alt="Alexandra Instituttet" style="height: 50px; width: auto;">
     </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
-    </a>
     <!-- Duplikeret for at skabe sømløs løkke -->
     <a href="https://www.sdu.dk">
       <img src="./_static/core-team/sdu.png" alt="Syddansk Universitet" style="height: 65px; width: auto;">
@@ -64,9 +61,6 @@ hide:
     </a>
     <a href="https://alexandra.dk/">
       <img src="./_static/core-team/alexandra.webp" alt="Alexandra Instituttet" style="height: 50px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
     </a>
   </div>
 </div>
@@ -83,7 +77,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">Nationalt initiativ, global rækkevidde</span>
-    <span class="pillar-desc">Dansk i fokus — men vores modeller, benchmarks og værktøjer bidrager til det bredere europæiske og globale open source AI-fællesskab, langt ud over det danske sprog.</span>
+    <span class="pillar-desc">Vores modeller, benchmarks og værktøjer bidrager til det danske, europæiske og globale open source AI-fællesskab.</span>
   </div>
   <div class="pillar">
     <span class="pillar-icon">
@@ -97,8 +91,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">Hele AI-stakken</span>
-    <span class="pillar-desc">Fra træningsdata og modeludvikling til evaluering og tilpasning i praksis. Gennem EuroEval og MTEB er dansk repræsenteret i de mest udbredte benchmarks.</span>
-    <a class="pillar-link" href="https://euroeval.com">EuroEval →</a>
+    <span class="pillar-desc">Fra træningsdata og modeludvikling til evaluering og tilpasning i praksis er vi med i hvert trin af processen.</span>
   </div>
   <div class="pillar">
     <span class="pillar-icon">
@@ -119,8 +112,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">Åbenhed som grundprincip</span>
-    <span class="pillar-desc">Alle modeller, datasæt og forskning er frit tilgængelige. Med Dynaword kan kommuner, erhvervsliv og forskning bidrage til fælles, åbent licenserede danske data.</span>
-    <a class="pillar-link" href="https://huggingface.co/collections/danish-foundation-models/dynawords">Dynaword →</a>
+    <span class="pillar-desc">Alle modeller, datasæt og forskning er frit tilgængelige til brug for forskere, erhvervsliv og den offentlige sektor.</span>
   </div>
 </div>
 

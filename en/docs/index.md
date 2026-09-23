@@ -49,9 +49,6 @@ hide:
     <a href="https://alexandra.dk/">
       <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
     </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
-    </a>
     <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
     <a href="https://www.sdu.dk">
       <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
@@ -64,9 +61,6 @@ hide:
     </a>
     <a href="https://alexandra.dk/">
       <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/chc.png" alt="Center for Humanities Computing Aarhus" style="height: 60px; width: auto;">
     </a>
   </div>
 </div>
@@ -83,7 +77,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">National initiative, international reach</span>
-    <span class="pillar-desc">Danish in focus — but our models, benchmarks and tools contribute to the broader European and global open-source AI community, well beyond the Danish language.</span>
+    <span class="pillar-desc">Our models, benchmarks and tools contribute to the Danish, European and global open-source AI community.</span>
   </div>
   <div class="pillar">
     <span class="pillar-icon">
@@ -97,8 +91,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">The full AI stack</span>
-    <span class="pillar-desc">From training data and model development to evaluation and real-world adaptation. Through EuroEval and MTEB, Danish is represented in the most widely used benchmarks.</span>
-    <a class="pillar-link" href="https://euroeval.com">EuroEval →</a>
+    <span class="pillar-desc">From training data and model development to evaluation and real-world adaptation, we are there in every step of the process.</span>
   </div>
   <div class="pillar">
     <span class="pillar-icon">
@@ -119,8 +112,7 @@ hide:
       </svg>
     </span>
     <span class="pillar-title">Open by design</span>
-    <span class="pillar-desc">All models, datasets and research are freely available. Dynaword lets municipalities, industry and research contribute to shared, openly licensed data.</span>
-    <a class="pillar-link" href="https://huggingface.co/collections/danish-foundation-models/dynawords">Dynaword →</a>
+    <span class="pillar-desc">All models, datasets and research are freely available to be used by researchers, industry and the public sector.</span>
   </div>
 </div>
 
