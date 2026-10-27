@@ -4,6 +4,7 @@ date: 2026-10-26
 slug: mimir-app
 authors:
   - peter
+  - torben
 tags:
   - Model Release
 ---
