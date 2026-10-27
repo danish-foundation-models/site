@@ -3,7 +3,7 @@ draft: false
 date: 2026-10-26
 slug: mimir-app
 authors:
-  - torben
+  - peter
 tags:
   - Modeludgivelse
 ---
