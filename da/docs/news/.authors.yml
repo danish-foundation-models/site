@@ -16,3 +16,8 @@ authors:
     name: Peter Schneider-Kamp
     description: University of Southern Denmark
     avatar: news/images/peter-schneider-kamp.jpg
+  kenneth:
+    name: Kenneth Enevoldsen
+    description: Aarhus Universitet
+    avatar: https://github.com/KennethEnevoldsen.png
+    url: https://github.com/KennethEnevoldsen
