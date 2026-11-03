@@ -413,3 +413,10 @@
   border-color: #e01e3c;
   color: #fff;
 }
+
+/* Mark external links in the top tab row with an up-right arrow */
+.md-tabs__link[href^="http"]::after {
+  content: "\2197";
+  margin-left: 0.25em;
+  font-size: 0.85em;
+}
