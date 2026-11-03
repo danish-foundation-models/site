@@ -31,7 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
   btn.href = "mailto:Torben.blach@alexandra.dk";
   btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
   btn.className = "dfm-contact-btn";
+  var select = inner.querySelector(".md-select");
+  var lang_switch = select && select.closest(".md-header__option");
+  // order on the right: search, "Contact us", language
   inner.appendChild(btn);
+  if (lang_switch) inner.appendChild(lang_switch);
 });
 </script>
 {% endblock %}

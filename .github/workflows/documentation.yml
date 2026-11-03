@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# one run at a time, so the daily refresh never races with a push
+concurrency:
+  group: documentation
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -44,7 +49,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add en/docs/publications.bib en/docs/publications.md da/docs/publications.md
           git diff --cached --quiet || git commit -m "Update publications [skip ci]"
-          git push
+          git pull --rebase origin "${GITHUB_REF_NAME}"  # someone may have pushed while we fetched
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Build site
         run: make build

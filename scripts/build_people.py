@@ -12,6 +12,16 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 PEOPLE = ROOT / "data" / "people.yml"
 
+# (field in people.yml, label, URL template); icons are drawn in extra.css. Shown in this order.
+SOCIALS = [
+    ("website", "Website", "{}"),
+    ("github", "GitHub", "https://github.com/{}"),
+    ("huggingface", "Hugging Face", "https://huggingface.co/{}"),
+    ("orcid", "ORCID", "https://orcid.org/{}"),
+    ("linkedin", "LinkedIn", "{}"),
+    ("bluesky", "Bluesky", "https://bsky.app/profile/{}"),
+]
+
 TEXT = {
     "en": {"title": "People", "portrait": "Portrait"},
     "da": {"title": "Mennesker", "portrait": "Portræt"},
@@ -26,18 +36,24 @@ def load() -> list[dict]:
 def card(p: dict, lang: str) -> str:
     t = TEXT[lang]
     tags = "".join(f'<span class="tag">{html.escape(x)}</span>' for x in p["tags"][lang])
-    links = []
+    items = []
+    for field, label, url in SOCIALS:
+        if p.get(field):
+            href = html.escape(url.format(p[field]))
+            items.append(f'<a class="social social--{field}" href="{href}" aria-label="{label}" title="{label}"></a>')
+    link_row = f'<p class="person-links">{"".join(items)}</p>\n' if items else ""
+    portrait = ""
     if p.get("portrait", {}).get(lang):
-        links.append(f'<a href="{html.escape(p["portrait"][lang])}">{t["portrait"]} →</a>')
-    link_row = f'<p class="person-links">{" · ".join(links)}</p>\n' if links else ""
+        portrait = f'<p class="person-portrait"><a href="{html.escape(p["portrait"][lang])}">{t["portrait"]} →</a></p>\n'
     return (
         '<div class="person-card">\n'
         f'<img src="./_static/people/{p["image"]}" alt="{html.escape(p["name"])}">\n'
         f'<h3>{html.escape(p["name"])}</h3>\n'
+        f"{link_row}"
         f'<p class="position">{html.escape(p["position"][lang])}</p>\n'
         f'<p class="affiliation">{html.escape(p["affiliation"][lang])}</p>\n'
         f'<div class="tags">{tags}</div>\n'
-        f"{link_row}</div>\n"
+        f"{portrait}</div>\n"
     )
 
 

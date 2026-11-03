@@ -846,6 +846,7 @@ body:not(.dfm-scrolled) .dfm-contact-btn {
 
 body:not(.dfm-scrolled) .dfm-contact-btn:hover,
 body:not(.dfm-scrolled) .dfm-contact-btn:focus-visible {
-  border-color: #c8102e;
-  background-color: #c8102e;
+  border-color: #fff;
+  background-color: #fff;
+  color: #111 !important;
 }
