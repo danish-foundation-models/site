@@ -6,6 +6,9 @@ on:
     branches: [main]
   push:
     branches: [main]
+  schedule:
+    - cron: "17 4 * * *"  # daily, refreshes the publications page
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -29,11 +32,25 @@ jobs:
       - name: Dependencies
         run: uv sync
 
+      - name: Update publications
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: uv run python scripts/fetch_publications.py
+
+      - name: Commit updated publications
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add en/docs/publications.bib en/docs/publications.md da/docs/publications.md
+          git diff --cached --quiet || git commit -m "Update publications [skip ci]"
+          git push
+
       - name: Build site
         run: make build
 
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

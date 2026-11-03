@@ -1,0 +1,185 @@
+# DFM team members: the single source for the People page, the news author bylines and
+# the publications page. Order here is the order on the People page.
+# People are grouped by `tier` (1 = most senior, shown first) and sorted by name within a tier.
+# Edit this file, then run `make build` (or `uv run python scripts/build_people.py`).
+#
+#   hired       Date they joined DFM (YYYY-MM-DD). Publications are only searched from this date
+#               (never earlier than `since` in publications/config.yml). Empty = use `since`.
+#   openalex    OpenAlex author ids used to find their publications (none = no papers listed).
+#   portrait    Path (relative to the docs root) of their portrait article, per language.
+#   news_author Set to false to keep someone out of .authors.yml (default: true).
+
+people:
+- id: peter
+  tier: 1
+  name: Peter Schneider-Kamp
+  image: peter-schneider-kamp.png
+  position:
+    en: Professor
+    da: Professor
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Model Training
+    - Data
+    da:
+    - Modeltræning
+    - Data
+  hired: null
+  openalex:
+  - A5058200123
+  - A5129118213
+  portrait:
+    en: news/2026/09/22/peter-wants-to-teach-the-machine-to-think--a-new-clever-model-has-brought-dfm-a-step-closer.html
+    da: news/2026/09/22/peter-vil-lære-maskinen-at-tænke--ny-snu-model-har-sendt-dfm-et-skridt-tættere-på.html
+- id: bolette
+  tier: 1
+  name: Bolette Sandford Pedersen
+  image: bolette-pedersen.png
+  position:
+    en: Professor
+    da: Professor
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Language
+    - Lexical Resources
+    - Evaluation
+    da:
+    - Sprog
+    - Leksikalske ressourcer
+    - Evaluering
+  hired: null
+  openalex:
+  - A5112741673
+  portrait:
+    en: news/2026/06/17/bolette-fights-for-the-danish-language-in-the-age-of-algorithms.html
+    da: news/2026/06/17/bolette-kæmper-for-det-danske-sprog-i-algoritmernes-tidsalder.html
+- id: torben
+  tier: 2
+  name: Torben Blach
+  image: torben-blach.png
+  position:
+    en: Principal Investigator
+    da: Principal Investigator
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - Project Leadership
+    - Applied AI
+    da:
+    - Projektledelse
+    - Anvendt AI
+  hired: null
+- id: kenneth
+  tier: 3
+  name: Kenneth Enevoldsen
+  image: kenneth-enevoldsen.png
+  position:
+    en: Assistant Professor
+    da: Adjunkt
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Evaluation
+    - Efficient Development
+    - Data
+    da:
+    - Evaluering
+    - Effektiv udvikling
+    - Data
+  hired: null
+  exclude_types:
+  - book-chapter
+  openalex:
+  - A5087151587
+  - A5158291654
+  - A5124969074
+  - A5138197604
+- id: nathalie
+  tier: 4
+  name: Nathalie Norman
+  image: nathalie-norman.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Evaluation
+    - Language
+    - Cultural Alignment
+    da:
+    - Evaluering
+    - Sprog
+    - Kulturel tilpasning
+  hired: null
+  openalex:
+  - A5120694675
+- id: danial
+  tier: 4
+  name: Danial Namazifard
+  image: danial-namazifard.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Interpretability
+    - Multilingual models
+    - Cultural Alignment
+    da:
+    - Fortolkelighed
+    - Flersprogede modeller
+    - Kulturel tilpasning
+  hired: null
+  openalex:
+  - A5095084138
+- id: rasmus
+  tier: 5
+  name: Rasmus Larsen
+  image: rasmus-larsen.png
+  position:
+    en: Senior AI Specialist
+    da: Senior AI Specialist
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - Model Training
+    - Data
+    da:
+    - Modeltræning
+    - Data
+  hired: null
+- id: anders
+  tier: 6
+  name: Anders Holmgaard
+  image: anders-holmgaard.png
+  position:
+    en: Communications Advisor
+    da: Kommunikationsrådgiver
+  affiliation:
+    en: Holmgaard Media
+    da: Holmgaard Media
+  tags:
+    en:
+    - Communication
+    da:
+    - Kommunikation
+  hired: null
+  url: https://holmgaardmedia.dk/

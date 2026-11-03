@@ -35,3 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 {% endblock %}
+
+{% block footer %}
+{% set da = config.theme.language == "da" %}
+<footer class="dfm-footer">
+<div class="dfm-footer-logos">
+  <a href="https://www.sdu.dk"><img src="{{ base_url }}/_static/core-team/sdu.png" alt="{{ 'Syddansk Universitet' if da else 'University of Southern Denmark' }}"></a>
+  <a href="https://chc.au.dk/"><img src="{{ base_url }}/_static/core-team/au.png" alt="{{ 'Aarhus Universitet' if da else 'Aarhus University' }}"></a>
+  <a href="https://www.ku.dk"><img src="{{ base_url }}/_static/core-team/ku.jpg" alt="{{ 'Københavns Universitet' if da else 'University of Copenhagen' }}"></a>
+  <a href="https://alexandra.dk/"><img src="{{ base_url }}/_static/core-team/alexandra.webp" alt="{{ 'Alexandra Instituttet' if da else 'Alexandra Institute' }}"></a>
+</div>
+{% if config.copyright %}<div class="dfm-footer-copy">{{ config.copyright }}</div>{% endif %}
+</footer>
+{% endblock %}

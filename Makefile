@@ -11,6 +11,7 @@ install:
 	uv sync --python 3.12
 
 build:
+	uv run python scripts/build_people.py
 	rm -rf site
 	@echo "--- 📚 Building English docs ---"
 	uv run zensical build

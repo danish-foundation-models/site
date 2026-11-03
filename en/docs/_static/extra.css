@@ -420,3 +420,261 @@
   margin-left: 0.25em;
   font-size: 0.85em;
 }
+
+/* "Last updated (i)" with a tooltip that opens on hover, focus and tap */
+.pub-updated {
+  margin: -0.4rem 0 0.8rem;
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+.info-tip {
+  position: relative;
+  display: inline-block;
+}
+.info-tip__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.15rem;
+  padding: 0;
+  border: 0.08rem solid currentColor;
+  border-radius: 50%;
+  background: none;
+  color: var(--md-default-fg-color--light);
+  font: italic 700 0.5rem/1 Georgia, "Times New Roman", serif;
+  cursor: help;
+}
+.info-tip__button:hover,
+.info-tip__button:focus-visible {
+  color: var(--md-accent-fg-color);
+}
+.info-tip__bubble {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: min(18rem, 80vw);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.4rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  color: var(--md-default-fg-color);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.info-tip:hover .info-tip__bubble,
+.info-tip:focus-within .info-tip__bubble {
+  display: block;
+}
+
+/* Headline numbers on the publications page */
+.pub-stats {
+  display: flex;
+  gap: 2.2rem;
+  margin: 1.2rem 0 0.5rem;
+}
+.pub-stats div {
+  display: flex;
+  flex-direction: column;
+}
+.pub-stats strong {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pub-stats span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+}
+
+/* Publication list */
+.md-typeset .pub-list {
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.md-typeset .pub {
+  margin: 0;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 0.12rem solid var(--md-default-fg-color--lightest);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.md-typeset .pub:hover {
+  border-left-color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+.md-typeset .pub__title {
+  display: block;
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.md-typeset .pub__title:hover {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .pub__authors,
+.md-typeset .pub__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .pub__authors strong {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+.md-typeset .pub__venue {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lightest);
+  font-size: 0.62rem;
+}
+.md-typeset .pub__venue--preprint {
+  background: transparent;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+}
+.md-typeset .pub-list + h2,
+.md-typeset h2 + .pub-list { margin-top: 0.4rem; }
+
+/* "Peer-reviewed only" filter: a checkbox plus :has(), no JavaScript */
+.pub-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.pub-filter small { color: var(--md-default-fg-color--light); }
+.pub-filter input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.pub-filter__switch {
+  position: relative;
+  width: 1.6rem;
+  height: 0.9rem;
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lighter);
+  transition: background-color 0.2s;
+}
+.pub-filter__switch::after {
+  content: "";
+  position: absolute;
+  top: 0.12rem;
+  left: 0.12rem;
+  width: 0.66rem;
+  height: 0.66rem;
+  border-radius: 50%;
+  background: var(--md-default-bg-color);
+  transition: transform 0.2s;
+}
+.pub-filter input:checked + .pub-filter__switch { background: var(--md-accent-fg-color); }
+.pub-filter input:checked + .pub-filter__switch::after { transform: translateX(0.7rem); }
+.pub-filter input:focus-visible + .pub-filter__switch {
+  outline: 0.1rem solid var(--md-accent-fg-color);
+  outline-offset: 0.1rem;
+}
+
+.pub-stats .n-peer { display: none; }
+.md-content:has(#pub-peer:checked) .n-all { display: none; }
+.md-content:has(#pub-peer:checked) .n-peer { display: inline; }
+.md-content:has(#pub-peer:checked) .pub[data-peer="0"],
+.md-content:has(#pub-peer:checked) .pub-list--no-peer,
+.md-content:has(#pub-peer:checked) h2:has(+ .pub-list--no-peer) { display: none; }
+.pub-stats strong span {
+  color: inherit;
+  font-size: inherit;
+}
+.person-card .person-links {
+  margin: 0.6rem 0 0;
+  font-size: 0.68rem;
+}
+.person-card .person-links a { white-space: nowrap; }
+
+/* DFM member portraits on each paper */
+.md-typeset .pub {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.md-typeset .pub__body { min-width: 0; }
+.md-typeset .pub__people {
+  display: flex;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+.md-typeset .pub__person {
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 0 -0.5rem;
+  border: 0.12rem solid var(--md-default-bg-color);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--md-default-bg-color);
+}
+/* the first portrait must not overlap anything: its negative margin squeezed a lone photo into an oval */
+.md-typeset .pub__person:first-child { margin-left: 0; }
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .pub { flex-direction: column-reverse; gap: 0.4rem; }
+}
+.md-typeset .pub__link {
+  margin-left: 0.5rem;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .pub__link:hover { color: var(--md-accent-fg-color); }
+.md-typeset .pub__person--more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.6rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Footer: partner logos in black and white above the licence line, on light grey */
+.dfm-footer {
+  background: #f3f4f6;
+  border-top: 0.05rem solid var(--md-default-fg-color--lightest);
+}
+.dfm-footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+  padding: 2.5rem 1rem 1.5rem;
+}
+.dfm-footer-logos a { display: flex; }
+.dfm-footer-logos img {
+  height: 2.4rem;
+  width: auto;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: multiply;  /* lets white logo backgrounds blend into the grey */
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.dfm-footer-logos a:hover img { opacity: 1; }
+.dfm-footer-logos a[href*="ku.dk"] img { height: 3.4rem; }  /* this logo has wide empty margins */
+.dfm-footer-copy {
+  padding: 0 1rem 1.5rem;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+}
+.dfm-footer-logos a[href*="sdu.dk"] img { height: 3rem; }
+.dfm-footer-logos a[href*="alexandra.dk"] img { height: 2rem; }

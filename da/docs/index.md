@@ -35,36 +35,6 @@ hide:
   </div>
 </section>
 
-<div class="logo-carousel">
-  <div class="logo-carousel-track">
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="Syddansk Universitet" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus Universitet" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="Københavns Universitet" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Instituttet" style="height: 50px; width: auto;">
-    </a>
-    <!-- Duplikeret for at skabe sømløs løkke -->
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="Syddansk Universitet" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus Universitet" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="Københavns Universitet" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Instituttet" style="height: 50px; width: auto;">
-    </a>
-  </div>
-</div>
-
 ## Det gør vi
 
 <div class="pillars">

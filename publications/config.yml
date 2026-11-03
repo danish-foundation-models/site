@@ -1,0 +1,24 @@
+# Configuration for the publications page (en/docs/publications.md and da/docs/publications.md).
+# Regenerated daily by scripts/fetch_publications.py (see .github/workflows/documentation.yml).
+
+# Only papers published on or after this date are listed (start of DFM funding).
+since: 2025-01-01
+
+# DFM members (names, OpenAlex ids, hire dates) live in data/people.yml.
+
+# Papers that are always included, whatever their date (DOI or OpenAlex work ID).
+always_include:
+  - 10.48550/arXiv.2311.07264   # Danish Foundation Models
+  - 10.18653/2026.oracle-main.34   # Naturalistic Measure of Social Norms Alignment (ORACLE 2026, supersedes the OSF preprints)
+
+# Papers to leave out, for example wrong matches. Matches a DOI, an OpenAlex work ID
+# (W...), or a title (case-insensitive, ignoring punctuation). Authors add entries here.
+exclude:
+  # - 10.1234/example
+  # - W1234567890
+  # - "Some paper title"
+
+# Papers to treat as peer-reviewed even if the venue looks like a preprint server or is
+# unknown (same matching as `exclude`). Used by the "Peer-reviewed only" filter.
+always_peer_reviewed:
+  # - 10.1234/example

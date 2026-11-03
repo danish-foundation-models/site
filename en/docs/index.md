@@ -35,36 +35,6 @@ hide:
   </div>
 </section>
 
-<div class="logo-carousel">
-  <div class="logo-carousel-track">
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
-    </a>
-    <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
-    </a>
-  </div>
-</div>
-
 ## What we do
 
 <div class="pillars">
