@@ -343,3 +343,73 @@
   font-weight: 500;
   border-bottom: 0.1rem solid currentcolor;
 }
+
+/* People page */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.person-card {
+  text-align: center;
+  padding: 0.9rem 0.7rem;
+}
+.person-card img {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+.person-card h3 { margin: 0.15rem 0; font-size: 0.95rem; }
+.person-card .position { margin: 0; font-size: 0.75rem; font-weight: 500; }
+.person-card .affiliation {
+  margin: 0 0 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+}
+.person-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.person-card .tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+}
+
+/* Call-to-action buttons in posts, matching the front-page hero buttons */
+.md-typeset .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  background: transparent;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--md-default-fg-color);
+  background: transparent;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .md-button--primary {
+  background: #c8102e;
+  border-color: #c8102e;
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover {
+  background: #e01e3c;
+  border-color: #e01e3c;
+  color: #fff;
+}

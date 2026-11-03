@@ -14,6 +14,7 @@ copyright = "Dette websted er gjort tilgængeligt under en Creative Commons Attr
 extra_css = ["_static/extra.css"]
 nav = [
   { "Om" = "index.md" },
+  { "Mennesker" = "people.md" },
   { "Nyheder" = "news/index.md" },
   { "Modeller" = "https://huggingface.co/danish-foundation-models/models" },
   { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets" },

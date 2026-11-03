@@ -2,17 +2,17 @@ authors:
   anders:
     name: Anders Holmgaard
     description: Communications advisor, Holmgaard Media
-    avatar: news/images/anders-holmgaard.jpg
+    avatar: news/images/anders-holmgaard.png
     url: https://holmgaardmedia.dk/
   rasmus:
     name: Rasmus Larsen
     description: Alexandra Instituttet A/S
-    avatar: news/images/rasmus-larsen.jpg
+    avatar: news/images/rasmus-larsen.png
   torben:
     name: Torben Blach
     description: Alexandra Instituttet A/S
-    avatar: news/images/torben-blach.jpg
+    avatar: news/images/torben-blach.png
   peter:
     name: Peter Schneider-Kamp
     description: University of Southern Denmark
-    avatar: news/images/peter-schneider-kamp.jpg
+    avatar: news/images/peter-schneider-kamp.png

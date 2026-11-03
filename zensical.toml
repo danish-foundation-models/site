@@ -12,6 +12,7 @@ copyright = "This site made available under a Creative Commons Attribution 4.0 l
 extra_css = ["_static/extra.css"]
 nav = [
   { "About" = "index.md" },
+  { "People" = "people.md" },
   { "News" = "news/index.md" },
   { "Models" = "https://huggingface.co/danish-foundation-models/models" },
   { "Datasets" = "https://huggingface.co/danish-foundation-models/datasets" },
