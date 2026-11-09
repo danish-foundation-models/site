@@ -1,0 +1,53 @@
+# Configuration for the publications page (en/docs/publications.md and da/docs/publications.md).
+# Regenerated daily by scripts/fetch_publications.py (see .github/workflows/documentation.yml).
+
+# Only papers published on or after this date are listed (start of DFM funding).
+since: 2025-01-01
+
+# DFM members (names, OpenAlex ids, hire dates) live in data/people.yml.
+
+# Papers that are always included, whatever their date (DOI or OpenAlex work ID).
+always_include:
+  - 10.48550/arXiv.2311.07264   # Danish Foundation Models
+  - 10.18653/2026.oracle-main.34   # Naturalistic Measure of Social Norms Alignment (ORACLE 2026, supersedes the OSF preprints)
+
+# Papers to leave out, for example wrong matches. Matches a DOI, an OpenAlex work ID
+# (W...), or a title (case-insensitive, ignoring punctuation). Authors add entries here.
+exclude:
+  # - 10.1234/example
+  # - W1234567890
+  # - "Some paper title"
+
+# Venues counted as "A*" in the headline numbers: regular expressions (case-insensitive) matched
+# against the venue name OpenAlex gives. Based on the CORE conference ranking; edit freely.
+# Findings volumes and workshops have different names and are not matched.
+a_star_venues:
+  - 'Annual Meeting of the Association for Computational Linguistics'   # ACL
+  - 'Association for Computational Linguistics\. Meeting'               # ACL (OpenAlex name)
+  - 'Empirical Methods in Natural Language Processing'                  # EMNLP
+  # - 'North American Chapter of the Association for Computational Linguistics'  # NAACL (A or A*, check CORE)
+  - 'Neural Information Processing Systems'                             # NeurIPS
+  - 'International Conference on Machine Learning'                      # ICML
+  - 'International Conference on Learning Representations'              # ICLR
+  - 'Proceedings of the AAAI Conference on Artificial Intelligence'     # AAAI
+  - 'International Joint Conference on Artificial Intelligence'         # IJCAI
+  - 'Computer Vision and Pattern Recognition'                           # CVPR
+  - 'International Conference on Computer Vision'                       # ICCV
+  - 'European Conference on Computer Vision'                            # ECCV
+  - 'Knowledge Discovery and Data Mining'                               # KDD
+  - 'Research and Development in Information Retrieval'                 # SIGIR
+  - 'Human Factors in Computing Systems'                                # CHI
+
+# Papers at those venues that are not main-track papers (student abstracts, workshops, ...):
+# title patterns that keep a paper out of the A* count.
+a_star_exclude_titles:
+  - 'Student Abstract'
+  - 'Workshop'
+  - 'Tutorial'
+  - 'Demonstration'
+  - 'Doctoral Consortium'
+
+# Papers to treat as peer-reviewed even if the venue looks like a preprint server or is
+# unknown (same matching as `exclude`). Counted in the peer-reviewed number.
+always_peer_reviewed:
+  # - 10.1234/example

@@ -15,8 +15,10 @@ extra_css = ["_static/extra.css"]
 nav = [
   { "Om" = "index.md" },
   { "Nyheder" = "news/index.md" },
-  { "Modeller" = "https://huggingface.co/danish-foundation-models/models" },
-  { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets" },
+  { "Mennesker" = "people.md" },
+  { "Publikationer" = "publications.md" },
+  { "Modeller" = "https://huggingface.co/danish-foundation-models/models?sort=downloads" },
+  { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets?sort=downloads" },
 ]
 
 [project.theme]
@@ -35,7 +37,6 @@ features = [
   "search.highlight",
   "content.tabs.link",
   "content.tooltips",
-  "navigation.footer",
   "navigation.indexes",
   "toc.follow",
 ]

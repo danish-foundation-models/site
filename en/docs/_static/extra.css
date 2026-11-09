@@ -19,9 +19,9 @@
   align-self: center;
   margin: 0 0.2rem 0 0.8rem;
   padding: 0.35rem 0.8rem;
-  border: 0.05rem solid var(--md-accent-fg-color);
+  border: 0.05rem solid var(--md-default-fg-color);
   border-radius: 1rem;
-  color: var(--md-accent-fg-color) !important;
+  color: var(--md-default-fg-color) !important;
   font-size: 0.7rem;
   font-weight: 500;
   line-height: 1;
@@ -32,8 +32,8 @@
 
 .dfm-contact-btn:hover,
 .dfm-contact-btn:focus-visible {
-  background-color: var(--md-accent-fg-color);
-  color: #fff !important;
+  background-color: var(--md-default-fg-color);
+  color: var(--md-default-bg-color) !important;
 }
 
 @media screen and (max-width: 44.9375em) {
@@ -103,15 +103,27 @@
 }
 
 :root {
-  --md-accent-fg-color: #c8102e;
-  --md-accent-fg-color--transparent: rgba(200, 16, 46, 0.1);
-  --md-typeset-a-color: #c8102e;
+  /* DFM palette */
+  --dfm-black: #06080e;
+  --dfm-red: #c91518;
+  --dfm-red-dark: #8d0c0c;
+  --dfm-pink: #d86f71;
+  --dfm-blue: #2d418d;
+  --dfm-orange: #cb7239;
+  --md-accent-fg-color: var(--dfm-red);
+  --md-accent-fg-color--transparent: rgba(216, 111, 113, 0.22);
+  --md-typeset-a-color: var(--dfm-red);
+  --md-default-fg-color: var(--dfm-black);
+  --md-typeset-color: var(--dfm-black);
 }
+.md-typeset h1, .md-typeset h2, .md-typeset h3 { color: var(--dfm-black); }
 
 /* The white palette sets its own (blue) link colour on <body>, which
    overrides :root; set ours at the same level so the DFM red wins */
 [data-md-color-primary] {
-  --md-typeset-a-color: #c8102e;
+  --md-typeset-a-color: #c91518;
+  --md-default-fg-color: #06080e;
+  --md-typeset-color: #06080e;
 }
 
 /* Links already turn the accent colour on hover, which is now the same red,
@@ -343,3 +355,435 @@
   font-weight: 500;
   border-bottom: 0.1rem solid currentcolor;
 }
+
+/* People page */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.person-card {
+  text-align: center;
+  padding: 0.9rem 0.7rem;
+}
+.person-card img {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+.person-card h3 { margin: 0.15rem 0; font-size: 0.95rem; }
+.person-card .position { margin: 0; font-size: 0.75rem; font-weight: 500; }
+.person-card .affiliation {
+  margin: 0 0 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+}
+.person-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.person-card .tag {
+  font: inherit;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.6rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--dfm-red-dark);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+.person-card .tag:hover { background: rgba(216, 111, 113, 0.4); }
+.person-card .tag.is-active { background: var(--dfm-red); color: #fff; }
+.person-card[hidden], .people-alumni[hidden] { display: none; }
+
+/* tag filter bar on the People page */
+.people-filter { margin: 0; font-size: 0.8rem; }
+.people-filter.is-active { margin: 0 0 1rem; }
+.people-filter p { margin: 0; }
+.people-filter__active { display: none; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.people-filter.is-active .people-filter__active { display: flex; }
+.people-filter__tag {
+  padding: 0.1rem 0.7rem;
+  border-radius: 1rem;
+  background: var(--dfm-red);
+  color: #fff;
+  font-weight: 500;
+}
+.people-filter__clear {
+  font: inherit;
+  padding: 0.1rem 0.7rem;
+  border: 1px solid var(--md-default-fg-color);
+  border-radius: 1rem;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+.people-filter__clear:hover { background: var(--md-default-fg-color); color: #fff; }
+.people-alumni { margin-top: 3rem; }
+
+/* Call-to-action buttons in posts, matching the front-page hero buttons */
+.md-typeset .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  background: transparent;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--md-default-fg-color);
+  background: transparent;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .md-button--primary {
+  background: #c91518;
+  border-color: #c91518;
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover {
+  background: #8d0c0c;
+  border-color: #8d0c0c;
+  color: #fff;
+}
+
+/* Mark external links in the top tab row with an up-right arrow */
+.md-tabs__link[href^="http"]::after {
+  content: "\2197";
+  margin-left: 0.25em;
+  font-size: 0.85em;
+}
+
+/* "Last updated (i)" with a tooltip that opens on hover, focus and tap */
+.pub-updated {
+  margin: -0.4rem 0 0.8rem;
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+.info-tip {
+  position: relative;
+  display: inline-block;
+}
+.info-tip__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.15rem;
+  padding: 0;
+  border: 0.08rem solid currentColor;
+  border-radius: 50%;
+  background: none;
+  color: var(--md-default-fg-color--light);
+  font: italic 700 0.5rem/1 Georgia, "Times New Roman", serif;
+  cursor: help;
+}
+.info-tip__button:hover,
+.info-tip__button:focus-visible {
+  color: var(--md-accent-fg-color);
+}
+.info-tip__bubble {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: min(18rem, 80vw);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.4rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  color: var(--md-default-fg-color);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.info-tip:hover .info-tip__bubble,
+.info-tip:focus-within .info-tip__bubble {
+  display: block;
+}
+
+/* Headline numbers on the publications page */
+.pub-stats {
+  display: flex;
+  gap: 2.2rem;
+  margin: 1.2rem 0 0.5rem;
+}
+.pub-stats .pub-stat {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+.pub-stat__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.pub-stat__btn:hover strong,
+.pub-stat.is-active strong { color: var(--dfm-red); }
+.pub-stat .info-tip { margin-bottom: 0.05rem; }
+.pub-stat__btn > span { transition: color 0.15s; }
+.pub-stat.is-active .pub-stat__btn > span { color: var(--md-default-fg-color); }
+.pub[hidden], .pub-list[hidden], .md-typeset h2[hidden], .md-sidebar--secondary li[hidden] { display: none !important; }
+.pub-stats strong {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pub-stats .pub-stat__btn > span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+}
+.pub-stats .info-tip__bubble { max-width: calc(100vw - 2rem); }
+
+/* Publication list */
+.md-typeset .pub-list {
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.md-typeset .pub {
+  margin: 0;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 0.12rem solid var(--md-default-fg-color--lightest);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.md-typeset .pub:hover {
+  border-left-color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+.md-typeset .pub__title {
+  display: block;
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.md-typeset .pub__title:hover {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .pub__authors,
+.md-typeset .pub__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .pub__authors strong {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+.md-typeset .pub__venue {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lightest);
+  font-size: 0.62rem;
+}
+.md-typeset .pub__venue--preprint {
+  background: transparent;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+}
+.md-typeset .pub-list + h2,
+.md-typeset h2 + .pub-list { margin-top: 0.4rem; }
+
+.pub-stats strong span {
+  color: inherit;
+  font-size: inherit;
+}
+.person-card .person-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.68rem;
+}
+.person-card .person-links a { white-space: nowrap; }
+
+/* DFM member portraits on each paper */
+.md-typeset .pub {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.md-typeset .pub__body { min-width: 0; }
+.md-typeset .pub__people {
+  display: flex;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+.md-typeset .pub__person {
+  flex: none;
+  width: 1.9rem;
+  height: 1.9rem;
+  aspect-ratio: 1 / 1;
+  margin: 0 0 0 -0.5rem;
+  border: 0.12rem solid var(--md-default-bg-color);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--md-default-bg-color);
+}
+/* the first portrait must not overlap anything: its negative margin squeezed a lone photo into an oval */
+.md-typeset .pub__person:first-child { margin-left: 0; }
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .pub { flex-direction: column-reverse; gap: 0.4rem; }
+}
+.md-typeset .pub__link {
+  margin-left: 0.5rem;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .pub__link:hover { color: var(--md-accent-fg-color); }
+.md-typeset .pub__person--more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* opaque: the tint sits on top of the page colour so portraits underneath do not show through */
+  background: linear-gradient(var(--md-default-fg-color--lightest), var(--md-default-fg-color--lightest)) var(--md-default-bg-color);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.6rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Footer: partner logos in black and white above the licence line, on light grey */
+.dfm-footer {
+  background: #f3f4f6;
+  border-top: 0.05rem solid var(--md-default-fg-color--lightest);
+}
+.dfm-footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+  padding: 2.5rem 1rem 1.5rem;
+}
+.dfm-footer-logos a { display: flex; }
+.dfm-footer-logos img {
+  height: 2.4rem;
+  width: auto;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: multiply;  /* lets white logo backgrounds blend into the grey */
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.dfm-footer-logos a:hover img { opacity: 1; }
+.dfm-footer-logos a[href*="ku.dk"] img { height: 3.4rem; }  /* this logo has wide empty margins */
+.dfm-footer-copy {
+  padding: 0 1rem 1.5rem;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+}
+.dfm-footer-logos a[href*="sdu.dk"] img { height: 3rem; }
+.dfm-footer-logos a[href*="alexandra.dk"] img { height: 2rem; }
+
+/* Language switcher: a globe and the current language code instead of the translate glyph */
+.md-header__option .md-select > .md-header__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: auto;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.md-header__option .md-select > .md-header__button svg { display: none; }
+.md-header__option .md-select > .md-header__button::before {
+  content: "";
+  width: 1.05rem;
+  height: 1.05rem;
+  background: currentColor;
+  -webkit-mask: var(--dfm-globe) center / contain no-repeat;
+  mask: var(--dfm-globe) center / contain no-repeat;
+  --dfm-globe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
+}
+.md-header__option .md-select > .md-header__button::after { content: "EN"; }
+html[lang="da"] .md-header__option .md-select > .md-header__button::after { content: "DA"; }
+@media screen and (max-width: 44.9375em) {
+  /* on phones keep just the globe so the header still fits */
+  .md-header__option .md-select > .md-header__button { padding: 0.2rem; }
+  .md-header__option .md-select > .md-header__button::after { display: none; }
+  .md-header__option { flex-shrink: 0; margin-left: 0; margin-right: 0.2rem; }
+}
+
+/* Social icons on the People cards */
+.person-card .person-social {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0 0;
+}
+.person-card .social {
+  width: 1.1rem;
+  height: 1.1rem;
+  background: var(--md-default-fg-color--light);
+  transition: background-color 0.2s;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.person-card .social:hover { background: var(--md-accent-fg-color); }
+.person-card .social--bluesky {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z'/%3E%3C/svg%3E");
+}
+.person-card .social--linkedin {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/%3E%3C/svg%3E");
+}
+.person-card .person-portrait {
+  margin: 0.6rem 0 0;
+  font-size: 0.68rem;
+}
+.person-card .person-links { flex-wrap: wrap; row-gap: 0.4rem; }
+.person-card .social--website {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
+}
+.person-card .social--github {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+}
+.person-card .social--huggingface {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M1.4446 11.5059c0 1.1021.1673 2.1585.4847 3.1563-.0378-.0028-.0691-.0058-.1058-.0058-.4209 0-.8015.16-1.0704.4512-.3454.3737-.4984.8335-.4316 1.293a1.576 1.576 0 0 0 .2148.5978c-.2319.1864-.4018.4456-.4844.7578-.0646.2448-.131.7543.2149 1.2794a1.4552 1.4552 0 0 0-.0625.1055c-.208.3923-.2207.8372-.0371 1.25.2783.6258.9696 1.1175 2.3126 1.6467.8356.3292 1.5988.5411 1.6056.543 1.1046.2847 2.104.4277 2.969.4277 1.4173 0 2.4754-.3849 3.1525-1.1446 1.538.2651 2.791.1403 3.592.006.6773.7555 1.7332 1.1387 3.1467 1.1387.8649 0 1.8643-.143 2.969-.4278.0068-.0019.77-.2138 1.6056-.543 1.343-.5292 2.0343-1.0208 2.3126-1.6466.1836-.4129.171-.8577-.037-1.25a1.4685 1.4685 0 0 0-.0626-.1056c.346-.525.2795-1.0346.2149-1.2793-.0826-.3122-.2525-.5714-.4844-.7579.11-.1816.1831-.3788.2148-.5977.0669-.4595-.0862-.9193-.4316-1.293-.2688-.2913-.6495-.4513-1.0704-.4513-.0209 0-.0376.0008-.0588.0018.3162-.9966.4846-2.0518.4846-3.1523 0-5.807-4.7362-10.5144-10.5789-10.5144-5.8426 0-10.5788 4.7073-10.5788 10.5144Zm10.5788-9.4831c5.2727 0 9.5476 4.246 9.5476 9.483a9.4201 9.4201 0 0 1-.2696 2.2365c-.0039-.0047-.0079-.011-.0117-.0156-.274-.3255-.6679-.5059-1.1075-.5059-.352 0-.714.1155-1.0763.3438-.2403.1517-.5058.422-.7793.7598-.2534-.3492-.608-.5832-1.0137-.6465a1.5174 1.5174 0 0 0-.2344-.0176c-.9263 0-1.4828.7993-1.6935 1.5177-.1046.2426-.6065 1.3482-1.3614 2.0978-1.1681 1.1601-1.4458 2.3534-.8396 3.6382-.843.1029-1.5836.0927-2.365-.006.5906-1.212.3626-2.4388-.8426-3.6322-.755-.7496-1.2568-1.8552-1.3614-2.0978-.2107-.7184-.7673-1.5177-1.6935-1.5177-.078 0-.1568.0054-.2344.0176-.4057.0633-.7604.2973-1.0137.6465-.2735-.3379-.539-.6081-.7794-.7598-.3622-.2283-.7243-.3438-1.0762-.3438-.4266 0-.8094.171-1.0821.4786a9.4208 9.4208 0 0 1-.2598-2.1936c0-5.237 4.2749-9.483 9.5475-9.483zM8.6443 7.0036c-.4838.0043-.9503.2667-1.1934.7227-.3536.6633-.1006 1.4873.5645 1.84.351.1862.4883-.5261.836-.6485.3107-.1095.841.399 1.0078.086.3536-.6634.1025-1.4874-.5625-1.84a1.3659 1.3659 0 0 0-.6524-.1602Zm6.8403 0c-.2199-.002-.4426.05-.6504.1602-.665.3526-.9181 1.1766-.5645 1.84.1669.313.6971-.1955 1.0079-.086.3476.1224.4867.8347.838.6485.6649-.3527.916-1.1767.5624-1.84-.243-.456-.7096-.7184-1.1934-.7227Zm-9.7565 1.418a.8768.8768 0 0 0-.877.877c0 .4846.3925.877.877.877a.8768.8768 0 0 0 .877-.877.8768.8768 0 0 0-.877-.877zm12.6434 0c-.4845 0-.879.3925-.879.877 0 .4846.3945.877.879.877a.8768.8768 0 0 0 .877-.877.8768.8768 0 0 0-.877-.877zM8.7927 11.459c-.179-.003-.2793.1107-.2793.416 0 .8097.3874 2.125 1.4279 2.924.207-.7123 1.3453-1.2832 1.5079-1.2012.2315.1167.2191.4417.6074.7266.3884-.285.374-.6098.6056-.7266.1627-.082 1.3009.4889 1.5079 1.2012 1.0404-.799 1.4278-2.1144 1.4278-2.924 0-1.2212-1.583.6402-3.5413.6485-1.4686-.0061-2.7266-1.0558-3.2639-1.0645zM4.312 14.4768c.5792.365 1.6964 2.2751 2.1056 3.0177.1371.2488.371.3536.582.3536.4188 0 .7465-.4138.0391-.9395-1.0636-.791-.6914-2.0846-.1836-2.1642a.4302.4302 0 0 1 .0664-.004c.4616 0 .666.7892.666.7892s.5959 1.4898 1.6213 2.508c.942.9356 1.062 1.703.4961 2.6661-.0164-.004-.0159.0236-.1484.2149-.1853.2673-.4322.4688-.7188.6152-.5062.2269-1.1397.2696-1.7833.2696-1.037 0-2.1017-.1824-2.6975-.336-.0293-.0075-3.6505-.9567-3.1916-1.8224.0771-.1454.2033-.2031.3633-.2031.6463 0 1.823.9551 2.3283.9551.113 0 .196-.0865.2285-.2031.2249-.8045-3.2787-1.0522-2.9846-2.1642.0519-.1967.193-.2757.3907-.2754.854 0 2.7704 1.4923 3.172 1.4923.0307 0 .0525-.0085.0645-.0274.2012-.3227.1096-.5865-1.3087-1.4395-1.4182-.8533-2.4315-1.329-1.8653-1.9416.0651-.0707.1574-.1015.2695-.1015.8611.0002 2.8948 1.84 2.8948 1.84s.5487.5683.8809.5683c.0762 0 .1416-.0315.1855-.1054.2355-.3946-2.1858-2.2183-2.3224-2.971-.0926-.51.0641-.7676.3555-.7676-.0006.008.1701-.0285.4942.1759zm16.2257.5918c-.1366.7526-2.5579 2.5764-2.3224 2.9709.044.074.1092.1055.1855.1055.3321 0 .881-.5684.881-.5684s2.0336-1.8397 2.8947-1.84c.1121 0 .2044.0308.2695.1016.5662.6125-.447 1.0882-1.8653 1.9415-1.4183.853-1.51 1.1168-1.3087 1.4396.012.0188.0337.0273.0644.0273.4016 0 2.3181-1.4923 3.1721-1.4923.1977-.0002.3388.0787.3907.2754.294 1.112-3.2095 1.3597-2.9846 2.1642.0325.1166.1156.2032.2285.2032.5054 0 1.682-.9552 2.3283-.9552.16 0 .2862.0577.3633.2032.459.8656-3.1623 1.8149-3.1916 1.8224-.5958.1535-1.6605.336-2.6975.336-.6351 0-1.261-.0409-1.7638-.2599-.2949-.1472-.5488-.3516-.7383-.625-.0411-.0682-.1026-.1476-.1426-.205-.5726-.9679-.455-1.7371.4903-2.676 1.0254-1.0182 1.6212-2.508 1.6212-2.508s.2044-.7891.666-.7891a.4318.4318 0 0 1 .0665.0039c.5078.0796.88 1.3732-.1836 2.1642-.7074.5257-.3797.9395.039.9395.211 0 .445-.1047.5821-.3535.4092-.7426 1.5264-2.6527 2.1056-3.0178.5588-.3524.99-.1816.8497.5918z'/%3E%3C/svg%3E");
+}
+.person-card .social--orcid {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z'/%3E%3C/svg%3E");
+}
+
+/* affiliation is a filter link that looks like plain text until hovered */
+.person-card .affiliation-filter {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.person-card .affiliation-filter:hover,
+.person-card .affiliation-filter.is-active { color: var(--dfm-red); }
+
+/* partner logos under the news on the front page: static, greyscale and see-through */
+.home-partners { padding: 2.2rem 0 0; opacity: 0.55; }
+.home-partners:hover { opacity: 0.8; }

@@ -12,8 +12,8 @@ hide:
       <h1>Building the foundation of <em>Danish AI</em></h1>
       <p>Language models have become critical infrastructure — but smaller languages like Danish risk being left behind. Danish Foundation Models is a collaborative effort across Danish universities and research institutions to develop, evaluate, and adapt open language AI that serves Danish society.</p>
       <div class="home-hero__actions">
-        <a class="home-btn home-btn--primary" href="https://huggingface.co/danish-foundation-models/models">Explore models →</a>
-        <a class="home-btn home-btn--ghost" href="https://huggingface.co/danish-foundation-models/datasets">Browse datasets</a>
+        <a class="home-btn home-btn--primary" href="https://huggingface.co/danish-foundation-models/models?sort=downloads">Explore models →</a>
+        <a class="home-btn home-btn--ghost" href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads">Browse datasets</a>
       </div>
       <div class="home-hero__stats">
       <div><strong>20+</strong><span>industry use cases</span></div>
@@ -35,34 +35,11 @@ hide:
   </div>
 </section>
 
-<div class="logo-carousel">
-  <div class="logo-carousel-track">
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
-    </a>
-    <!-- Duplicated for now to make it seamless, but if we add more we don't need it -->
-    <a href="https://www.sdu.dk">
-      <img src="./_static/core-team/sdu.png" alt="University of Southern Denmark" style="height: 65px; width: auto;">
-    </a>
-    <a href="https://chc.au.dk/">
-      <img src="./_static/core-team/au.png" alt="Aarhus University" style="height: 60px; width: auto;">
-    </a>
-    <a href="https://www.ku.dk">
-      <img src="./_static/core-team/ku.jpg" alt="University of Copenhagen" style="height: 70px; width: auto;">
-    </a>
-    <a href="https://alexandra.dk/">
-      <img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute" style="height: 50px; width: auto;">
-    </a>
-  </div>
+<div class="dfm-footer-logos home-partners">
+  <a href="https://www.sdu.dk"><img src="./_static/core-team/sdu.png" alt="University of Southern Denmark"></a>
+  <a href="https://chc.au.dk/"><img src="./_static/core-team/au.png" alt="Aarhus University"></a>
+  <a href="https://www.ku.dk"><img src="./_static/core-team/ku.jpg" alt="University of Copenhagen"></a>
+  <a href="https://alexandra.dk/"><img src="./_static/core-team/alexandra.webp" alt="Alexandra Institute"></a>
 </div>
 
 ## What we do

@@ -31,7 +31,37 @@ document.addEventListener("DOMContentLoaded", function () {
   btn.href = "mailto:Torben.blach@alexandra.dk";
   btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
   btn.className = "dfm-contact-btn";
+  var select = inner.querySelector(".md-select");
+  var lang_switch = select && select.closest(".md-header__option");
+  // order on the right: search, "Contact us", language
   inner.appendChild(btn);
+  if (lang_switch) inner.appendChild(lang_switch);
 });
 </script>
+<script>
+/* shuffle partner logos on every load so that no institution is always first */
+(function () {
+  document.querySelectorAll(".dfm-footer-logos").forEach(function (box) {
+    var items = Array.prototype.slice.call(box.children);
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = items[i]; items[i] = items[j]; items[j] = t;
+    }
+    items.forEach(function (el) { box.appendChild(el); });
+  });
+})();
+</script>
+{% endblock %}
+
+{% block footer %}
+{% set da = config.theme.language == "da" %}
+<footer class="dfm-footer">
+<div class="dfm-footer-logos">
+  <a href="https://www.sdu.dk"><img src="{{ base_url }}/_static/core-team/sdu.png" alt="{{ 'Syddansk Universitet' if da else 'University of Southern Denmark' }}"></a>
+  <a href="https://chc.au.dk/"><img src="{{ base_url }}/_static/core-team/au.png" alt="{{ 'Aarhus Universitet' if da else 'Aarhus University' }}"></a>
+  <a href="https://www.ku.dk"><img src="{{ base_url }}/_static/core-team/ku.jpg" alt="{{ 'Københavns Universitet' if da else 'University of Copenhagen' }}"></a>
+  <a href="https://alexandra.dk/"><img src="{{ base_url }}/_static/core-team/alexandra.webp" alt="{{ 'Alexandra Instituttet' if da else 'Alexandra Institute' }}"></a>
+</div>
+{% if config.copyright %}<div class="dfm-footer-copy">{{ config.copyright }}</div>{% endif %}
+</footer>
 {% endblock %}

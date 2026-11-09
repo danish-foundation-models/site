@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "zensical==0.0.64",
+    "bibtexparser>=1.4,<2",
+    "pyyaml",
 ]
 license = "MIT"
 license-files = ["LICENSE"]
