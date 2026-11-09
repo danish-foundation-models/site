@@ -807,6 +807,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 </script>
+<script>
+/* open links to other sites in a new tab */
+(function () {
+  function mark(root) {
+    (root || document).querySelectorAll("a[href^='http']").forEach(function (a) {
+      if (a.hostname && a.hostname !== location.hostname) {
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", function () { mark(); });
+})();
+</script>
 
   </body>
 </html>
