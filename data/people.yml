@@ -221,6 +221,8 @@ people:
   linkedin: https://www.linkedin.com/in/rlrs/
   tier: 6
   name: Rasmus Larsen
+  aliases:
+  - Rasmus F. Larsen
   image: rasmus-larsen.png
   position:
     en: Senior AI Specialist
@@ -405,6 +407,8 @@ people:
   bluesky: nicolaslegrand.bsky.social
   tier: 4
   name: Nicolas Marc Simon Legrand
+  aliases:
+  - Nicolas Legrand
   image: nicolas-marc-simon-legrand.png
   position:
     en: Senior Researcher

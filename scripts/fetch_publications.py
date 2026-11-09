@@ -271,23 +271,25 @@ def clean(text: str) -> str:
     return re.sub(r"[{}\\]", "", text or "").strip()
 
 
+def matches(person: dict, author: dict) -> bool:
+    """Whether an OpenAlex author is this member: by OpenAlex id, ORCID or (with OpenAlex ids) name."""
+    ids, orcid = set(person.get("openalex") or []), str(person.get("orcid") or "")
+    names = {norm(person["name"]), *(norm(n) for n in person.get("aliases") or [])}
+    return bool(
+        short_id(author.get("id") or "") in ids
+        or (orcid and (author.get("orcid") or "").endswith(orcid))
+        or (ids and norm(author["display_name"]) in names)  # name match only for people with OpenAlex ids
+    )
+
+
 def person_ids(work: dict, people: list[dict]) -> list[str]:
     """Ids (from data/people.yml) of the DFM members who wrote a work, matched by OpenAlex id, ORCID or name."""
     found = []
     for p in people:
         if p.get("left") and str(work.get("publication_date") or "") > str(p["left"]):
             continue
-        ids, orcid = set(p.get("openalex") or []), str(p.get("orcid") or "")
-        names = {norm(p["name"]), *(norm(n) for n in p.get("aliases") or [])}
-        for a in work.get("authorships", []):
-            author = a["author"]
-            if (
-                short_id(author.get("id") or "") in ids
-                or (orcid and (author.get("orcid") or "").endswith(orcid))
-                or (ids and norm(author["display_name"]) in names)  # name match only for people with OpenAlex ids
-            ):
-                found.append(p["id"])
-                break
+        if any(matches(p, a["author"]) for a in work.get("authorships", [])):
+            found.append(p["id"])
     return found
 
 
@@ -320,7 +322,9 @@ def to_entry(work: dict, member_ids: set[str], member_names: set[str], people: l
         "dfm_members": " and ".join(
             clean(a["author"]["display_name"])
             for a in authorships
-            if short_id(a["author"].get("id") or "") in member_ids or norm(a["author"]["display_name"]) in member_names
+            if short_id(a["author"].get("id") or "") in member_ids
+            or norm(a["author"]["display_name"]) in member_names
+            or any(matches(p, a["author"]) for p in people)
         ),
     }
     if source:
@@ -366,8 +370,12 @@ def excluded(entry: dict, exclude: list[str]) -> bool:
     )
 
 
-def authors_line(entry: dict) -> str:
+def authors_line(entry: dict, by_id: dict[str, dict]) -> str:
     members = set((entry.get("dfm_members") or "").split(" and "))
+    for i in (entry.get("dfm_people") or "").split(" and "):  # members matched by ORCID/alias too
+        if i in by_id:
+            p = by_id[i]
+            members |= {p["name"], *(p.get("aliases") or [])}
     names = [n for n in entry.get("author", "").split(" and ") if n]
     flagged = [(n, n in members) for n in names]
     if len(flagged) > 12:  # keep long author lists short, but never hide a DFM member
@@ -403,7 +411,7 @@ def item(e: dict, by_id: dict[str, dict]) -> str:
         f'<li class="pub" data-peer="{int(not is_preprint(e))}" data-astar="{int(is_a_star(e))}">'
         '<div class="pub__body">'
         f'<a class="pub__title" href="{html.escape(url)}">{html.escape(e["title"])}</a>'
-        f'<p class="pub__authors">{authors_line(e)}</p>'
+        f'<p class="pub__authors">{authors_line(e, by_id)}</p>'
         + (
             '<p class="pub__meta">'
             + (f'<span class="{classes}">{html.escape(venue)}</span>' if venue else "")
@@ -608,7 +616,7 @@ def discover(config: dict, known: list[dict]) -> list[dict]:
             "ID": "ext-" + re.sub(r"[^a-z0-9]+", "-", norm(title))[:40].strip("-"),
             "ENTRYTYPE": "inproceedings" if w["type"] == "conference-paper" else "article",
             "title": clean(title),
-            "author": " and ".join(clean(n) for n in names) or ", ".join(by_id[i]["name"] for i in owners),
+            "author": " and ".join(clean(n) for n in names) or " and ".join(by_id[i]["name"] for i in owners),
             "oa_type": "preprint" if w["type"] == "preprint" or venue.lower() == "arxiv" else w["type"],
             "arxiv": w["arxiv"] or ((s2 or {}).get("externalIds") or {}).get("ArXiv", ""),
             "year": date[:4],
