@@ -35,6 +35,8 @@ hide:
   </div>
 </section>
 
+<p class="home-follow"><a href="https://www.linkedin.com/company/danish-foundation-models/"><span class="social social--linkedin"></span>Follow Danish Foundation Models on LinkedIn</a></p>
+
 <div class="dfm-footer-logos home-partners">
   <a href="https://www.sdu.dk"><img src="./_static/core-team/sdu.png" alt="University of Southern Denmark"></a>
   <a href="https://chc.au.dk/"><img src="./_static/core-team/au.png" alt="Aarhus University"></a>
