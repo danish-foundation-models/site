@@ -1,4 +1,4 @@
-# creates the documentation and pushes it to the gh-pages branch
+# builds the documentation and pushes it to the gh-pages branch (on every push to main)
 name: Documentation
 
 on:
@@ -6,14 +6,12 @@ on:
     branches: [main]
   push:
     branches: [main]
-  schedule:
-    - cron: "17 4 * * *"  # daily, refreshes the publications page
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# one run at a time, so the daily refresh never races with a push
+# one run at a time
 concurrency:
   group: documentation
   cancel-in-progress: false
@@ -37,21 +35,18 @@ jobs:
       - name: Dependencies
         run: uv sync
 
-      - name: Update publications
-        env:
-          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
-        run: uv run python scripts/fetch_publications.py
-
-      - name: Commit updated publications
-        if: github.event_name != 'pull_request'
+      # The publication data is fetched separately (publications.yml, daily) and kept on the
+      # publications-data branch. Here we only take the latest data and render the pages from it,
+      # which needs no network and takes seconds. Falls back to the copies on main if there is none yet.
+      - name: Latest publication data
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publications/openalex_publications.bib publications/orcid_publications.bib publications/semanticscholar_publications.bib en/docs/publications.bib en/docs/publications.md da/docs/publications.md
-          git diff --cached --quiet || git commit -m "Update publications [skip ci]"
-          git pull --rebase origin "${GITHUB_REF_NAME}"  # someone may have pushed while we fetched
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          git fetch origin publications-data || true
+          if git rev-parse --verify --quiet origin/publications-data >/dev/null; then
+            git checkout origin/publications-data -- \
+              publications/openalex_publications.bib publications/orcid_publications.bib \
+              publications/semanticscholar_publications.bib
+          fi
+          PUBLICATIONS_RENDER_ONLY=1 uv run python scripts/fetch_publications.py
 
       - name: Build site
         run: make build
