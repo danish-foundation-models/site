@@ -766,6 +766,8 @@ def main() -> int:
     config["authors"] = [p for p in people if p.get("openalex")]
     config["people"] = people
     try:
+        if os.environ.get("PUBLICATIONS_RENDER_ONLY"):  # re-render from the saved .bib files, no network
+            raise RuntimeError("render only")
         works = fetch(config)
         member_ids = {i for p in config["authors"] for i in p["openalex"]}
         member_names = {norm(p["name"]) for p in config["authors"]}
@@ -794,7 +796,8 @@ def main() -> int:
         except Exception as err:
             print(f"Semantic Scholar step failed ({err}); keeping {S2_BIB.name}", file=sys.stderr)
     except Exception as err:  # keep the last good .bib
-        print(f"Fetch failed ({err}); keeping existing {BIB.name}", file=sys.stderr)
+        if not os.environ.get("PUBLICATIONS_RENDER_ONLY"):
+            print(f"Fetch failed ({err}); keeping existing {BIB.name}", file=sys.stderr)
         if not BIB.exists():
             return 1
 
