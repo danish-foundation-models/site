@@ -43,7 +43,7 @@
       const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1;
       return `M${x1},${y1} Q${mx - dy * bend},${my + dx * bend} ${x2},${y2}`;
     };
-    [[0, 2, 0.25], [1, 2, -0.2], [0, 1, 0.35]].forEach(([a, b, bend]) =>
+    [[0, 2, 0.1], [1, 2, -0.08], [0, 1, 0.2]].forEach(([a, b, bend]) =>
       svg.appendChild(el("path", { d: curve(pts[a], pts[b], bend), class: "link" })));
 
     CITIES.forEach((c, i) => {

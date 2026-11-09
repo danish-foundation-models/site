@@ -254,7 +254,39 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://huggingface.co/danish-foundation-models/models" class="md-tabs__link">
+      <a href="../../people.html" class="md-tabs__link">
+        
+  
+  Mennesker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../publications.html" class="md-tabs__link">
+        
+  
+  Publikationer
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://huggingface.co/danish-foundation-models/models?sort=downloads" class="md-tabs__link">
         
   
   Modeller
@@ -270,7 +302,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://huggingface.co/danish-foundation-models/datasets" class="md-tabs__link">
+      <a href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads" class="md-tabs__link">
         
   
   Datasæt
@@ -373,7 +405,59 @@
   
   
     <li class="md-nav__item">
-      <a href="https://huggingface.co/danish-foundation-models/models" class="md-nav__link">
+      <a href="../../people.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mennesker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publications.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Publikationer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://huggingface.co/danish-foundation-models/models?sort=downloads" class="md-nav__link">
         
   
   
@@ -399,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://huggingface.co/danish-foundation-models/datasets" class="md-nav__link">
+      <a href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads" class="md-nav__link">
         
   
   
@@ -636,25 +720,17 @@
         
       </main>
       
-        <footer class="md-footer">
-  
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens
-    </div>
-  
-  
+
+<footer class="dfm-footer">
+<div class="dfm-footer-logos">
+  <a href="https://www.sdu.dk"><img src="../../_static/core-team/sdu.png" alt="Syddansk Universitet"></a>
+  <a href="https://chc.au.dk/"><img src="../../_static/core-team/au.png" alt="Aarhus Universitet"></a>
+  <a href="https://www.ku.dk"><img src="../../_static/core-team/ku.jpg" alt="Københavns Universitet"></a>
+  <a href="https://alexandra.dk/"><img src="../../_static/core-team/alexandra.webp" alt="Alexandra Instituttet"></a>
 </div>
-      
-    </div>
-  </div>
+<div class="dfm-footer-copy">Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens</div>
 </footer>
-      
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -668,7 +744,7 @@
       
         
         
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tracking","navigation.tabs","navigation.sections","toc.integrate","navigation.top","search.suggest","search.highlight","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Kopieret til udklipsholderen","clipboard.copy":"Kopiér til udklipsholderen","search.result.more.one":"1 resultat mere på denne side","search.result.more.other":"# resultater mere på denne side","search.result.none":"Ingen resultater fundet","search.result.one":"1 resultat","search.result.other":"# resultater","search.result.placeholder":"Indtast søgeord","search.result.term.missing":"Mangler","select.version":"Vælg version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tracking","navigation.tabs","navigation.sections","toc.integrate","navigation.top","search.suggest","search.highlight","content.tabs.link","content.tooltips","navigation.indexes","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Kopieret til udklipsholderen","clipboard.copy":"Kopiér til udklipsholderen","search.result.more.one":"1 resultat mere på denne side","search.result.more.other":"# resultater mere på denne side","search.result.none":"Ingen resultater fundet","search.result.one":"1 resultat","search.result.other":"# resultater","search.result.placeholder":"Indtast søgeord","search.result.term.missing":"Mangler","select.version":"Vælg version"},"version":null}</script>
     
     
 
@@ -684,8 +760,26 @@ document.addEventListener("DOMContentLoaded", function () {
   btn.href = "mailto:Torben.blach@alexandra.dk";
   btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
   btn.className = "dfm-contact-btn";
+  var select = inner.querySelector(".md-select");
+  var lang_switch = select && select.closest(".md-header__option");
+  // order on the right: search, "Contact us", language
   inner.appendChild(btn);
+  if (lang_switch) inner.appendChild(lang_switch);
 });
+</script>
+<script>
+/* shuffle partner logos on every load so that no institution is always first (other items in the row stay last) */
+(function () {
+  document.querySelectorAll(".dfm-footer-logos").forEach(function (box) {
+    var items = Array.prototype.slice.call(box.children).filter(function (el) { return el.querySelector("img"); });
+    var rest = Array.prototype.slice.call(box.children).filter(function (el) { return !el.querySelector("img"); });
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = items[i]; items[i] = items[j]; items[j] = t;
+    }
+    items.concat(rest).forEach(function (el) { box.appendChild(el); });
+  });
+})();
 </script>
 
   </body>
