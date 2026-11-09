@@ -5,6 +5,7 @@ da/docs/news/.authors.yml. Do not edit those files by hand; edit data/people.yml
 """
 
 import html
+import json
 from pathlib import Path
 
 import yaml
@@ -23,9 +24,52 @@ SOCIALS = [
 ]
 
 TEXT = {
-    "en": {"title": "People", "portrait": "Portrait"},
-    "da": {"title": "Mennesker", "portrait": "Portræt"},
+    "en": {"title": "People", "portrait": "Portrait", "filtered": "Filtered by", "clear": "Clear filter",
+           "one": "person", "many": "people", "click": "Click to filter", "alumni": "Alumni"},
+    "da": {"title": "Mennesker", "portrait": "Portræt", "filtered": "Filtreret på", "clear": "Ryd filter",
+           "one": "person", "many": "personer", "click": "Klik for at filtrere", "alumni": "Tidligere medlemmer"},
 }
+
+# Click a tag to filter the cards by it (state lives in the URL hash, e.g. #tag=Evaluation).
+SCRIPT = """<script>
+(function () {
+  var grid = document.querySelector(".people-page");
+  if (!grid) return;
+  var alumniHead = grid.querySelector(".people-alumni");
+  var bar = document.querySelector(".people-filter");
+  var label = bar.querySelector(".people-filter__tag");
+  var count = bar.querySelector(".people-filter__count");
+  var cards = [].slice.call(grid.querySelectorAll(".person-card"));
+  var UNITS = %(units)s;
+  function apply(tag, scroll) {
+    var n = 0;
+    cards.forEach(function (c) {
+      var show = !tag || c.getAttribute("data-tags").split("|").indexOf(tag) !== -1;
+      c.hidden = !show;
+      if (show) n++;
+    });
+    if (alumniHead) alumniHead.hidden = !grid.querySelector(".people-alumni ~ .people-grid .person-card:not([hidden])");
+    [].forEach.call(grid.querySelectorAll("[data-tag]"), function (b) {
+      b.classList.toggle("is-active", !!tag && b.getAttribute("data-tag") === tag);
+    });
+    bar.classList.toggle("is-active", !!tag);
+    label.textContent = tag || "";
+    count.textContent = tag ? n + " " + (n === 1 ? UNITS[0] : UNITS[1]) : "";
+    try { history.replaceState(null, "", tag ? "#tag=" + encodeURIComponent(tag) : location.pathname + location.search); } catch (e) {}
+    if (tag && scroll) bar.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  grid.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-tag]");
+    if (!b) return;
+    var t = b.getAttribute("data-tag");
+    apply(label.textContent === t ? "" : t, true);
+  });
+  bar.querySelector(".people-filter__clear").addEventListener("click", function () { apply("", false); });
+  var m = /^#tag=(.+)$/.exec(location.hash);
+  if (m) { try { apply(decodeURIComponent(m[1]), false); } catch (e) {} }
+})();
+</script>
+"""
 
 
 def load() -> list[dict]:
@@ -35,7 +79,10 @@ def load() -> list[dict]:
 
 def card(p: dict, lang: str) -> str:
     t = TEXT[lang]
-    tags = "".join(f'<span class="tag">{html.escape(x)}</span>' for x in p["tags"][lang])
+    tags = "".join(
+        f'<button type="button" class="tag" data-tag="{html.escape(x)}" title="{t["click"]}">{html.escape(x)}</button>'
+        for x in p.get("tags", {}).get(lang, [])
+    )
     items = []
     for field, label, url in SOCIALS:
         if p.get(field):
@@ -45,24 +92,43 @@ def card(p: dict, lang: str) -> str:
     portrait = ""
     if p.get("portrait", {}).get(lang):
         portrait = f'<p class="person-portrait"><a href="{html.escape(p["portrait"][lang])}">{t["portrait"]} →</a></p>\n'
+    position = f'<p class="position">{html.escape(p["position"][lang])}</p>\n' if p.get("position") else ""
+    tag_row = f'<div class="tags">{tags}</div>\n' if tags else ""
+    data_tags = html.escape("|".join([*p.get("tags", {}).get(lang, []), p["affiliation"][lang]]))
+    affiliation = html.escape(p["affiliation"][lang])
     return (
-        '<div class="person-card">\n'
+        f'<div class="person-card" data-tags="{data_tags}">\n'
         f'<img src="./_static/people/{p["image"]}" alt="{html.escape(p["name"])}">\n'
         f'<h3>{html.escape(p["name"])}</h3>\n'
-        f"{link_row}"
-        f'<p class="position">{html.escape(p["position"][lang])}</p>\n'
-        f'<p class="affiliation">{html.escape(p["affiliation"][lang])}</p>\n'
-        f'<div class="tags">{tags}</div>\n'
-        f"{portrait}</div>\n"
+        + link_row
+        + position
+        + f'<p class="affiliation"><button type="button" class="affiliation-filter" data-tag="{affiliation}" '
+        + f'title="{t["click"]}">{affiliation}</button></p>\n'
+        + tag_row
+        + portrait
+        + "</div>\n"
     )
 
 
 def main() -> None:
     people = load()
     for lang in ("en", "da"):
-        body = "".join(card(p, lang) for p in people)
+        t = TEXT[lang]
+        shown = [p for p in people if p.get("show", True) is not False]
+        body = "".join(card(p, lang) for p in shown if not p.get("alumni"))
+        alumni = "".join(card(p, lang) for p in shown if p.get("alumni"))
+        alumni_html = (
+            f'<h2 class="people-alumni">{t["alumni"]}</h2>\n<div class="people-grid">\n{alumni}</div>\n' if alumni else ""
+        )
+        bar = (
+            f'<div class="people-filter">'
+            f'<p class="people-filter__active">{t["filtered"]} <strong class="people-filter__tag"></strong> '
+            f'<span class="people-filter__count"></span> '
+            f'<button type="button" class="people-filter__clear">{t["clear"]} ✕</button></p></div>\n'
+        )
+        script = SCRIPT % {"units": json.dumps([t["one"], t["many"]])}
         (ROOT / lang / "docs" / "people.md").write_text(
-            f'# {TEXT[lang]["title"]}\n\n<div class="people-grid">\n{body}</div>\n'
+            f'# {t["title"]}\n\n{bar}\n<div class="people-page">\n<div class="people-grid">\n{body}</div>\n{alumni_html}</div>\n\n{script}'
         )
         authors = {}
         for p in people:
@@ -70,7 +136,7 @@ def main() -> None:
                 continue
             entry = {
                 "name": p["name"],
-                "description": f'{p["position"][lang]}, {p["affiliation"][lang]}',
+                "description": ", ".join(x for x in (p.get("position", {}).get(lang), p["affiliation"][lang]) if x),
                 "avatar": f'_static/people/{p["image"]}',
             }
             if p.get("url"):

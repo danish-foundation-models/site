@@ -12,8 +12,8 @@ hide:
       <h1>Vi bygger fundamentet for <em>dansk AI</em></h1>
       <p>Sprogmodeller er nu kritisk infrastruktur — men mindre sprog som dansk risikerer at sakke bagud. Danske Grundmodeller (Danish Foundation Models, DFM) er et samarbejde på tværs af danske universiteter og forskningsinstitutioner om at udvikle, evaluere og tilpasse sprogbaseret AI til gavn for det danske samfund.</p>
       <div class="home-hero__actions">
-        <a class="home-btn home-btn--primary" href="https://huggingface.co/danish-foundation-models/models">Udforsk modeller →</a>
-        <a class="home-btn home-btn--ghost" href="https://huggingface.co/danish-foundation-models/datasets">Se datasæt</a>
+        <a class="home-btn home-btn--primary" href="https://huggingface.co/danish-foundation-models/models?sort=downloads">Udforsk modeller →</a>
+        <a class="home-btn home-btn--ghost" href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads">Se datasæt</a>
       </div>
       <div class="home-hero__stats">
       <div><strong>20+</strong><span>use cases fra industrien</span></div>
@@ -34,6 +34,13 @@ hide:
     <a class="home-news__item" href="./news/index.html"><span class="home-news__title">Alle nyheder →</span></a>
   </div>
 </section>
+
+<div class="dfm-footer-logos home-partners">
+  <a href="https://www.sdu.dk"><img src="./_static/core-team/sdu.png" alt="Syddansk Universitet"></a>
+  <a href="https://chc.au.dk/"><img src="./_static/core-team/au.png" alt="Aarhus Universitet"></a>
+  <a href="https://www.ku.dk"><img src="./_static/core-team/ku.jpg" alt="Københavns Universitet"></a>
+  <a href="https://alexandra.dk/"><img src="./_static/core-team/alexandra.webp" alt="Alexandra Instituttet"></a>
+</div>
 
 ## Det gør vi
 

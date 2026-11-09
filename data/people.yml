@@ -5,13 +5,18 @@
 #
 #   hired       Date they joined DFM (YYYY-MM-DD). Publications are only searched from this date
 #               (never earlier than `since` in publications/config.yml). Empty = use `since`.
+#   left        Date they left DFM (YYYY-MM-DD); only papers up to this date are listed for them.
 #   openalex    OpenAlex author ids used to find their publications (none = no papers listed).
+#   aliases     Other spellings of their name used on papers (matched only if they have OpenAlex ids).
 #   website     Personal or lab site (full URL).
 #   github      GitHub username.   huggingface   Hugging Face username.
 #   orcid       ORCID iD (0000-0000-0000-0000).
 #   bluesky     Bluesky handle (e.g. name.bsky.social), shown as an icon on the card.
 #   linkedin    Full LinkedIn profile URL, shown as an icon on the card.
 #   portrait    Path (relative to the docs root) of their portrait article, per language.
+#   show        Set to false to hide them from the People page for now (news bylines and
+#               publications still use them; commenting a person out would drop both).
+#   alumni      Set to true to list them under "Alumni" at the bottom of the People page.
 #   news_author Set to false to keep someone out of .authors.yml (default: true).
 
 people:
@@ -31,19 +36,22 @@ people:
     da: Syddansk Universitet
   tags:
     en:
-    - Model Training
-    - Data
+    - Model training
+    - Automated reasoning
     da:
     - Modeltræning
-    - Data
+    - Automatiseret ræsonnement
   hired: null
   openalex:
   - A5058200123
   - A5129118213
+  aliases:
+  - Peter Schneider–Kamp
   portrait:
     en: news/2026/09/22/peter-wants-to-teach-the-machine-to-think--a-new-clever-model-has-brought-dfm-a-step-closer.html
     da: news/2026/09/22/peter-vil-lære-maskinen-at-tænke--ny-snu-model-har-sendt-dfm-et-skridt-tættere-på.html
 - id: bolette
+  orcid: 0000-0003-3968-0077
   linkedin: https://www.linkedin.com/in/bolette-pedersen-2642474a/
   tier: 1
   name: Bolette Sandford Pedersen
@@ -56,12 +64,12 @@ people:
     da: Københavns Universitet
   tags:
     en:
+    - Cultural alignment
     - Language
-    - Lexical Resources
     - Evaluation
     da:
+    - Kulturel tilpasning
     - Sprog
-    - Leksikalske ressourcer
     - Evaluering
   hired: null
   openalex:
@@ -77,18 +85,16 @@ people:
   name: Torben Blach
   image: torben-blach.png
   position:
-    en: Principal Investigator
-    da: Principal Investigator
+    en: Project Manager
+    da: Projektleder
   affiliation:
     en: Alexandra Institute
     da: Alexandra Instituttet
   tags:
     en:
-    - Project Leadership
-    - Applied AI
+    - Project management
     da:
     - Projektledelse
-    - Anvendt AI
   hired: null
 - id: kenneth
   website: https://kennethenevoldsen.com
@@ -108,25 +114,57 @@ people:
     da: Aarhus Universitet
   tags:
     en:
+    - Efficient development
+    - Data curation
     - Evaluation
-    - Efficient Development
-    - Data
     da:
-    - Evaluering
     - Effektiv udvikling
-    - Data
+    - Datakuratering
+    - Evaluering
   hired: null
-  exclude_types:
-  - book-chapter
   openalex:
   - A5087151587
-  - A5158291654
   - A5124969074
+  - A5128688509
   - A5138197604
+  - A5158291654
+  aliases:
+  - Kenneth Christian Enevoldsen
+  exclude_types:
+  - book-chapter
+- id: mike
+  website: https://jjzha.github.io
+  github: jjzha
+  huggingface: jjzha
+  orcid: 0000-0003-1218-5201
+  linkedin: https://linkedin.com/in/jjzha/
+  tier: 4
+  name: Mike Zhang
+  image: mike-zhang.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Language
+    - Post-training
+    - Multilingual NLP
+    da:
+    - Sprog
+    - Post-training
+    - Flersproget NLP
+  hired: null
+  openalex:
+  - A5025357679
+  - A5133799394
 - id: nathalie
   github: Linguistcoder
+  orcid: 0009-0009-1179-5703
   linkedin: https://www.linkedin.com/in/nathalie-hau-sorensen-nlp-specialist/
-  tier: 4
+  tier: 5
   name: Nathalie Norman
   image: nathalie-norman.png
   position:
@@ -138,21 +176,24 @@ people:
   tags:
     en:
     - Evaluation
+    - Cultural alignment
     - Language
-    - Cultural Alignment
     da:
     - Evaluering
-    - Sprog
     - Kulturel tilpasning
+    - Sprog
   hired: null
   openalex:
   - A5120694675
+  aliases:
+  - Nathalie Carmen Hau Norman
 - id: danial
   website: https://namazifard.github.io
   github: namazifard
   huggingface: namazifard
+  orcid: 0009-0000-4899-2043
   linkedin: https://www.linkedin.com/in/namazifard/
-  tier: 4
+  tier: 5
   name: Danial Namazifard
   image: danial-namazifard.png
   position:
@@ -164,20 +205,19 @@ people:
   tags:
     en:
     - Interpretability
-    - Multilingual models
-    - Cultural Alignment
+    - AI safety
     da:
     - Fortolkelighed
-    - Flersprogede modeller
-    - Kulturel tilpasning
+    - AI-sikkerhed
   hired: null
   openalex:
   - A5095084138
 - id: rasmus
   website: https://rlrs.github.io
   github: rlrs
+  orcid: 0000-0001-9177-2695
   linkedin: https://www.linkedin.com/in/rlrs/
-  tier: 5
+  tier: 6
   name: Rasmus Larsen
   image: rasmus-larsen.png
   position:
@@ -188,15 +228,15 @@ people:
     da: Alexandra Instituttet
   tags:
     en:
-    - Model Training
-    - Data
+    - Model training
+    - AI infrastructure
     da:
     - Modeltræning
-    - Data
+    - AI-infrastruktur
   hired: null
 - id: anders
   linkedin: https://www.linkedin.com/in/anders-holmgaard123/
-  tier: 6
+  tier: 8
   name: Anders Holmgaard
   image: anders-holmgaard.png
   position:
@@ -212,3 +252,848 @@ people:
     - Kommunikation
   hired: null
   url: https://holmgaardmedia.dk/
+- id: aleksandrs-baskakovs
+  orcid: 0009-0007-8340-4113
+  tier: 7
+  name: Aleksandrs Baskakovs
+  image: aleksandrs-baskakovs.png
+  position:
+    en: Research Assistant
+    da: Forskningsassistent
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Predictive coding
+    - Architecture development
+    da:
+    - Prædiktiv kodning
+    - Arkitekturudvikling
+  hired: null
+  openalex:
+  - A5118937675
+- id: anders-falkenhard-ron
+  linkedin: https://dk.linkedin.com/in/anders-ron
+  tier: 5
+  name: Anders Falkenhard Røn
+  image: anders-falkenhard-ron.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Data management
+    - AI applications
+    da:
+    - Datahåndtering
+    - AI-applikationer
+  hired: null
+- id: gustav-idun-sloth
+  github: gustavidun
+  tier: 7
+  name: Gustav Idun Sloth
+  image: gustav-idun-sloth.png
+  position:
+    en: Student Data Scientist
+    da: Studentermedhjælper (data scientist)
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Data curation
+    da:
+    - Datakuratering
+  hired: null
+- id: johana-mayerova
+  github: JohanaMayerova
+  tier: 7
+  name: Johana Mayerova
+  image: johana-mayerova.png
+  position:
+    en: Student Developer
+    da: Studentermedhjælper (udvikler)
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Software development
+    - Research software
+    da:
+    - Softwareudvikling
+    - Forskningssoftware
+  hired: null
+- id: kristoffer-laigaard-nielbo
+  website: https://knielbo.github.io
+  github: knielbo
+  orcid: 0000-0002-5116-5070
+  linkedin: https://www.linkedin.com/in/kristoffer-nielbo/
+  tier: 1
+  name: Kristoffer Laigaard Nielbo
+  image: kristoffer-laigaard-nielbo.png
+  position:
+    en: Professor
+    da: Professor
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Cultural analytics
+    - Language
+    da:
+    - Kulturanalyse
+    - Sprog
+  hired: null
+  openalex:
+  - A5018362446
+- id: mikkel-krojer-svendsen
+  website: https://cogscimikkel.github.io
+  github: CogSciMikkel
+  linkedin: https://www.linkedin.com/in/ksmikkel
+  tier: 7
+  name: Mikkel Krøjer Svendsen
+  image: mikkel-krojer-svendsen.png
+  position:
+    en: Student Developer
+    da: Studentermedhjælper (udvikler)
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Software development
+    - Research software
+    da:
+    - Softwareudvikling
+    - Forskningssoftware
+  hired: null
+- id: marton-kardos
+  github: x-tabdeveloping
+  orcid: 0000-0001-9652-4498
+  tier: 5
+  name: Márton Kardos
+  image: marton-kardos.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Evaluation
+    - Representation learning
+    - Topic modelling
+    da:
+    - Evaluering
+    - Repræsentationslæring
+    - Emnemodellering
+  hired: null
+  openalex:
+  - A5092833960
+- id: nicolas-marc-simon-legrand
+  github: LegrandNico
+  orcid: 0000-0002-2651-4929
+  bluesky: nicolaslegrand.bsky.social
+  tier: 4
+  name: Nicolas Marc Simon Legrand
+  image: nicolas-marc-simon-legrand.png
+  position:
+    en: Senior Researcher
+    da: Seniorforsker
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Predictive coding
+    - Security
+    - Agentic
+    da:
+    - Prædiktiv kodning
+    - Sikkerhed
+    - Agent-baserede systemer
+  hired: null
+- id: per-moldrup-dalum
+  website: https://moldrup-dalum.dk/per
+  github: perdalum
+  orcid: 0000-0001-9976-3515
+  tier: 6
+  name: Per Møldrup-Dalum
+  image: per-moldrup-dalum.png
+  position:
+    en: Chief Consultant; Senior Data Management Consultant
+    da: Chefkonsulent; seniorkonsulent i datahåndtering
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Data management
+    - Research infrastructure
+    da:
+    - Datahåndtering
+    - Forskningsinfrastruktur
+  hired: null
+  openalex:
+  - A5046499343
+- id: peter-bjerregaard-vahlstrup
+  github: pbvahlst
+  orcid: 0000-0003-4126-7740
+  tier: 6
+  name: Peter Bjerregaard Vahlstrup
+  image: peter-bjerregaard-vahlstrup.png
+  position:
+    en: Special Consultant; Web Development Team Leader
+    da: Specialkonsulent; teamleder for webudvikling
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Research software
+    - Data curation
+    da:
+    - Forskningssoftware
+    - Datakuratering
+  hired: null
+  openalex:
+  - A5055006198
+- id: simon-aagaard-enni
+  github: Enniwhere
+  orcid: 0000-0002-1544-4371
+  tier: 3
+  name: Simon Aagaard Enni
+  image: simon-aagaard-enni.png
+  position:
+    en: Assistant Professor
+    da: Adjunkt
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Participatory AI
+    - Editorial alignment
+    da:
+    - Deltagende AI
+    - Redaktionel tilpasning
+  hired: null
+  openalex:
+  - A5048074669
+- id: sylvain-pierre-estebe
+  website: https://sylvainestebe.github.io
+  github: SylvainEstebe
+  orcid: 0009-0006-6020-869X
+  tier: 7
+  name: Sylvain Pierre Estebe
+  image: sylvain-pierre-estebe.png
+  position:
+    en: Research Assistant
+    da: Forskningsassistent
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Cultural evolution
+    - Cognitive modelling
+    da:
+    - Kulturel evolution
+    - Kognitiv modellering
+  hired: null
+- id: vladimir-salnikov
+  website: https://v4ldesalnikov.github.io
+  github: V4ldeSalnikov
+  huggingface: V4ldeLund
+  linkedin: https://www.linkedin.com/in/vladimir-s-464ab5228/
+  tier: 7
+  name: Vladimir Salnikov
+  image: vladimir-salnikov.png
+  position:
+    en: Student Developer
+    da: Studentermedhjælper (udvikler)
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Data curation
+    - Evaluation
+    da:
+    - Datakuratering
+    - Evaluering
+  hired: null
+- id: yevhen-kostiuk
+  orcid: 0000-0002-8104-5141
+  tier: 4
+  name: Yevhen Kostiuk
+  image: yevhen-kostiuk.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Cultural alignment
+    - Evaluation
+    - Language
+    da:
+    - Kulturel tilpasning
+    - Evaluering
+    - Sprog
+  hired: null
+  openalex:
+  - A5084143445
+- id: zafar-hussain
+  orcid: 0000-0002-0717-8181
+  tier: 4
+  name: Zafar Hussain
+  image: zafar-hussain.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Evaluation
+    - Retrieval-augmented generation
+    da:
+    - Evaluering
+    - Retrieval-augmented generation
+  hired: null
+- id: andreas-nugaard-holm
+  github: AndreasHolm
+  orcid: 0000-0002-2006-5894
+  tier: 6
+  name: Andreas Nugaard Holm
+  image: andreas-nugaard-holm.png
+  position:
+    en: AI Specialist
+    da: AI Specialist
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - AI applications
+    - Language
+    da:
+    - AI-applikationer
+    - Sprog
+  hired: null
+  openalex:
+  - A5029564803
+- id: per-andersen
+  tier: 6
+  name: Per Andersen
+  image: per-andersen.png
+  position:
+    en: Senior AI Specialist
+    da: Senior AI Specialist
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - AI applications
+    - Model training
+    da:
+    - AI-applikationer
+    - Modeltræning
+  hired: null
+- id: ali-basirat
+  github: abasirat
+  orcid: 0000-0002-4718-886X
+  tier: 3
+  name: Ali Basirat
+  image: ali-basirat.png
+  position:
+    en: Associate Professor
+    da: Lektor
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Language
+    - Representation learning
+    - Interpretability
+    da:
+    - Sprog
+    - Repræsentationslæring
+    - Fortolkelighed
+  hired: null
+  openalex:
+  - A5052998031
+- id: anna-davidsen-buhl
+  linkedin: https://www.linkedin.com/in/anna-davidsen-buhl-534233185/
+  tier: 7
+  name: Anna Davidsen Buhl
+  image: anna-davidsen-buhl.png
+  position:
+    en: Research Assistant
+    da: Forskningsassistent
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Cultural alignment
+    da:
+    - Kulturel tilpasning
+  hired: null
+  openalex:
+  - A5119257971
+- id: barbara-scalvini
+  github: barbaroo
+  huggingface: barbaroo
+  orcid: 0009-0000-4414-248X
+  linkedin: https://www.linkedin.com/in/barbara-scalvini-a71a0b15b/
+  tier: 4
+  name: Barbara Scalvini
+  image: barbara-scalvini.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Cultural alignment
+    - Low-resource languages
+    da:
+    - Kulturel tilpasning
+    - Ressourcesvage sprog
+  hired: null
+  openalex:
+  - A5006799562
+- id: desmond-elliott
+  website: https://elliottd.github.io
+  github: elliottd
+  orcid: 0000-0003-3112-7904
+  linkedin: https://www.linkedin.com/in/desmond-elliott-b911b9213/
+  tier: 3
+  name: Desmond Elliott
+  image: desmond-elliott.png
+  position:
+    en: Associate Professor
+    da: Lektor
+  affiliation:
+    en: University of Copenhagen
+    da: Københavns Universitet
+  tags:
+    en:
+    - Multimodal models
+    - Multilingual NLP
+    - Model training
+    da:
+    - Multimodale modeller
+    - Flersproget NLP
+    - Modeltræning
+  hired: null
+  openalex:
+  - A5010165733
+- id: andrea-blasi-nunez
+  orcid: 0009-0005-4279-3699
+  tier: 5
+  name: Andrea Blasi Núñez
+  image: andrea-blasi-nunez.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Data curation
+    - Model training
+    da:
+    - Datakuratering
+    - Modeltræning
+  hired: null
+  openalex:
+  - A5128925133
+  - A5159365088
+- id: anna-bomme-ousager
+  github: Anous21
+  tier: 5
+  name: Anna Bomme Ousager
+  image: anna-bomme-ousager.png
+  position:
+    en: Industrial PhD Fellow
+    da: Erhvervs-ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Model training
+    - Language
+    da:
+    - Modeltræning
+    - Sprog
+  hired: null
+  openalex:
+  - A5121653278
+- id: annemette-brok-pirchert
+  orcid: 0009-0008-4386-9765
+  tier: 5
+  name: Annemette Brok Pirchert
+  image: annemette-brok-pirchert.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Model training
+    - Mixture of experts
+    - Efficient models
+    da:
+    - Modeltræning
+    - Mixture of experts
+    - Effektive modeller
+  hired: null
+  openalex:
+  - A5125505506
+- id: anton-danholt-lautrup
+  github: notna07
+  orcid: 0000-0002-9228-2417
+  tier: 4
+  name: Anton Danholt Lautrup
+  image: anton-danholt-lautrup.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Synthetic data
+    - Evaluation
+    - Data curation
+    da:
+    - Syntetiske data
+    - Evaluering
+    - Datakuratering
+  hired: null
+  openalex:
+  - A5093229388
+  aliases:
+  - Anton D. Lautrup
+- id: federico-torrielli
+  website: https://federicotorrielli.github.io
+  github: federicotorrielli
+  orcid: 0000-0001-8037-8828
+  linkedin: https://www.linkedin.com/in/federico-torrielli/
+  tier: 4
+  name: Federico Torrielli
+  image: federico-torrielli.png
+  position:
+    en: Postdoctoral Researcher
+    da: Postdoc
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - AI safety
+    - AI alignment
+    - Human–AI interaction
+    da:
+    - AI-sikkerhed
+    - AI-alignment
+    - Menneske–AI-interaktion
+  hired: null
+  openalex:
+  - A5023712450
+- id: filippo-tonini
+  orcid: 0009-0001-4288-9384
+  tier: 5
+  name: Filippo Tonini
+  image: filippo-tonini.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Agentic
+    - Safety
+    da:
+    - Agent-baserede systemer
+    - Sikkerhed
+  hired: null
+  openalex:
+  - A5120318631
+- id: gianluca-barmina
+  github: N-essuno
+  orcid: 0009-0009-6138-8612
+  tier: 5
+  name: Gianluca Barmina
+  image: gianluca-barmina.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Evaluation
+    - Post-training
+    - Interpretability
+    da:
+    - Evaluering
+    - Post-training
+    - Fortolkelighed
+  hired: null
+  openalex:
+  - A5099048090
+  - A5120421625
+- id: henrik-hoffmann
+  linkedin: https://www.linkedin.com/in/henrik-hoffmann-418186a2/
+  tier: 7
+  name: Henrik Hoffmann
+  image: henrik-hoffmann.png
+  position:
+    en: Guest Researcher
+    da: Gæsteforsker
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Model development
+    - AI applications
+    da:
+    - Modeludvikling
+    - AI-applikationer
+  hired: null
+- id: jacob-nielsen
+  website: https://jacobbitlabs.github.io
+  github: JacobBITLABS
+  orcid: 0000-0002-5134-8950
+  tier: 5
+  name: Jacob Nielsen
+  image: jacob-nielsen.png
+  position:
+    en: Industrial PhD Fellow
+    da: Erhvervs-ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Model training
+    - Quantization
+    - Efficient inference
+    da:
+    - Modeltræning
+    - Kvantisering
+    - Effektiv inferens
+  hired: null
+- id: jonas-vistrup
+  github: JonassVistrup
+  orcid: 0000-0001-7704-3656
+  tier: 5
+  name: Jonas Vistrup
+  image: jonas-vistrup.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Explainable AI
+    - Legal AI
+    - Logic programming
+    da:
+    - Forklarlig AI
+    - Juridisk AI
+    - Logikprogrammering
+  hired: null
+  left: '2026-11-09'
+  openalex:
+  - A5093046512
+  alumni: true
+- id: lukas-paul-achatius-galke-poech
+  website: http://www.lpag.de
+  github: lgalke
+  orcid: 0000-0001-6124-1092
+  linkedin: https://www.linkedin.com/in/lukas-galke-poech-8086b0155/
+  tier: 3
+  name: Lukas Paul Achatius Galke Poech
+  image: lukas-paul-achatius-galke-poech.png
+  position:
+    en: Associate Professor
+    da: Lektor
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - AI safety
+    - Model training
+    - Alignment
+    da:
+    - AI-sikkerhed
+    - Modeltræning
+    - Alignment
+  hired: null
+  openalex:
+  - A5077989893
+  aliases:
+  - Lukas Galke
+  - Lukas Paul Achatius Galke
+- id: mogens-henrik-from
+  orcid: 0000-0002-7414-3819
+  tier: 5
+  name: Mogens Henrik From
+  image: mogens-henrik-from.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Distributed training
+    - Efficient models
+    - Long-context inference
+    da:
+    - Distribueret træning
+    - Effektive modeller
+    - Inferens med lang kontekst
+  hired: null
+  openalex:
+  - A5116225373
+- id: muhammad-rajabinasab
+  github: mrajabinasab
+  orcid: 0009-0006-7045-3998
+  tier: 7
+  name: Muhammad Rajabinasab
+  image: muhammad-rajabinasab.png
+  position:
+    en: Research Assistant
+    da: Forskningsassistent
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Explainable AI
+    - Evaluation
+    da:
+    - Forklarlig AI
+    - Evaluering
+  hired: null
+  openalex:
+  - A5034671612
+- id: stine-lyngso-beltoft
+  orcid: 0009-0006-5412-0050
+  tier: 5
+  name: Stine Lyngsø Beltoft
+  image: stine-lyngso-beltoft.png
+  position:
+    en: PhD Fellow
+    da: Ph.d.-stipendiat
+  affiliation:
+    en: University of Southern Denmark
+    da: Syddansk Universitet
+  tags:
+    en:
+    - Qualitative AI
+    - Alignment
+    - Human–AI interaction
+    da:
+    - Kvalitativ AI
+    - Alignment
+    - Menneske–AI-interaktion
+  hired: null
+  openalex:
+  - A5124040138
+- id: balazs-szabo
+  huggingface: balsab
+  tier: 9
+  name: Balázs Szabó
+  image: balazs-szabo.png
+  position:
+    en: Student Data Scientist
+    da: Studentermedhjælper (data scientist)
+  affiliation:
+    en: Aarhus University
+    da: Aarhus Universitet
+  tags:
+    en:
+    - Data curation
+    da:
+    - Datakuratering
+  hired: null
+  left: '2026-11-09'
+  alumni: true
+- id: dan-saattrup-smart
+  website: https://saattrupdan.com
+  github: saattrupdan
+  orcid: 0000-0001-9227-1470
+  linkedin: https://www.linkedin.com/in/saattrupdan/
+  tier: 9
+  name: Dan Saattrup Smart
+  image: dan-saattrup-smart.png
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - Evaluation
+    - AI applications
+    da:
+    - Evaluering
+    - AI-applikationer
+  hired: null
+  left: '2026-11-09'
+  openalex:
+  - A5025130001
+  aliases:
+  - Dan Saattrup Nielsen
+  alumni: true
+- id: kristian-norgaard-jensen
+  website: https://kris927b.github.io
+  github: kris927b
+  tier: 9
+  name: Kristian Nørgaard Jensen
+  image: kristian-norgaard-jensen.png
+  affiliation:
+    en: Alexandra Institute
+    da: Alexandra Instituttet
+  tags:
+    en:
+    - Data curation
+    - AI applications
+    da:
+    - Datakuratering
+    - AI-applikationer
+  hired: null
+  left: '2026-11-09'
+  alumni: true

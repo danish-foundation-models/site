@@ -50,8 +50,12 @@ TEXT = {
         "updated": "Last updated",
         "about": "About this list",
         "stat_papers": "papers since {since_long}",
-        "stat_acl": "papers at *ACL venues",
-        "filter": "Peer-reviewed only",
+        "click": "Click to filter",
+        "stat_peer": "peer-reviewed publications",
+        "stat_astar": "papers at A* venues",
+        "tip_papers": "Everything our members have published since {since_long}, including preprints that have not yet been peer reviewed.",
+        "tip_peer": "Papers published in a journal or at a conference after peer review. Preprints (for example on arXiv) that have not been reviewed yet are not counted.",
+        "tip_astar": "Peer-reviewed papers at top-tier venues (A* in the CORE conference ranking), for example ACL, EMNLP, NeurIPS, ICML and ICLR. Workshops and Findings volumes are not counted.",
         "info": (
             'Generated automatically every day from <a href="https://openalex.org">OpenAlex</a> '
             "and covers papers by our members. "
@@ -63,8 +67,12 @@ TEXT = {
         "updated": "Senest opdateret",
         "about": "Om denne liste",
         "stat_papers": "artikler siden {since_long}",
-        "stat_acl": "artikler på *ACL-konferencer",
-        "filter": "Kun peer-reviewede",
+        "click": "Klik for at filtrere",
+        "stat_peer": "peer-reviewede publikationer",
+        "stat_astar": "artikler på A*-konferencer",
+        "tip_papers": "Alt, vores medlemmer har publiceret siden {since_long}, inklusive preprints, der endnu ikke er peer-reviewede.",
+        "tip_peer": "Artikler udgivet i et tidsskrift eller på en konference efter peer review. Preprints (fx på arXiv), der endnu ikke er gennemgået, tælles ikke med.",
+        "tip_astar": "Peer-reviewede artikler på topkonferencer (A* i CORE-rangeringen), fx ACL, EMNLP, NeurIPS, ICML og ICLR. Workshops og Findings-bind tælles ikke med.",
         "info": (
             'Genereres automatisk hver dag fra <a href="https://openalex.org">OpenAlex</a> '
             "og dækker artikler af DFM-medlemmer siden {since}. "
@@ -74,14 +82,31 @@ TEXT = {
 }
 
 
-# *ACL family: ACL, EACL, NAACL, AACL, EMNLP, TACL and the Findings volumes.
-ACL_VENUE = re.compile(
-    r"\b(ACL|EACL|NAACL|AACL|EMNLP|TACL)\b|Association for Computational Linguistics|Empirical Methods in Natural"
-)
+# Venues counted as A* (CORE ranking). The patterns live in publications/config.yml
+# (`a_star_venues`) and are matched case-insensitively against the venue name.
+A_STAR: list[re.Pattern] = []
+A_STAR_NOT: list[re.Pattern] = []  # title patterns for things that are not main-track papers
 
 
-def is_acl(entry: dict) -> bool:
-    return bool(ACL_VENUE.search(entry.get("journal") or entry.get("booktitle") or ""))
+def is_a_star(entry: dict) -> bool:
+    venue = entry.get("journal") or entry.get("booktitle") or ""
+    return (
+        not is_preprint(entry)
+        and any(p.search(venue) for p in A_STAR)
+        and not any(p.search(entry.get("title") or "") for p in A_STAR_NOT)
+    )
+
+
+VENUE_FIXES = [  # OpenAlex's own names for some venues read like catalogue entries
+    (re.compile(r"^Proceedings of the conference - Association for Computational Linguistics\. Meeting$"),
+     "Annual Meeting of the Association for Computational Linguistics (ACL)"),
+]
+
+
+def tidy_venue(name: str) -> str:
+    for pattern, replacement in VENUE_FIXES:
+        name = pattern.sub(replacement, name)
+    return name
 
 
 def is_preprint(entry: dict) -> bool:
@@ -134,6 +159,23 @@ def get(params: dict) -> dict:
     raise RuntimeError("unreachable")
 
 
+def full_authorships(work: dict) -> list[dict]:
+    """The list endpoint cuts long author lists at 100; the single-work endpoint has them all."""
+    params = {"select": "authorships"}
+    if os.environ.get("OPENALEX_API_KEY"):
+        params["api_key"] = os.environ["OPENALEX_API_KEY"]
+    url = f"{API}/{short_id(work['id'])}?{urllib.parse.urlencode(params)}"
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(url, timeout=60) as resp:
+                return json.load(resp)["authorships"]
+        except Exception:
+            if attempt == 3:
+                return work["authorships"]
+            time.sleep(2 * (attempt + 1))
+    return work["authorships"]
+
+
 def fetch_all(filter_: str) -> list[dict]:
     works, cursor = [], "*"
     while cursor:
@@ -151,6 +193,8 @@ def fetch(config: dict) -> list[dict]:
         ids = "|".join(person["openalex"])
         start = max(str(config["since"]), str(person.get("hired") or ""))  # never before `since`
         filter_ = f"author.id:{ids},from_publication_date:{start}"
+        if person.get("left"):  # alumni: nothing published after they left
+            filter_ += f",to_publication_date:{person['left']}"
         if person.get("exclude_types"):  # e.g. book-chapter, only for this person's profile
             filter_ += ",type:" + "|".join(f"!{t}" for t in person["exclude_types"])
         for work in fetch_all(filter_):
@@ -161,7 +205,12 @@ def fetch(config: dict) -> list[dict]:
         filter_ = f"doi:https://doi.org/{ref.lower()}" if ref.startswith("10.") else f"openalex:{ref}"
         for work in fetch_all(filter_):
             by_id.setdefault(work["id"], {**work, "members": []})
-    return list(by_id.values())
+    works = list(by_id.values())
+    for work in works:
+        if len(work.get("authorships", [])) >= 100:  # the list endpoint stops at 100 authors
+            work["authorships"] = full_authorships(work)
+            time.sleep(0.2)
+    return works
 
 
 def excluded(work: dict, exclude: list[str]) -> bool:
@@ -204,12 +253,20 @@ def clean(text: str) -> str:
 
 
 def person_ids(work: dict, people: list[dict]) -> list[str]:
-    """Ids (from data/people.yml) of the DFM members who wrote a work, matched by OpenAlex id or name."""
+    """Ids (from data/people.yml) of the DFM members who wrote a work, matched by OpenAlex id, ORCID or name."""
     found = []
     for p in people:
-        ids, name = set(p.get("openalex") or []), norm(p["name"])
+        if p.get("left") and str(work.get("publication_date") or "") > str(p["left"]):
+            continue
+        ids, orcid = set(p.get("openalex") or []), str(p.get("orcid") or "")
+        names = {norm(p["name"]), *(norm(n) for n in p.get("aliases") or [])}
         for a in work.get("authorships", []):
-            if short_id(a["author"].get("id") or "") in ids or norm(a["author"]["display_name"]) == name:
+            author = a["author"]
+            if (
+                short_id(author.get("id") or "") in ids
+                or (orcid and (author.get("orcid") or "").endswith(orcid))
+                or (ids and norm(author["display_name"]) in names)  # name match only for people with OpenAlex ids
+            ):
                 found.append(p["id"])
                 break
     return found
@@ -324,7 +381,7 @@ def item(e: dict, by_id: dict[str, dict]) -> str:
     venue = e.get("journal") or e.get("booktitle") or ""
     classes = "pub__venue" + (" pub__venue--preprint" if is_preprint(e) else "")
     return (
-        f'<li class="pub" data-peer="{0 if is_preprint(e) else 1}">'
+        f'<li class="pub" data-peer="{int(not is_preprint(e))}" data-astar="{int(is_a_star(e))}">'
         '<div class="pub__body">'
         f'<a class="pub__title" href="{html.escape(url)}">{html.escape(e["title"])}</a>'
         f'<p class="pub__authors">{authors_line(e)}</p>'
@@ -346,10 +403,60 @@ def item(e: dict, by_id: dict[str, dict]) -> str:
     )
 
 
-FILTER = (
-    '<label class="pub-filter"><input type="checkbox" id="pub-peer">'
-    '<span class="pub-filter__switch"></span>{filter}</label>\n'
-)
+def stat(number: int, label: str, tip: str, key: str, click: str) -> str:
+    return (
+        f'<div class="pub-stat" data-filter="{key}">'
+        f'<button type="button" class="pub-stat__btn" title="{click}"><strong>{number}</strong>'
+        f"<span>{html.escape(label)}</span></button>"
+        '<span class="info-tip">'
+        f'<button type="button" class="info-tip__button" aria-label="{html.escape(label)}">i</button>'
+        f'<span class="info-tip__bubble" role="tooltip">{html.escape(tip)}</span>'
+        "</span></div>"
+    )
+
+
+# Click a headline number to filter the list (state lives in the URL hash, e.g. #show=peer).
+FILTER_SCRIPT = """<script>
+(function () {
+  var stats = document.querySelector(".pub-stats");
+  if (!stats) return;
+  var items = [].slice.call(document.querySelectorAll(".pub"));
+  var lists = [].slice.call(document.querySelectorAll(".pub-list"));
+  function apply(mode) {
+    items.forEach(function (li) {
+      li.hidden = (mode === "peer" && li.getAttribute("data-peer") !== "1") ||
+                  (mode === "astar" && li.getAttribute("data-astar") !== "1");
+    });
+    lists.forEach(function (ul) {
+      var empty = !ul.querySelector(".pub:not([hidden])");
+      ul.hidden = empty;
+      var h = ul.previousElementSibling;
+      while (h && h.tagName !== "H2") h = h.previousElementSibling;
+      if (h) {
+        h.hidden = empty;
+        var link = document.querySelector('.md-sidebar--secondary a[href="#' + h.id + '"]');
+        if (link && link.parentElement) link.parentElement.hidden = empty;
+      }
+    });
+    [].forEach.call(stats.querySelectorAll(".pub-stat"), function (s) {
+      var on = s.getAttribute("data-filter") === mode;
+      s.classList.toggle("is-active", on && mode !== "all");
+      s.querySelector(".pub-stat__btn").setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { history.replaceState(null, "", mode === "all" ? location.pathname + location.search : "#show=" + mode); } catch (e) {}
+  }
+  stats.addEventListener("click", function (e) {
+    var b = e.target.closest(".pub-stat__btn");
+    if (!b) return;
+    var mode = b.parentElement.getAttribute("data-filter");
+    var current = (stats.querySelector(".pub-stat.is-active") || {}).dataset;
+    apply(current && current.filter === mode ? "all" : mode);
+  });
+  var m = /^#show=(peer|astar)$/.exec(location.hash);
+  if (m) apply(m[1]);
+})();
+</script>
+"""
 
 
 def render(entries: list[dict], lang: str, since: str, updated: str, people: list[dict]) -> str:
@@ -365,25 +472,25 @@ def render(entries: list[dict], lang: str, since: str, updated: str, people: lis
         f'<span class="info-tip__bubble" role="tooltip">{t["info"].format(since=since)}</span>'
         "</span></p>\n",
         '<div class="pub-stats">'
-        f'<div><strong><span class="n-all">{len(entries)}</span><span class="n-peer">{n_peer}</span></strong>'
-        f"<span>{t['stat_papers'].format(since_long=long_date(since, lang))}</span></div>"
-        f"<div><strong>{sum(is_acl(e) for e in entries)}</strong><span>{t['stat_acl']}</span></div>"
-        "</div>\n",
+        + stat(len(entries), t["stat_papers"].format(since_long=long_date(since, lang)), t["tip_papers"].format(since_long=long_date(since, lang)), "all", t["click"])
+        + stat(n_peer, t["stat_peer"], t["tip_peer"], "peer", t["click"])
+        + stat(sum(is_a_star(e) for e in entries), t["stat_astar"], t["tip_astar"], "astar", t["click"])
+        + "</div>\n",
     ]
     groups: dict[str, list[dict]] = {}
     for e in entries:
         groups.setdefault(e["year"], []).append(e)
     for n, (year, items) in enumerate(groups.items()):
-        if n == 0:  # the filter sits just above the first year heading
-            out.append(FILTER.format(**t))
         out.append(f"\n## {year}\n")
-        none = "" if any(not is_preprint(e) for e in items) else " pub-list--no-peer"
-        out.append(f'<ul class="pub-list{none}">\n' + "\n".join(item(e, by_id) for e in items) + "\n</ul>\n")
+        out.append('<ul class="pub-list">\n' + "\n".join(item(e, by_id) for e in items) + "\n</ul>\n")
+    out.append(FILTER_SCRIPT)
     return "\n".join(out) + "\n"
 
 
 def main() -> int:
     config = yaml.safe_load(CONFIG.read_text())
+    A_STAR[:] = [re.compile(p, re.I) for p in config.get("a_star_venues") or []]
+    A_STAR_NOT[:] = [re.compile(p, re.I) for p in config.get("a_star_exclude_titles") or []]
     people = yaml.safe_load(PEOPLE.read_text())["people"]
     config["authors"] = [p for p in people if p.get("openalex")]
     config["people"] = people
@@ -410,6 +517,10 @@ def main() -> int:
             return 1
 
     entries, updated = read_bib()
+    for e in entries:
+        for field in ("journal", "booktitle"):
+            if e.get(field):
+                e[field] = tidy_venue(e[field])
     exclude = [str(e) for e in config.get("exclude") or []]
     overrides = [str(e) for e in config.get("always_peer_reviewed") or []]
     for e in entries:

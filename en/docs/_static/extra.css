@@ -103,15 +103,27 @@
 }
 
 :root {
-  --md-accent-fg-color: #c8102e;
-  --md-accent-fg-color--transparent: rgba(200, 16, 46, 0.1);
-  --md-typeset-a-color: #c8102e;
+  /* DFM palette */
+  --dfm-black: #06080e;
+  --dfm-red: #c91518;
+  --dfm-red-dark: #8d0c0c;
+  --dfm-pink: #d86f71;
+  --dfm-blue: #2d418d;
+  --dfm-orange: #cb7239;
+  --md-accent-fg-color: var(--dfm-red);
+  --md-accent-fg-color--transparent: rgba(216, 111, 113, 0.22);
+  --md-typeset-a-color: var(--dfm-red);
+  --md-default-fg-color: var(--dfm-black);
+  --md-typeset-color: var(--dfm-black);
 }
+.md-typeset h1, .md-typeset h2, .md-typeset h3 { color: var(--dfm-black); }
 
 /* The white palette sets its own (blue) link colour on <body>, which
    overrides :root; set ours at the same level so the DFM red wins */
 [data-md-color-primary] {
-  --md-typeset-a-color: #c8102e;
+  --md-typeset-a-color: #c91518;
+  --md-default-fg-color: #06080e;
+  --md-typeset-color: #06080e;
 }
 
 /* Links already turn the accent colour on hover, which is now the same red,
@@ -376,12 +388,44 @@
   gap: 0.35rem;
 }
 .person-card .tag {
+  font: inherit;
   font-size: 0.7rem;
   padding: 0.1rem 0.6rem;
+  border: 0;
   border-radius: 1rem;
   background: var(--md-accent-fg-color--transparent);
-  color: var(--md-accent-fg-color);
+  color: var(--dfm-red-dark);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
 }
+.person-card .tag:hover { background: rgba(216, 111, 113, 0.4); }
+.person-card .tag.is-active { background: var(--dfm-red); color: #fff; }
+.person-card[hidden], .people-alumni[hidden] { display: none; }
+
+/* tag filter bar on the People page */
+.people-filter { margin: 0; font-size: 0.8rem; }
+.people-filter.is-active { margin: 0 0 1rem; }
+.people-filter p { margin: 0; }
+.people-filter__active { display: none; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.people-filter.is-active .people-filter__active { display: flex; }
+.people-filter__tag {
+  padding: 0.1rem 0.7rem;
+  border-radius: 1rem;
+  background: var(--dfm-red);
+  color: #fff;
+  font-weight: 500;
+}
+.people-filter__clear {
+  font: inherit;
+  padding: 0.1rem 0.7rem;
+  border: 1px solid var(--md-default-fg-color);
+  border-radius: 1rem;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+.people-filter__clear:hover { background: var(--md-default-fg-color); color: #fff; }
+.people-alumni { margin-top: 3rem; }
 
 /* Call-to-action buttons in posts, matching the front-page hero buttons */
 .md-typeset .md-button {
@@ -404,13 +448,13 @@
   color: var(--md-default-fg-color);
 }
 .md-typeset .md-button--primary {
-  background: #c8102e;
-  border-color: #c8102e;
+  background: #c91518;
+  border-color: #c91518;
   color: #fff;
 }
 .md-typeset .md-button--primary:hover {
-  background: #e01e3c;
-  border-color: #e01e3c;
+  background: #8d0c0c;
+  border-color: #8d0c0c;
   color: #fff;
 }
 
@@ -478,19 +522,39 @@
   gap: 2.2rem;
   margin: 1.2rem 0 0.5rem;
 }
-.pub-stats div {
+.pub-stats .pub-stat {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+.pub-stat__btn {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
+.pub-stat__btn:hover strong,
+.pub-stat.is-active strong { color: var(--dfm-red); }
+.pub-stat .info-tip { margin-bottom: 0.05rem; }
+.pub-stat__btn > span { transition: color 0.15s; }
+.pub-stat.is-active .pub-stat__btn > span { color: var(--md-default-fg-color); }
+.pub[hidden], .pub-list[hidden], .md-typeset h2[hidden], .md-sidebar--secondary li[hidden] { display: none !important; }
 .pub-stats strong {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.2;
 }
-.pub-stats span {
+.pub-stats .pub-stat__btn > span {
   color: var(--md-default-fg-color--light);
   font-size: 0.65rem;
 }
+.pub-stats .info-tip__bubble { max-width: calc(100vw - 2rem); }
 
 /* Publication list */
 .md-typeset .pub-list {
@@ -543,53 +607,6 @@
 .md-typeset .pub-list + h2,
 .md-typeset h2 + .pub-list { margin-top: 0.4rem; }
 
-/* "Peer-reviewed only" filter: a checkbox plus :has(), no JavaScript */
-.pub-filter {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.4rem 0 0;
-  font-size: 0.72rem;
-  cursor: pointer;
-}
-.pub-filter small { color: var(--md-default-fg-color--light); }
-.pub-filter input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-.pub-filter__switch {
-  position: relative;
-  width: 1.6rem;
-  height: 0.9rem;
-  border-radius: 1rem;
-  background: var(--md-default-fg-color--lighter);
-  transition: background-color 0.2s;
-}
-.pub-filter__switch::after {
-  content: "";
-  position: absolute;
-  top: 0.12rem;
-  left: 0.12rem;
-  width: 0.66rem;
-  height: 0.66rem;
-  border-radius: 50%;
-  background: var(--md-default-bg-color);
-  transition: transform 0.2s;
-}
-.pub-filter input:checked + .pub-filter__switch { background: var(--md-accent-fg-color); }
-.pub-filter input:checked + .pub-filter__switch::after { transform: translateX(0.7rem); }
-.pub-filter input:focus-visible + .pub-filter__switch {
-  outline: 0.1rem solid var(--md-accent-fg-color);
-  outline-offset: 0.1rem;
-}
-
-.pub-stats .n-peer { display: none; }
-.md-content:has(#pub-peer:checked) .n-all { display: none; }
-.md-content:has(#pub-peer:checked) .n-peer { display: inline; }
-.md-content:has(#pub-peer:checked) .pub[data-peer="0"],
-.md-content:has(#pub-peer:checked) .pub-list--no-peer,
-.md-content:has(#pub-peer:checked) h2:has(+ .pub-list--no-peer) { display: none; }
 .pub-stats strong span {
   color: inherit;
   font-size: inherit;
@@ -643,7 +660,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--md-default-fg-color--lightest);
+  /* opaque: the tint sits on top of the page colour so portraits underneath do not show through */
+  background: linear-gradient(var(--md-default-fg-color--lightest), var(--md-default-fg-color--lightest)) var(--md-default-bg-color);
   color: var(--md-default-fg-color--light);
   font-size: 0.6rem;
   font-weight: 700;
@@ -752,3 +770,20 @@ html[lang="da"] .md-header__option .md-select > .md-header__button::after { cont
 .person-card .social--orcid {
   --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z'/%3E%3C/svg%3E");
 }
+
+/* affiliation is a filter link that looks like plain text until hovered */
+.person-card .affiliation-filter {
+  font: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.person-card .affiliation-filter:hover,
+.person-card .affiliation-filter.is-active { color: var(--dfm-red); }
+
+/* partner logos under the news on the front page: static, greyscale and see-through */
+.home-partners { padding: 2.2rem 0 0; opacity: 0.55; }
+.home-partners:hover { opacity: 0.8; }

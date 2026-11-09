@@ -17,8 +17,8 @@ nav = [
   { "Nyheder" = "news/index.md" },
   { "Mennesker" = "people.md" },
   { "Publikationer" = "publications.md" },
-  { "Modeller" = "https://huggingface.co/danish-foundation-models/models" },
-  { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets" },
+  { "Modeller" = "https://huggingface.co/danish-foundation-models/models?sort=downloads" },
+  { "Datasæt" = "https://huggingface.co/danish-foundation-models/datasets?sort=downloads" },
 ]
 
 [project.theme]
