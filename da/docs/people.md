@@ -249,7 +249,7 @@
 <img src="./_static/people/per-moldrup-dalum.png" alt="Per Møldrup-Dalum">
 <h3>Per Møldrup-Dalum</h3>
 <p class="person-links"><a class="social social--website" href="https://moldrup-dalum.dk/per" aria-label="Website" title="Website"></a><a class="social social--github" href="https://github.com/perdalum" aria-label="GitHub" title="GitHub"></a><a class="social social--orcid" href="https://orcid.org/0000-0001-9976-3515" aria-label="ORCID" title="ORCID"></a></p>
-<p class="position">Chefkonsulent; seniorkonsulent i datahåndtering</p>
+<p class="position">Chefkonsulent, datahåndtering</p>
 <p class="affiliation"><button type="button" class="affiliation-filter" data-tag="Aarhus Universitet" title="Klik for at filtrere">Aarhus Universitet</button></p>
 <div class="tags"><button type="button" class="tag" data-tag="Datahåndtering" title="Klik for at filtrere">Datahåndtering</button><button type="button" class="tag" data-tag="Forskningsinfrastruktur" title="Klik for at filtrere">Forskningsinfrastruktur</button></div>
 </div>
@@ -257,7 +257,7 @@
 <img src="./_static/people/peter-bjerregaard-vahlstrup.png" alt="Peter Bjerregaard Vahlstrup">
 <h3>Peter Bjerregaard Vahlstrup</h3>
 <p class="person-links"><a class="social social--github" href="https://github.com/pbvahlst" aria-label="GitHub" title="GitHub"></a><a class="social social--orcid" href="https://orcid.org/0000-0003-4126-7740" aria-label="ORCID" title="ORCID"></a></p>
-<p class="position">Specialkonsulent; teamleder for webudvikling</p>
+<p class="position">Specialkonsulent, webudvikling</p>
 <p class="affiliation"><button type="button" class="affiliation-filter" data-tag="Aarhus Universitet" title="Klik for at filtrere">Aarhus Universitet</button></p>
 <div class="tags"><button type="button" class="tag" data-tag="Forskningssoftware" title="Klik for at filtrere">Forskningssoftware</button><button type="button" class="tag" data-tag="Datakuratering" title="Klik for at filtrere">Datakuratering</button></div>
 </div>
@@ -372,6 +372,7 @@
 <img src="./_static/people/dan-saattrup-smart.png" alt="Dan Saattrup Smart">
 <h3>Dan Saattrup Smart</h3>
 <p class="person-links"><a class="social social--website" href="https://saattrupdan.com" aria-label="Website" title="Website"></a><a class="social social--github" href="https://github.com/saattrupdan" aria-label="GitHub" title="GitHub"></a><a class="social social--orcid" href="https://orcid.org/0000-0001-9227-1470" aria-label="ORCID" title="ORCID"></a><a class="social social--linkedin" href="https://www.linkedin.com/in/saattrupdan/" aria-label="LinkedIn" title="LinkedIn"></a></p>
+<p class="position">Senior AI Specialist</p>
 <p class="affiliation"><button type="button" class="affiliation-filter" data-tag="Alexandra Instituttet" title="Klik for at filtrere">Alexandra Instituttet</button></p>
 <div class="tags"><button type="button" class="tag" data-tag="Evaluering" title="Klik for at filtrere">Evaluering</button><button type="button" class="tag" data-tag="AI-applikationer" title="Klik for at filtrere">AI-applikationer</button></div>
 </div>
@@ -379,6 +380,7 @@
 <img src="./_static/people/kristian-norgaard-jensen.png" alt="Kristian Nørgaard Jensen">
 <h3>Kristian Nørgaard Jensen</h3>
 <p class="person-links"><a class="social social--website" href="https://kris927b.github.io" aria-label="Website" title="Website"></a><a class="social social--github" href="https://github.com/kris927b" aria-label="GitHub" title="GitHub"></a></p>
+<p class="position">AI Specialist</p>
 <p class="affiliation"><button type="button" class="affiliation-filter" data-tag="Alexandra Instituttet" title="Klik for at filtrere">Alexandra Instituttet</button></p>
 <div class="tags"><button type="button" class="tag" data-tag="Datakuratering" title="Klik for at filtrere">Datakuratering</button><button type="button" class="tag" data-tag="AI-applikationer" title="Klik for at filtrere">AI-applikationer</button></div>
 </div>

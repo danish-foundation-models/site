@@ -7,6 +7,8 @@
 #               (never earlier than `since` in publications/config.yml). Empty = use `since`.
 #   left        Date they left DFM (YYYY-MM-DD); only papers up to this date are listed for them.
 #   openalex    OpenAlex author ids used to find their publications (none = no papers listed).
+#   semanticscholar  Semantic Scholar author id (optional; otherwise found by name and accepted only if the
+#               profile lists the same ORCID).
 #   aliases     Other spellings of their name used on papers (matched only if they have OpenAlex ids).
 #   website     Personal or lab site (full URL).
 #   github      GitHub username.   huggingface   Hugging Face username.
@@ -428,8 +430,8 @@ people:
   name: Per Møldrup-Dalum
   image: per-moldrup-dalum.png
   position:
-    en: Chief Consultant; Senior Data Management Consultant
-    da: Chefkonsulent; seniorkonsulent i datahåndtering
+    en: Chief Consultant, Data Management
+    da: Chefkonsulent, datahåndtering
   affiliation:
     en: Aarhus University
     da: Aarhus Universitet
@@ -450,8 +452,8 @@ people:
   name: Peter Bjerregaard Vahlstrup
   image: peter-bjerregaard-vahlstrup.png
   position:
-    en: Special Consultant; Web Development Team Leader
-    da: Specialkonsulent; teamleder for webudvikling
+    en: Special Consultant, Web Development
+    da: Specialkonsulent, webudvikling
   affiliation:
     en: Aarhus University
     da: Aarhus Universitet
@@ -1061,6 +1063,9 @@ people:
   tier: 9
   name: Dan Saattrup Smart
   image: dan-saattrup-smart.png
+  position:
+    en: Senior AI Specialist
+    da: Senior AI Specialist
   affiliation:
     en: Alexandra Institute
     da: Alexandra Instituttet
@@ -1084,6 +1089,9 @@ people:
   tier: 9
   name: Kristian Nørgaard Jensen
   image: kristian-norgaard-jensen.png
+  position:
+    en: AI Specialist
+    da: AI Specialist
   affiliation:
     en: Alexandra Institute
     da: Alexandra Instituttet

@@ -126,11 +126,11 @@ authors:
     avatar: _static/people/per-andersen.png
   per-moldrup-dalum:
     name: Per Møldrup-Dalum
-    description: Chefkonsulent; seniorkonsulent i datahåndtering, Aarhus Universitet
+    description: Chefkonsulent, datahåndtering, Aarhus Universitet
     avatar: _static/people/per-moldrup-dalum.png
   peter-bjerregaard-vahlstrup:
     name: Peter Bjerregaard Vahlstrup
-    description: Specialkonsulent; teamleder for webudvikling, Aarhus Universitet
+    description: Specialkonsulent, webudvikling, Aarhus Universitet
     avatar: _static/people/peter-bjerregaard-vahlstrup.png
   rasmus:
     name: Rasmus Larsen
@@ -183,9 +183,9 @@ authors:
     avatar: _static/people/balazs-szabo.png
   dan-saattrup-smart:
     name: Dan Saattrup Smart
-    description: Alexandra Instituttet
+    description: Senior AI Specialist, Alexandra Instituttet
     avatar: _static/people/dan-saattrup-smart.png
   kristian-norgaard-jensen:
     name: Kristian Nørgaard Jensen
-    description: Alexandra Instituttet
+    description: AI Specialist, Alexandra Instituttet
     avatar: _static/people/kristian-norgaard-jensen.png

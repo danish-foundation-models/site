@@ -40,6 +40,7 @@ jobs:
       - name: Update publications
         env:
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
         run: uv run python scripts/fetch_publications.py
 
       - name: Commit updated publications
@@ -47,7 +48,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add en/docs/publications.bib en/docs/publications.md da/docs/publications.md
+          git add publications/openalex_publications.bib publications/orcid_publications.bib publications/semanticscholar_publications.bib en/docs/publications.bib en/docs/publications.md da/docs/publications.md
           git diff --cached --quiet || git commit -m "Update publications [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"  # someone may have pushed while we fetched
           git push origin "HEAD:${GITHUB_REF_NAME}"
