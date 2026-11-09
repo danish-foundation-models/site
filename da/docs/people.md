@@ -241,6 +241,7 @@
 <div class="person-card" data-tags="AI-applikationer|Modeltræning|Alexandra Instituttet">
 <img src="./_static/people/per-andersen.png" alt="Per Andersen">
 <h3>Per Andersen</h3>
+<p class="person-links"><a class="social social--linkedin" href="https://www.linkedin.com/in/per-andersen-02b1722b/" aria-label="LinkedIn" title="LinkedIn"></a></p>
 <p class="position">Senior AI Specialist</p>
 <p class="affiliation"><button type="button" class="affiliation-filter" data-tag="Alexandra Instituttet" title="Klik for at filtrere">Alexandra Instituttet</button></p>
 <div class="tags"><button type="button" class="tag" data-tag="AI-applikationer" title="Klik for at filtrere">AI-applikationer</button><button type="button" class="tag" data-tag="Modeltræning" title="Klik for at filtrere">Modeltræning</button></div>
