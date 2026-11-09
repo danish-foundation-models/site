@@ -29,6 +29,7 @@ hide:
     <span class="home-news__label">Latest</span>
     <span class="home-news__heading">News from DFM</span>
     <a class="home-news__all" href="./news/index.html">All news →</a>
+    <a class="home-news__all home-news__social" href="https://www.linkedin.com/company/danish-foundation-models/"><span class="social social--linkedin"></span>Follow on LinkedIn</a>
   </div>
   <div class="home-news__items" data-src="news/index.html">
     <a class="home-news__item" href="./news/index.html"><span class="home-news__title">All news →</span></a>
