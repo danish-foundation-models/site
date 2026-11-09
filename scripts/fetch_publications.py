@@ -512,6 +512,11 @@ BUDGET = 600  # seconds each of the ORCID and Semantic Scholar steps may take
 ORCID_TYPES = {"journal-article", "conference-paper", "preprint", "working-paper", "report", "book-chapter", "book"}
 
 
+def is_volume(title: str) -> bool:
+    """Whole proceedings volumes (front matter) are not papers."""
+    return bool(re.match(r"^\s*proceedings of\b", title, re.I))
+
+
 def http_json(url: str, headers: dict | None = None, retries: int = 4, body: dict | None = None):
     for attempt in range(retries):
         try:
@@ -572,7 +577,7 @@ def discover(config: dict, known: list[dict]) -> list[dict]:
         if not p.get("orcid"):
             continue
         for w in orcid_works(str(p["orcid"])):
-            if w["type"] not in ORCID_TYPES or w["year"] < int(since[:4]) or not w["title"]:
+            if w["type"] not in ORCID_TYPES or w["year"] < int(since[:4]) or not w["title"] or is_volume(w["title"]):
                 continue
             if p.get("left") and w["year"] > int(str(p["left"])[:4]):
                 continue
@@ -643,6 +648,7 @@ def s2_author_ids(people: list[dict], known: list[dict]) -> dict[str, set[str]]:
         ref = f"DOI:{e['doi']}" if e.get("doi") else (f"ARXIV:{e['arxiv']}" if e.get("arxiv") else "")
         if ref:
             papers.append((ref, owners))
+    seen: dict[tuple[str, str], int] = {}
     started = time.time()
     for i in range(0, len(papers), 200):
         if time.time() - started > BUDGET:
@@ -658,7 +664,10 @@ def s2_author_ids(people: list[dict], known: list[dict]) -> dict[str, set[str]]:
             for author in (paper or {}).get("authors", []):
                 for o in owners:
                     if author.get("authorId") and norm(author.get("name")) in names[o]:
-                        ids[o].add(author["authorId"])
+                        seen[(o, author["authorId"])] = seen.get((o, author["authorId"]), 0) + 1
+    for (o, author), n in seen.items():
+        if n >= 2:  # a single match could be a namesake; two known papers make the profile theirs
+            ids[o].add(author)
     return ids
 
 
@@ -686,7 +695,7 @@ def s2_discover(config: dict, known: list[dict]) -> list[dict]:
             ext = w.get("externalIds") or {}
             doi, arxiv = norm_doi(ext.get("DOI")) if ext.get("DOI") else "", ext.get("ArXiv") or ""
             date = w.get("publicationDate") or (f"{w['year']}-01-01" if w.get("year") else "")
-            if not w.get("title") or not date or date < since:
+            if not w.get("title") or not date or date < since or is_volume(w["title"]):
                 continue
             if p.get("left") and date > str(p["left"]):
                 continue
@@ -807,14 +816,24 @@ def main() -> int:
 
     # When a preprint and its published version are both listed, keep the published one.
     best: dict[str, dict] = {}
+    all_titles = sorted({norm(e.get("title")) for e in entries if e.get("title")}, key=len, reverse=True)
+
+    def canonical(title: str) -> str:
+        """A shortened title ("Follow the Path") is the same paper as its full title ("Follow the Path: ...")."""
+        if len(title) >= 8:
+            for longer in all_titles:
+                if longer != title and longer.startswith(title) and len(longer) > len(title):
+                    return longer
+        return title
+
     for e in entries:
-        title = norm(e.get("title"))
+        title = canonical(norm(e.get("title")))
         if not title or excluded(e, exclude):
             continue
         if title not in best or priority(e) < priority(best[title]):
             best[title] = e
     for e in entries:  # a published version inherits the preprint's Hugging Face page
-        twin = best.get(norm(e.get("title")))
+        twin = best.get(canonical(norm(e.get("title"))))
         if twin is not None and e.get("huggingface") and not twin.get("huggingface"):
             twin["huggingface"] = e["huggingface"]
     kept = sorted(best.values(), key=lambda e: e.get("date", ""), reverse=True)

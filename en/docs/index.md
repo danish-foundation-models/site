@@ -29,13 +29,12 @@ hide:
     <span class="home-news__label">Latest</span>
     <span class="home-news__heading">News from DFM</span>
     <a class="home-news__all" href="./news/index.html">All news →</a>
+    <a class="home-news__all home-news__social" href="https://www.linkedin.com/company/danish-foundation-models/"><span class="social social--linkedin"></span>Follow on LinkedIn</a>
   </div>
   <div class="home-news__items" data-src="news/index.html">
     <a class="home-news__item" href="./news/index.html"><span class="home-news__title">All news →</span></a>
   </div>
 </section>
-
-<p class="home-follow"><a href="https://www.linkedin.com/company/danish-foundation-models/"><span class="social social--linkedin"></span>Follow Danish Foundation Models on LinkedIn</a></p>
 
 <div class="dfm-footer-logos home-partners">
   <a href="https://www.sdu.dk"><img src="./_static/core-team/sdu.png" alt="University of Southern Denmark"></a>
