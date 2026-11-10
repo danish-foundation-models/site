@@ -15,6 +15,7 @@ import html
 import json
 import os
 import re
+import unicodedata
 import sys
 import time
 import urllib.error
@@ -151,7 +152,8 @@ def long_date(iso: str, lang: str) -> str:
 
 
 def norm(text: str) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+    text = unicodedata.normalize("NFKD", text or "")  # S³ -> S3, é -> e
+    return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
 
 
 def short_id(value: str) -> str:
@@ -831,9 +833,9 @@ def main() -> int:
 
     def canonical(title: str) -> str:
         """A shortened title ("Follow the Path") is the same paper as its full title ("Follow the Path: ...")."""
-        if len(title) >= 8:
-            for longer in all_titles:
-                if longer != title and longer.startswith(title) and len(longer) > len(title):
+        if len(title) >= 7:
+            for longer in all_titles:  # only at a word boundary ("include" is not a prefix of "including")
+                if longer != title and longer.startswith(title + " "):
                     return longer
         return title
 
