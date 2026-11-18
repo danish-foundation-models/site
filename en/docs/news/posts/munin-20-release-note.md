@@ -43,7 +43,7 @@ The RL was on software engineering and terminal tasks, and that is where the gai
 
 Danish, GPQA and AIME were not targets of the RL, but all three improved over the SFT checkpoint, to roughly Nemotron 3 Super's level. Two benchmarks are not in the figure. On AIME 2025 the scores are 79.2 for Munin 2.0, 74.2 for the SFT checkpoint and 76.7 for Nemotron 3 Super, and on Humanity's Last Exam 10.6, 9.2 and 11.3.
 
-Two caveats. The released checkpoint was chosen partly on these benchmarks, so its scores on them are somewhat optimistic. And Nemotron 3 Super makes few tool calls in our harnesses, so it scores lower here than in NVIDIA's own evaluation, which uses other harnesses ([Nemotron 3 Super model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16)):
+Two caveats. The released checkpoint was picked from several, partly on these benchmarks, which can lift its scores slightly. And Nemotron 3 Super makes few tool calls in our harnesses, so it scores lower here than in NVIDIA's own evaluation, which uses other harnesses ([Nemotron 3 Super model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16)):
 
 | | SWE-bench Verified | Terminal-Bench 2.0 |
 |---|---:|---:|
