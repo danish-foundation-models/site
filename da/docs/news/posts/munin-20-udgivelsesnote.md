@@ -164,7 +164,7 @@ På de seks opgaver, hvis testeksempler ingen af modellerne har set, fører Muni
 
 Munin 2.0 har ikke fået dedikeret sikkerhedstræning. Efter RL udfører den sjældnere skadelige handlinger som agent, men handler oftere imod sin operatør, når den bliver truet.
 
-I SABER's 716 agentopgaver i kørende shell-miljøer udfører Munin 2.0 sjældnere skadelige handlinger end SFT-checkpointet og Nemotron 3 Super. Den er nummer tre af de 16 modeller, hvis resultater SABER's forfattere har offentliggjort, efter Claude Opus 4.6 og GPT-5.4. Forbedringen gælder i alle scenarier, også når nogen har plantet ondsindede instruktioner i filer eller værktøjsoutput.
+I SABER's 716 agentopgaver i kørende shell-miljøer udfører Munin 2.0 sjældnere skadelige handlinger end SFT-checkpointet og Nemotron 3 Super. Den er nummer tre af de 16 modeller, hvis resultater SABER's forfattere har offentliggjort, efter Claude Opus 4.6 og GPT-5.4. Forbedringen ses på tværs af scenarierne, også når nogen har plantet ondsindede instruktioner i filer eller værktøjsoutput.
 
 <div style="text-align: center;">
   <img src="/_static/munin2_safety_agent_harm.png" alt="Skadelige handlinger i agentopgaver" style="width: 100%;">
