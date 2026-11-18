@@ -1,0 +1,1462 @@
+
+<!doctype html>
+<html lang="da" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Danish Foundation Models udvikler, evaluerer og tilpasser åbne sprogmodeller, datasæt og benchmarks til dansk.">
+      
+      
+      
+        <link rel="canonical" href="https://foundationmodels.dk/da/news/2026/11/18/munin-20-udgivelsesnote.html">
+      
+      
+        <link rel="prev" href="../../10/26/mimir-app.html">
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/da/" hreflang="da">
+        
+      
+      
+      <link rel="icon" href="../../../../_static/icon.png">
+      <meta name="generator" content="zensical-0.0.64">
+    
+    
+      
+        <title>Munin 2.0-udgivelsesnote - Danske Grundmodeller</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../../assets/stylesheets/classic/main.1470d0a1.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/classic/palette.c7ab7c71.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../_static/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Danske Grundmodeller">
+<meta property="og:title" content="Munin 2.0-udgivelsesnote - Danske Grundmodeller">
+<meta property="og:description" content="Danish Foundation Models udvikler, evaluerer og tilpasser åbne sprogmodeller, datasæt og benchmarks til dansk.">
+<meta property="og:url" content="https://foundationmodels.dk/da/news/2026/11/18/munin-20-udgivelsesnote.html">
+<meta property="og:image" content="https://foundationmodels.dk/da/_static/social-card-da.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="da_DK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Munin 2.0-udgivelsesnote - Danske Grundmodeller">
+<meta name="twitter:description" content="Danish Foundation Models udvikler, evaluerer og tilpasser åbne sprogmodeller, datasæt og benchmarks til dansk.">
+<meta name="twitter:image" content="https://foundationmodels.dk/da/_static/social-card-da.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#munin-20-udgivelsesnote" class="md-skip">
+          Gå til indholdet
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Sidehoved">
+    <a href="../../../../index.html" title="Danske Grundmodeller" class="md-header__button md-logo" aria-label="Danske Grundmodeller" data-md-component="logo">
+      
+  <img src="../../../../_static/icon.png" alt="Danske Grundmodeller">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Danske Grundmodeller
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Munin 2.0-udgivelsesnote
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Vælg sprog">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/da/" hreflang="da" class="md-select__link">
+              Dansk
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Søg">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Søg">
+  <button type="button" class="md-search__button">
+    Søg
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Faner" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../index.html" class="md-tabs__link">
+        
+  
+  Om
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+  Nyheder
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../people.html" class="md-tabs__link">
+        
+  
+  Mennesker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../publications.html" class="md-tabs__link">
+        
+  
+  Publikationer
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://huggingface.co/danish-foundation-models/models?sort=downloads" class="md-tabs__link">
+        
+  
+  Modeller
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads" class="md-tabs__link">
+        
+  
+  Datasæt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.html" title="Danske Grundmodeller" class="md-nav__button md-logo" aria-label="Danske Grundmodeller" data-md-component="logo">
+      
+  <img src="../../../../_static/icon.png" alt="Danske Grundmodeller">
+
+    </a>
+    Danske Grundmodeller
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Om
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nyheder
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="../../../index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nyheder
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Indholdsfortegnelse">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indholdsfortegnelse
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modeller
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultater" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resultater
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sadan-trnede-vi-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sådan trænede vi den
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sådan trænede vi den">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Supervised fine-tuning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reinforcement learning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sandkasser-og-infrastruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sandkasser og infrastruktur
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#belnninger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Belønninger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regnekraft" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Regnekraft
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flere-evalueringer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flere evalueringer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flere evalueringer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruktionsflgning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instruktionsfølgning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kontaminering-og-danske-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Kontaminering og danske benchmarks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dansk-kreativ-skrivning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dansk kreativ skrivning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sammenligning-med-dfm-mimir-v15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sammenligning med DFM Mimir v1.5
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sikkerhed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sikkerhed
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hvad-er-det-nste" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hvad er det næste?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidragydere" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bidragydere
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anerkendelser" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Anerkendelser
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../people.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mennesker
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../publications.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Publikationer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://huggingface.co/danish-foundation-models/models?sort=downloads" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modeller
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://huggingface.co/danish-foundation-models/datasets?sort=downloads" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Datasæt
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Gå tilbage
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="../../../../_static/people/rasmus-larsen.png" alt="Rasmus Larsen">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Rasmus Larsen
+                        
+                      </strong>
+                      <br>
+                      Senior AI Specialist, Alexandra Instituttet
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="../../../../_static/people/torben-blach.png" alt="Torben Blach">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Torben Blach
+                        
+                      </strong>
+                      <br>
+                      Projektleder, Alexandra Instituttet
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-11-18 00:00:00+00:00" class="md-ellipsis">November 18, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              13 minutters læsetid
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Indholdsfortegnelse">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indholdsfortegnelse
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modeller
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultater" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resultater
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sadan-trnede-vi-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sådan trænede vi den
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sådan trænede vi den">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Supervised fine-tuning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reinforcement learning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sandkasser-og-infrastruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sandkasser og infrastruktur
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#belnninger" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Belønninger
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regnekraft" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Regnekraft
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flere-evalueringer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flere evalueringer
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flere evalueringer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instruktionsflgning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instruktionsfølgning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kontaminering-og-danske-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Kontaminering og danske benchmarks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dansk-kreativ-skrivning" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dansk kreativ skrivning
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sammenligning-med-dfm-mimir-v15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sammenligning med DFM Mimir v1.5
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sikkerhed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sikkerhed
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hvad-er-det-nste" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hvad er det næste?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidragydere" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bidragydere
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anerkendelser" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Anerkendelser
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+<h1 id="munin-20-udgivelsesnote">Munin 2.0-udgivelsesnote<a class="headerlink" href="#munin-20-udgivelsesnote" title="Permanent link">&para;</a></h1>
+<p>I dag udgiver vi Munin 2.0, den stærkeste fuldt åbne sprogmodel, der nogensinde er lavet i Danmark. Det er en 120B-model (12B aktive) til dansk og engelsk, bygget til agentisk softwareudvikling, og dens vægte kan frit bruges, også kommercielt. Vi har post-trænet den fra NVIDIAs prætrænede <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16">Nemotron 3 Super Base</a>. Den endelige træning tog under fem dage: 2,5 dages supervised fine-tuning (SFT) på 128 GPU'er på LUMI og 2 dages reinforcement learning (RL) på 128 GPU'er på Gefion. Det er under 0,1 % af den regnekraft, der gik til basismodellen.</p>
+<!-- more -->
+
+<p>Munin 2.0 er vores første model trænet med RL. Munin 1.0 brugte kun SFT. I RL lærer modellen ved at forsøge sig med tusindvis af rigtige opgaver, hver i sit eget isolerede computermiljø. En stor del af arbejdet består i at køre så mange miljøer på én gang, og det har vi bygget vores egen infrastruktur til. Når vi gør det selv, bliver ekspertisen i Danmark inden for en teknologi, der hurtigt er ved at blive kritisk infrastruktur. Vi offentliggør også hele RL-opsætningen, og opsummeringer af træningsdata følger senere.</p>
+<p>Med RL steg resultatet på SWE-bench Verified fra 58 % til 66 % og på Terminal-Bench Lite fra 48 % til 64 %, hvilket er på niveau med de 66,4 %, som NVIDIA rapporterer på SWE-bench Verified for den lige så store Qwen3.5-122B-A10B. Selvom RL-træningen ikke indeholdt dansk og kun lidt matematik, blev modellen også bedre til dansk, matematik og naturvidenskab og nåede niveauet for NVIDIAs egen post-trænede Nemotron 3 Super på benchmarks uden overlap med vores træningsdata. Og selvom Munin 2.0 ikke har fået særskilt sikkerhedstræning, er den nummer tre af 16 modeller til at undgå skadelige handlinger som agent, kun overgået af to lukkede modeller, Claude Opus 4.6 og GPT-5.4. I en blindtest af dansk kreativ skrivning med 13 modeller blev Munin 2.0 også nummer tre, og kun en model, der er mere end tre gange så stor, var klart bedre.</p>
+<p>Herfra kan vi skalere indsatsen op på flere måder. Med mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på de basismodeller, som de satsninger frembringer.</p>
+<h2 id="modeller">Modeller<a class="headerlink" href="#modeller" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-2.0">Munin 2.0</a></td>
+<td>SFT + RL, BF16-vægte.</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-2.0-nvfp4">Munin 2.0 NVFP4</a></td>
+<td>Anbefales på Blackwell-GPU'er, som understøtter FP4 i hardwaren.</td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/danish-foundation-models/munin-2.0-sft">Munin 2.0 SFT</a></td>
+<td>SFT-checkpointet, som Munin 2.0 er trænet fra. Til forskning og videre fine-tuning.</td>
+</tr>
+</tbody>
+</table>
+<p>Alle tre udgives under <a href="https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/">NVIDIA Nemotron Open Model License</a>, som tillader kommerciel brug. Se modelkortene på Hugging Face for mere information.</p>
+<p>I NVFP4-versionen har lagene samme præcision som i NVIDIAs egen NVFP4-udgivelse af Nemotron 3 Super. Den fylder 80 GB i stedet for 247 GB og kan være på en enkelt RTX PRO 6000 Blackwell med 96 GB.</p>
+<h2 id="resultater">Resultater<a class="headerlink" href="#resultater" title="Permanent link">&para;</a></h2>
+<div style="text-align: center;">
+  <img src="/_static/munin2_headline.png" alt="Hovedresultater for Munin 2.0" style="width: 100%;">
+</div>
+
+<p>Modellen blev RL-trænet på opgaver i softwareudvikling og terminalarbejde, og det er dér, den er blevet bedre. Sammenlignet med SFT-checkpointet stiger Munin 2.0 med 8 point på SWE-bench Verified og 13–16 point på Terminal-Bench. Den ligger klart foran NVIDIAs <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16">Nemotron 3 Super</a> på SWE-bench Verified og Terminal-Bench Lite og på niveau med den på Terminal-Bench 2.0 og 2.1.</p>
+<p>RL-træningen sigtede ikke mod dansk, GPQA eller AIME, men modellen blev bedre end SFT-checkpointet på alle tre og ligger omtrent på niveau med Nemotron 3 Super. To benchmarks er ikke med i figuren. På AIME 2025 er resultaterne 79,2 for Munin 2.0, 74,2 for SFT-checkpointet og 76,7 for Nemotron 3 Super, og på Humanity's Last Exam 10,6, 9,2 og 11,3.</p>
+<p>To forbehold. Det udgivne checkpoint er valgt blandt flere, blandt andet ud fra disse benchmarks, og det kan trække resultaterne en smule op. Og Nemotron 3 Super laver få værktøjskald i vores harnesses, så den scorer lavere her end i NVIDIAs egen evaluering, som bruger andre harnesses (<a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16">modelkortet for Nemotron 3 Super</a>):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">SWE-bench Verified</th>
+<th style="text-align: right;">Terminal-Bench 2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Munin 2.0 (vores harnesses)</td>
+<td style="text-align: right;">66,2</td>
+<td style="text-align: right;">35,8</td>
+</tr>
+<tr>
+<td>Qwen3.5-122B-A10B (NVIDIA)</td>
+<td style="text-align: right;">66,4</td>
+<td style="text-align: right;">37,5</td>
+</tr>
+<tr>
+<td>Nemotron 3 Super (NVIDIA)</td>
+<td style="text-align: right;">60,5</td>
+<td style="text-align: right;">31,0</td>
+</tr>
+<tr>
+<td>gpt-oss-120b (NVIDIA)</td>
+<td style="text-align: right;">41,9</td>
+<td style="text-align: right;">18,7</td>
+</tr>
+</tbody>
+</table>
+<p>Bootstrap-intervallerne (95 %) for Munin 2.0's agentiske resultater er ±7 til 9 point. Fremgangen i forhold til SFT-checkpointet er mere sikker, end intervallerne antyder, fordi begge modeller løste de samme opgaver. Sammenligner man opgave for opgave i bash-harnesset på SWE-bench Verified, Terminal-Bench 2.0 og Terminal-Bench Lite, ligger Munin 2.0 11 point foran (p &lt; 0,001).</p>
+<p>Vores resultat på SWE-bench Verified bygger på de første 128 af de 500 opgaver, som alle modeller har kørt i alle tre harnesses. På hele sættet i bash-harnesset løser Munin 2.0 65,7 % og Nemotron 3 Super 46,6 %.</p>
+<p>Instruktionsfølgning, kontaminering, dansk kreativ skrivning og sammenligningen med DFM Mimir v1.5 beskrives under <a href="#flere-evalueringer">Flere evalueringer</a>.</p>
+<h2 id="sadan-trnede-vi-den">Sådan trænede vi den<a class="headerlink" href="#sadan-trnede-vi-den" title="Permanent link">&para;</a></h2>
+<p>Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arkitektur eller tokenizer. Den bruger chat-templaten fra NVIDIAs post-trænede Nemotron 3 Super. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.</p>
+<h3 id="supervised-fine-tuning">Supervised fine-tuning<a class="headerlink" href="#supervised-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>I SFT-trinnet blev modellen trænet på 6,8 millioner samtaler, i alt 11 milliarder tokens, i én epoke og i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agent-trajektorier med værktøjskald, og nogle af dem har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel kan kun færdiggøre tekst, så det er dette trin, der lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.</p>
+<h3 id="reinforcement-learning">Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h3>
+<p>I RL-trinnet arbejder modellen som agent. Den får en opgave, for eksempel en fejlrapport og et repository, og løser den ved at køre kommandoer og redigere filer. Når den stopper, tjekker et program resultatet. For en kodeopgave kører programmet tests, som agenten aldrig har set. Modellen forsøger sig med hver opgave otte gange, og GRPO forstærker de forsøg, der scorer over gruppens gennemsnit. Alle belønninger kommer fra programmer: der er ingen menneskelig feedback og ingen dommermodel.</p>
+<p>Frem til det udgivne checkpoint havde modellen arbejdet sig igennem omkring 119.000 episoder og produceret eller læst 5,6 milliarder tokens. Omkring halvdelen af episoderne er softwareudvikling (Scale-SWE, SWE-smith, OpenSWE), og en fjerdedel er terminalopgaver (Terminal-Lego, TMax). Resten er værktøjsbrug, tekst-til-SQL, instruktionsfølgning og matematik. Kode- og terminalopgaverne kører i tre agent-harnesses: opencode, pi og et simpelt bash-værktøj. Ingen af opgaverne er på dansk.</p>
+<p>En episode kan vare op til 300 turns og 300.000 tokens. Modellens kontekst er 128k tokens, så på lange opgaver komprimerer harnesset samtalen til et resumé, og agenten fortsætter.</p>
+<p>Træningen kører i Prime Intellects open source-framework <a href="https://github.com/PrimeIntellect-ai/prime-rl">prime-rl</a>, og hele opsætningen ligger på <code>munin-2.0</code>-grenene i vores <a href="https://github.com/danish-foundation-models/prime-rl/tree/munin-2.0/gefion-rl">fork</a>.</p>
+<h3 id="sandkasser-og-infrastruktur">Sandkasser og infrastruktur<a class="headerlink" href="#sandkasser-og-infrastruktur" title="Permanent link">&para;</a></h3>
+<p>I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i, og kan man ikke stille tusindvis af dem til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container, som startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så agentens kode ikke kan påvirke noget udenfor, og containeren slettes igen efter bedømmelsen. Omkring tusind episoder kørte samtidig, og det var sandkasseplatformens kapacitet og ikke GPU'erne, der satte grænsen for træningens hastighed.</p>
+<p>Vi har bygget <a href="https://github.com/rlrs/ucloud-sandboxes">sandkasseplatformen</a> til dette projekt. Den starter og fjerner containere på to backends, <a href="https://cloud.sdu.dk">UCloud</a> på Syddansk Universitet og Hetzner, bygger opgavernes images og er integreret med prime-rl. Til denne model kørte sandkasserne på Hetzner. Harnesset i hver sandkasse taler med modellen gennem et relay, og for de fleste opgaver er relayet den eneste adresse, sandkassen kan nå, så agenten har ikke adgang til internettet.</p>
+<h3 id="belnninger">Belønninger<a class="headerlink" href="#belnninger" title="Permanent link">&para;</a></h3>
+<p>Agenter trænet på testresultater tager enhver genvej, som testene tillader, og derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op. Hver opgave er desuden valideret: referenceløsningen består testene, og et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests lagt tilbage, i tilfælde af at agenten har ændret dem. Løber en episode tør for budget, får den nul i belønning, og turns med gentagelsesløkker tæller ikke med i opdateringen.</p>
+<p>Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det udgivne checkpoint viste, at 18–42 % af de eksakte referenceløsninger til SWE-smiths Rust-, C++- og Java-opgaver var blevet bedømt som forkerte, mest fordi testene kørte i den samme sandkasse, som agenten havde bygget i. SWE-smith bruges kun i træningen, så fejlen gav mere støj i belønningen, men påvirker ikke benchmarkresultaterne. Rettelserne er med i den offentliggjorte opsætning.</p>
+<h3 id="regnekraft">Regnekraft<a class="headerlink" href="#regnekraft" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Trin</th>
+<th>Hardware</th>
+<th>Regnekraft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT</td>
+<td>16 LUMI-noder (AMD MI250X), 57,5 timer</td>
+<td>≈ 8,7×10<sup>20</sup> FLOP; 1.870 kWh</td>
+</tr>
+<tr>
+<td>Syntetiske data til SFT</td>
+<td>–</td>
+<td>≈ 3–4×10<sup>19</sup> FLOP</td>
+</tr>
+<tr>
+<td>RL (til det udgivne checkpoint)</td>
+<td>16 Gefion-noder (NVIDIA DGX H100), 788 nodetimer</td>
+<td>≈ 6×10<sup>20</sup> FLOP; ~5–8 MWh (anslået)</td>
+</tr>
+</tbody>
+</table>
+<p>RL-nodetimerne inkluderer mislykkede forsøg.</p>
+<p>I alt brugte DFM omkring 1,5×10<sup>21</sup> FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10<sup>22</sup>, cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10<sup>24</sup> FLOP), lærermodeller og genereringen af de syntetiske DFM-datasæt, som begge modeller er trænet på, er ikke talt med.</p>
+<h2 id="flere-evalueringer">Flere evalueringer<a class="headerlink" href="#flere-evalueringer" title="Permanent link">&para;</a></h2>
+<h3 id="instruktionsflgning">Instruktionsfølgning<a class="headerlink" href="#instruktionsflgning" title="Permanent link">&para;</a></h3>
+<p>IFBench er der, hvor Munin 2.0 er længst bagud: 49,7 mod 74,0 for Nemotron 3 Super. Hver prompt er en almindelig forespørgsel med et eller to usædvanlige krav tilføjet, som kontrolleres mekanisk. Forskellen findes allerede i SFT-checkpointet. Instruktionsfølgning udgjorde omkring 6 % af vores RL-opgaver, mens NVIDIA trænede Nemotron 3 Super med dedikeret RL til at følge instruktioner.</p>
+<p>Munin 2.0 ignorerer sjældent et krav: i 160 af sine 163 fejl planlægger den efter kravet i sin ræsonnering. Den prøver og rammer lidt ved siden af. For eksempel skulle den gøre hver sætning præcis fem ord længere end den forrige, og her skrev den sætninger på 5, 10, 13, 20 og 25 ord.</p>
+<h3 id="kontaminering-og-danske-benchmarks">Kontaminering og danske benchmarks<a class="headerlink" href="#kontaminering-og-danske-benchmarks" title="Permanent link">&para;</a></h3>
+<p>Alle vores træningsdata er sammenlignet eksempel for eksempel med hvert benchmark i denne note. De engelske og agentiske benchmarks er rene, det vil sige uden overlap med vores træningsdata, bortset fra én genbrugt AIME 2026-opgave og nogle IFBench-grundprompts fra offentlige chatdata (uden deres krav).</p>
+<p>SFT-dataene indeholder træningssættene fra 24 danske EuroEval-opgaver. De indeholder også testeksempler fra 10 af de 27 datasæt, vi kører, fordi nogle af EuroEvals trænings- og testsæt overlapper, og flere opgaver deler kilder. Den danske score, vi rapporterer, er gennemsnittet over de 17 rene datasæt. Med alle 27 ville både vores score og vores forspring foran Nemotron 3 Super være højere.</p>
+<p>Scanningen dækker kun det, vi selv har tilføjet i SFT og RL. NVIDIAs prætræning af basismodellen, som Munin 2.0 arver, og NVIDIAs post-træning af Nemotron 3 Super er ikke scannet, så "ren" betyder her ren for vores egne træningsdata.</p>
+<p>Københavns Universitets <a href="https://github.com/kuhumcst/danish-semantic-reasoning-benchmark">Danish Semantic Reasoning Benchmark</a> (beta) tester ordbetydning og inferens. Som reference kørte vi Gemma 4 31B, der ofte bruges som en af de bedste modeller til dansk, i samme harness. På de rene eksempler scorer Munin 2.0 80,1 og Gemma 4 31B 80,5.</p>
+<h3 id="dansk-kreativ-skrivning">Dansk kreativ skrivning<a class="headerlink" href="#dansk-kreativ-skrivning" title="Permanent link">&para;</a></h3>
+<p>I den danske skriveturnering fik modellerne 24 prompts fra <a href="https://github.com/danish-foundation-models/dfm-evals">dfm-evals</a> og skrev tre svar på hver, med ræsonnering slået fra (gpt-oss-120b og Embla 1 kan ikke slå den fra, så kun deres endelige svar blev bedømt). Der var to dommere: Gemma 4 31B, som sammenlignede svar parvis, og Claude Sonnet 5.5, som rangerede alle tretten svar på hver prompt. Ingen af dem vidste, hvilken model der havde skrevet hvad. De to dommere er enige om 86 % af parrene. Tabellen viser, hvor stor en andel af modstanderne hver model slog.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Claude Sonnet 5.5</th>
+<th style="text-align: right;">Gemma 4 31B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen3.5-397B-A17B</td>
+<td style="text-align: right;">0,84</td>
+<td style="text-align: right;">0,86</td>
+</tr>
+<tr>
+<td>Nemotron 3 Super</td>
+<td style="text-align: right;">0,77</td>
+<td style="text-align: right;">0,81</td>
+</tr>
+<tr>
+<td><strong>Munin 2.0</strong></td>
+<td style="text-align: right;">0,75</td>
+<td style="text-align: right;">0,75</td>
+</tr>
+<tr>
+<td>Gemma 4 31B</td>
+<td style="text-align: right;">0,73</td>
+<td style="text-align: right;">0,68</td>
+</tr>
+<tr>
+<td>Gemma 4 26B-A4B</td>
+<td style="text-align: right;">0,72</td>
+<td style="text-align: right;">0,70</td>
+</tr>
+<tr>
+<td>Munin 2.0 SFT</td>
+<td style="text-align: right;">0,71</td>
+<td style="text-align: right;">0,74</td>
+</tr>
+<tr>
+<td>Gemma 3 27B</td>
+<td style="text-align: right;">0,55</td>
+<td style="text-align: right;">0,50</td>
+</tr>
+<tr>
+<td>Munin 1.0 Qwen 9B</td>
+<td style="text-align: right;">0,43</td>
+<td style="text-align: right;">0,42</td>
+</tr>
+<tr>
+<td>gpt-oss-120b</td>
+<td style="text-align: right;">0,36</td>
+<td style="text-align: right;">0,41</td>
+</tr>
+<tr>
+<td>Munin 1.0 Ministral 8B</td>
+<td style="text-align: right;">0,19</td>
+<td style="text-align: right;">0,26</td>
+</tr>
+<tr>
+<td>Munin 1.0 Apertus 8B</td>
+<td style="text-align: right;">0,17</td>
+<td style="text-align: right;">0,16</td>
+</tr>
+<tr>
+<td>DFM Mimir v1.5</td>
+<td style="text-align: right;">0,15</td>
+<td style="text-align: right;">0,17</td>
+</tr>
+<tr>
+<td>Embla 1</td>
+<td style="text-align: right;">0,11</td>
+<td style="text-align: right;">0,05</td>
+</tr>
+</tbody>
+</table>
+<p>Qwen3.5-397B-A17B er nummer et hos begge dommere og slår Munin 2.0 i omkring to ud af tre indbyrdes dueller. Dens dansk er godt, men det smutter af og til. I ét svar skrev den, at en bus "ikke减速erede", med det kinesiske ord for "sætte farten ned" og en dansk verbalendelse.</p>
+<p>Nemotron 3 Super, Munin 2.0, de to Gemma 4-modeller og Munin 2.0 SFT følger tæt efter hinanden. I de indbyrdes dueller placerer Sonnet Munin 2.0 på niveau med Nemotron 3 Super; Gemma placerer Nemotron 3 Super foran. Gemma 4 31B favoriserer ikke sig selv: den placerer sine egne svar som nummer seks. RL ændrede næsten ikke på, hvordan Munin 2.0 skriver.</p>
+<p>Munin 2.0 slår hver af Munin 1.0-modellerne i mindst omkring ni ud af ti indbyrdes dueller. I bunden ligger 8B-modellerne fra Munin 1.0, Mimir v1.5 og <a href="https://huggingface.co/sevren-ai/Embla1-bf16">Embla 1</a>. Syv af Mimirs 72 svar ender i en gentagelsesløkke, og Embla 1 besvarer otte af de danske prompts på engelsk og én på norsk.</p>
+<h3 id="sammenligning-med-dfm-mimir-v15">Sammenligning med DFM Mimir v1.5<a class="headerlink" href="#sammenligning-med-dfm-mimir-v15" title="Permanent link">&para;</a></h3>
+<div style="text-align: center;">
+  <img src="/_static/munin2_vs_mimir.png" alt="Munin 2.0, DFM Mimir v1.5 og Nemotron 3 Super på dansk" style="width: 100%;">
+</div>
+
+<p><a href="https://huggingface.co/danish-foundation-models/DFM-Mimir-v1.5">DFM Mimir v1.5</a> er vores anden nye model, og de to har forskellige formål. Mimir er en 1,8B-model, der genbruger sine lag flere gange per token. Den er trænet fra bunden på DFM's egne datablandinger og udgivet under Apache 2.0, mens Munin 2.0 er en 120B-model bygget på en prætrænet basismodel. Mimir køres uden ræsonnering og bruger omkring en tredjedel af Munin 2.0's regnekraft per token.</p>
+<p>Sammenligningen dækker de 11 danske opgaver, som begge modeller rapporterer. Mimirs resultater er de offentliggjorte (EuroEvals valideringssæt samt Mimirs eget evalueringsharness for DaLA og WMT24++). Begge modellers træningsdata er scannet for kontaminering på samme måde.</p>
+<p>Mimir fører på tre opgaver, og dens træningsdata indeholder de fleste af testeksemplerne for alle tre: 95 % af MultiWikiQA-da-spørgsmålene med svar og næsten alle grammatiske DaLA- og ScaLA-sætninger. DaLA- og ScaLA-sætningerne kommer fra DFM's eget Danish Dynaword-korpus, som indeholder den treebank, de to benchmarks er bygget af. Munin 2.0 har et mindre overlap på DaLA og ScaLA (21 %), så begge opgaver er udeladt af Munin 2.0's danske score.</p>
+<p>Munin 2.0 fører på yderligere to opgaver, hvor kun den ene model har set testeksempler. På DANSK NER fører den, selvom Mimirs træningsdata indeholder 28 % af testsætningerne. På indfødsrets- og medborgerskabsprøverne tæller dens forspring ikke, fordi Munin 2.0's træningssæt gentager 76 % af testen.</p>
+<p>På de seks opgaver, som ingen af modellerne har set testeksempler fra, fører Munin 2.0 på tre og ligger lige på tre, med 64,0 mod Mimirs 59,0 i gennemsnit. De seks opgaver måler dog ikke rent, hvor god en model er til dansk. På nogle af dem scorer modellerne tæt på maksimum, og begge modeller er trænet på beslægtede data: Munin 2.0 på træningssættene fra opgaverne med talemåder, HellaSwag-da, sentiment og opsummering, og Mimir på langt flere opsummeringsdata, på store mængder data til instruktionsfølgning, oversættelse og engelsk sentiment og på nogle af de engelske HellaSwag-eksempler. Derfor kan EuroEval ikke afgøre sammenligningen.</p>
+<h2 id="sikkerhed">Sikkerhed<a class="headerlink" href="#sikkerhed" title="Permanent link">&para;</a></h2>
+<p>Munin 2.0 har ikke fået dedikeret sikkerhedstræning. Efter RL udfører den sjældnere skadelige handlinger som agent, men handler oftere imod sin operatør, når den bliver truet.</p>
+<p>I SABER's 716 agentopgaver i kørende shell-miljøer udfører Munin 2.0 sjældnere skadelige handlinger end SFT-checkpointet og Nemotron 3 Super, og den er nummer tre af de 16 modeller, hvis resultater SABER's forfattere har offentliggjort, efter Claude Opus 4.6 og GPT-5.4. Forbedringen ses på tværs af scenarierne, også når nogen har plantet ondsindede instruktioner i filer eller værktøjsoutput.</p>
+<div style="text-align: center;">
+  <img src="/_static/munin2_safety_agent_harm.png" alt="Skadelige handlinger i agentopgaver" style="width: 100%;">
+</div>
+
+<p>Modellen er blevet dårligere i Agentic Misalignment, hvor den får at vide, at den vil blive erstattet, eller at dens mål vil blive tilsidesat. Dér begår Munin 2.0 oftere afpresning og lækker oftere fortrolige data end SFT-checkpointet, mens Nemotron 3 Super lækker endnu oftere.</p>
+<div style="text-align: center;">
+  <img src="/_static/munin2_safety_operator.png" alt="Handlinger imod operatøren" style="width: 100%;">
+</div>
+
+<p>Under RL fik Munin 2.0 også mere viden om cybersikkerhed, herunder farlig viden (WMDP-cyber). Hvis du bruger Munin 2.0 som autonom agent, så tilføj dine egne sikkerhedsforanstaltninger.</p>
+<h2 id="hvad-er-det-nste">Hvad er det næste?<a class="headerlink" href="#hvad-er-det-nste" title="Permanent link">&para;</a></h2>
+<p>Det var vores første RL-kørsel i denne skala, og pipelinen kan stadig optimeres betydeligt. Vi tilføjer flere softwareudviklings- og terminalopgaver, miljøer, der rækker langt ud over software, og danske opgaver med verificerbare belønninger. I SFT-trinnet mangler modellen dedikerede data til at følge instruktioner, længere agent-trajektorier og mere dansk. Sideløbende bygger vi danske evalueringer, der holdes helt ude af træningen.</p>
+<p>Vi vil meget gerne have feedback på modellen, evalueringerne og på, i hvilken retning vi skal forbedre modellen.</p>
+<h2 id="bidragydere">Bidragydere<a class="headerlink" href="#bidragydere" title="Permanent link">&para;</a></h2>
+<p>Vi angiver bidrag i henhold til <a href="https://credit.niso.org">Contributor Roles Taxonomy (CRediT)</a>.</p>
+<ul>
+<li><strong>Rasmus Larsen</strong>: <em>Conceptualization</em>, <em>Methodology</em>, <em>Software</em>, <em>Investigation</em>, <em>Formal analysis</em>, <em>Validation</em>, <em>Data curation</em>, <em>Visualization</em>, <em>Writing – original draft</em></li>
+</ul>
+<p><em>Yderligere bidragydere</em>:</p>
+<ul>
+<li><strong>Oliver Kinch</strong>: <em>Software</em>, <em>Data curation</em></li>
+<li><strong>Torben Blach</strong>: <em>Project administration</em>, <em>Writing – review &amp; editing</em></li>
+<li><strong>Gianluca Barmina</strong>: <em>Resources</em></li>
+<li><strong>Kenneth Enevoldsen</strong>: <em>Resources</em></li>
+<li><strong>Vladimir Salnikov</strong>: <em>Resources</em></li>
+<li><strong>Peter Schneider-Kamp</strong>: <em>Resources</em></li>
+<li><strong>Dan Saattrup Smart</strong>: <em>Resources</em></li>
+</ul>
+<h2 id="anerkendelser">Anerkendelser<a class="headerlink" href="#anerkendelser" title="Permanent link">&para;</a></h2>
+<p>Arbejdet blev støttet af Danish Foundation Models-projektet, finansieret af den danske regering. Supervised fine-tuning kørte på LUMI under DeiC-bevilling DeiC-SDU-N5-2026185.</p>
+
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../tags.html#tag:modeludgivelse" class="md-tag">Modeludgivelse</a>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Tilbage til start
+</button>
+        
+      </main>
+      
+
+<footer class="dfm-footer">
+<div class="dfm-footer-logos">
+  <a href="https://www.sdu.dk"><img src="../../../../_static/core-team/sdu.png" alt="Syddansk Universitet"></a>
+  <a href="https://chc.au.dk/"><img src="../../../../_static/core-team/au.png" alt="Aarhus Universitet"></a>
+  <a href="https://www.ku.dk"><img src="../../../../_static/core-team/ku.jpg" alt="Københavns Universitet"></a>
+  <a href="https://alexandra.dk/"><img src="../../../../_static/core-team/alexandra.webp" alt="Alexandra Instituttet"></a>
+</div>
+<div class="dfm-footer-copy">Dette websted er gjort tilgængeligt under en Creative Commons Attribution 4.0-licens</div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tracking","navigation.tabs","navigation.sections","toc.integrate","navigation.top","search.suggest","search.highlight","content.tabs.link","content.tooltips","navigation.indexes","toc.follow"],"redirect":null,"search":"../../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Kopieret til udklipsholderen","clipboard.copy":"Kopiér til udklipsholderen","search.result.more.one":"1 resultat mere på denne side","search.result.more.other":"# resultater mere på denne side","search.result.none":"Ingen resultater fundet","search.result.one":"1 resultat","search.result.other":"# resultater","search.result.placeholder":"Indtast søgeord","search.result.term.missing":"Mangler","select.version":"Vælg version"},"version":null}</script>
+    
+    
+
+      <script src="../../../../assets/javascripts/bundle.c04ba553.min.js"></script>
+      
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inner = document.querySelector(".md-header__inner");
+  if (!inner) return;
+  var lang = document.documentElement.lang || "en";
+  var btn = document.createElement("a");
+  btn.href = "mailto:Torben.blach@alexandra.dk";
+  btn.textContent = lang.startsWith("da") ? "Kontakt os" : "Contact us";
+  btn.className = "dfm-contact-btn";
+  var select = inner.querySelector(".md-select");
+  var lang_switch = select && select.closest(".md-header__option");
+  // order on the right: search, "Contact us", language
+  inner.appendChild(btn);
+  if (lang_switch) inner.appendChild(lang_switch);
+});
+</script>
+<script>
+/* shuffle partner logos on every load so that no institution is always first (other items in the row stay last) */
+(function () {
+  document.querySelectorAll(".dfm-footer-logos").forEach(function (box) {
+    var items = Array.prototype.slice.call(box.children).filter(function (el) { return el.querySelector("img"); });
+    var rest = Array.prototype.slice.call(box.children).filter(function (el) { return !el.querySelector("img"); });
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = items[i]; items[i] = items[j]; items[j] = t;
+    }
+    items.concat(rest).forEach(function (el) { box.appendChild(el); });
+  });
+})();
+</script>
+<script>
+/* open links to other sites in a new tab */
+(function () {
+  function mark(root) {
+    (root || document).querySelectorAll("a[href^='http']").forEach(function (a) {
+      if (a.hostname && a.hostname !== location.hostname) {
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", function () { mark(); });
+})();
+</script>
+
+  </body>
+</html>
