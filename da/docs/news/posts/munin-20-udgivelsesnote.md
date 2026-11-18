@@ -19,7 +19,7 @@ Munin 2.0 er vores første model trænet med RL. Munin 1.0 brugte kun SFT. I RL 
 
 Med RL steg resultatet på SWE-bench Verified fra 58 % til 66 % og på Terminal-Bench Lite fra 48 % til 64 %. NVIDIA rapporterer 66,4 % på SWE-bench Verified for Qwen3.5-122B-A10B, som har samme størrelse. RL-træningen indeholdt intet dansk og kun lidt matematik. Alligevel blev modellen også bedre til dansk, matematik og naturvidenskab og nåede niveauet for NVIDIAs egen post-trænede Nemotron 3 Super. Det er målt på benchmarks, der ikke overlapper med vores træningsdata. Munin 2.0 har ikke fået særskilt sikkerhedstræning. Alligevel er den nummer tre af 16 modeller til at undgå skadelige handlinger som agent; kun to lukkede frontier-modeller er bedre. Vi har også sammenlignet 13 modellers danske kreative skrivning i en blindtest. Munin 2.0 blev nummer tre, og kun en model, der er mere end tre gange så stor, var klart bedre.
 
-Herfra kan vi skalere indsatsen op på flere måder. Med mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på andre basismodeller.
+Herfra kan vi skalere indsatsen op på flere måder. Med mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på de basismodeller, som de satsninger frembringer.
 
 ## Modeller
 
