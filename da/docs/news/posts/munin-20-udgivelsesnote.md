@@ -60,11 +60,11 @@ Instruktionsfølgning, kontaminering, dansk kreativ skrivning og sammenligningen
 
 ## Sådan trænede vi den
 
-Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arkitektur eller tokenizer. Den bruger Qwen3's chat-template. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.
+Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arkitektur eller tokenizer. Den bruger chat-templaten fra NVIDIAs post-trænede Nemotron 3 Super. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.
 
 ### Supervised fine-tuning
 
-I SFT-trinnet blev modellen trænet på 6,8 millioner samtaler, i alt 11 milliarder tokens, i et enkelt gennemløb og i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agentforløb med værktøjskald, og nogle af dem har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel kan kun færdiggøre tekst, så det er dette trin, der lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
+I SFT-trinnet blev modellen trænet på 6,8 millioner samtaler, i alt 11 milliarder tokens, i én epoke og i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agent-trajektorier med værktøjskald, og nogle af dem har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel kan kun færdiggøre tekst, så det er dette trin, der lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
 
 ### Reinforcement learning
 
@@ -180,7 +180,7 @@ Under RL fik Munin 2.0 også mere viden om cybersikkerhed, herunder farlig viden
 
 ## Hvad er det næste?
 
-Det var vores første RL-kørsel i denne skala, og pipelinen kan stadig optimeres betydeligt. Vi tilføjer flere softwareudviklings- og terminalopgaver, miljøer, der rækker langt ud over software, og danske opgaver med verificerbare belønninger. I SFT-trinnet mangler modellen dedikerede data til at følge instruktioner, længere agentforløb og mere dansk. Sideløbende bygger vi danske evalueringer, der holdes helt ude af træningen.
+Det var vores første RL-kørsel i denne skala, og pipelinen kan stadig optimeres betydeligt. Vi tilføjer flere softwareudviklings- og terminalopgaver, miljøer, der rækker langt ud over software, og danske opgaver med verificerbare belønninger. I SFT-trinnet mangler modellen dedikerede data til at følge instruktioner, længere agent-trajektorier og mere dansk. Sideløbende bygger vi danske evalueringer, der holdes helt ude af træningen.
 
 Vi vil meget gerne have feedback på modellen, evalueringerne og på, i hvilken retning vi skal forbedre modellen.
 
