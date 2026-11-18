@@ -1,6 +1,6 @@
 ---
-draft: true  # set to false on release day
-date: 2026-11-18  # set to the release date
+draft: false
+date: 2026-11-18
 slug: munin-20-release-note
 authors:
   - rasmus

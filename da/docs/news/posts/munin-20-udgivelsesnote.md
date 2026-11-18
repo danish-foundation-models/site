@@ -1,6 +1,6 @@
 ---
-draft: true  # sættes til false på udgivelsesdagen
-date: 2026-11-18  # sættes til udgivelsesdatoen
+draft: false
+date: 2026-11-18
 slug: munin-20-udgivelsesnote
 authors:
   - rasmus
