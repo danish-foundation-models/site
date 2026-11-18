@@ -17,7 +17,7 @@ I dag udgiver vi Munin 2.0, den stærkeste fuldt åbne sprogmodel, der nogensind
 
 Munin 2.0 er vores første model trænet med RL. Munin 1.0 brugte kun SFT. I RL lærer modellen ved at forsøge sig med tusindvis af rigtige opgaver, hver i sit eget isolerede computermiljø. En stor del af arbejdet består i at køre så mange miljøer på én gang, og det har vi bygget vores egen infrastruktur til. Når vi gør det selv, bliver ekspertisen i Danmark inden for en teknologi, der hurtigt er ved at blive kritisk infrastruktur. Vi offentliggør også hele RL-opsætningen, og opsummeringer af træningsdata følger senere.
 
-Med RL steg resultatet på SWE-bench Verified fra 58 % til 66 % og på Terminal-Bench Lite fra 48 % til 64 %, hvilket er på niveau med de 66,4 %, som NVIDIA rapporterer på SWE-bench Verified for den lige så store Qwen3.5-122B-A10B. Selvom RL-træningen ikke indeholdt dansk og kun lidt matematik, blev modellen også bedre til dansk, matematik og naturvidenskab og nåede niveauet for NVIDIAs egen post-trænede Nemotron 3 Super, målt på benchmarks, der ikke overlapper med vores træningsdata. Og selvom Munin 2.0 ikke har fået særskilt sikkerhedstræning, er den nummer tre af 16 modeller til at undgå skadelige handlinger som agent, kun overgået af to lukkede modeller, Claude Opus 4.6 og GPT-5.4. I en blindtest af dansk kreativ skrivning med 13 modeller blev Munin 2.0 også nummer tre, og kun en model, der er mere end tre gange så stor, var klart bedre.
+Med RL steg resultatet på SWE-bench Verified fra 58 % til 66 % og på Terminal-Bench Lite fra 48 % til 64 %, hvilket er på niveau med de 66,4 %, som NVIDIA rapporterer på SWE-bench Verified for den lige så store Qwen3.5-122B-A10B. Selvom RL-træningen ikke indeholdt dansk og kun lidt matematik, blev modellen også bedre til dansk, matematik og naturvidenskab og nåede niveauet for NVIDIAs egen post-trænede Nemotron 3 Super på benchmarks uden overlap med vores træningsdata. Og selvom Munin 2.0 ikke har fået særskilt sikkerhedstræning, er den nummer tre af 16 modeller til at undgå skadelige handlinger som agent, kun overgået af to lukkede modeller, Claude Opus 4.6 og GPT-5.4. I en blindtest af dansk kreativ skrivning med 13 modeller blev Munin 2.0 også nummer tre, og kun en model, der er mere end tre gange så stor, var klart bedre.
 
 Herfra kan vi skalere indsatsen op på flere måder. Med mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på de basismodeller, som de satsninger frembringer.
 
@@ -78,13 +78,13 @@ Træningen kører i Prime Intellects open source-framework [prime-rl](https://gi
 
 ### Sandkasser og infrastruktur
 
-I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i, og kan man ikke stille tusindvis af dem til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container, som startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så den kode, agenten kører, ikke kan påvirke noget udenfor, og når episoden er bedømt, slettes containeren igen. Omkring tusind episoder kørte samtidig, og det var sandkasseplatformens kapacitet, ikke GPU'erne, der bestemte, hvor hurtigt træningen kunne køre.
+I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i, og kan man ikke stille tusindvis af dem til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container, som startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så agentens kode ikke kan påvirke noget udenfor, og containeren slettes igen efter bedømmelsen. Omkring tusind episoder kørte samtidig, og det var sandkasseplatformens kapacitet og ikke GPU'erne, der satte grænsen for træningens hastighed.
 
 Vi har bygget [sandkasseplatformen](https://github.com/rlrs/ucloud-sandboxes) til dette projekt. Den starter og fjerner containere på to backends, [UCloud](https://cloud.sdu.dk) på Syddansk Universitet og Hetzner, bygger opgavernes images og er integreret med prime-rl. Til denne model kørte sandkasserne på Hetzner. Harnesset i hver sandkasse taler med modellen gennem et relay, og for de fleste opgaver er relayet den eneste adresse, sandkassen kan nå, så agenten har ikke adgang til internettet.
 
 ### Belønninger
 
-En agent, der trænes på testresultater, tager enhver genvej, testene tillader, og derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op, og hver opgave er valideret, så referenceløsningen består testene, mens et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests desuden lagt tilbage, i tilfælde af at agenten har ændret dem. Episoder, der løber tør for budget, får nul i belønning, og turns, der ender i en gentagelsesløkke, tæller ikke med i opdateringen.
+Agenter trænet på testresultater tager enhver genvej, som testene tillader, og derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op. Hver opgave er desuden valideret: referenceløsningen består testene, og et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests lagt tilbage, i tilfælde af at agenten har ændret dem. Løber en episode tør for budget, får den nul i belønning, og turns med gentagelsesløkker tæller ikke med i opdateringen.
 
 Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det udgivne checkpoint viste, at 18–42 % af de eksakte referenceløsninger til SWE-smiths Rust-, C++- og Java-opgaver var blevet bedømt som forkerte, mest fordi testene kørte i den samme sandkasse, som agenten havde bygget i. SWE-smith bruges kun i træningen, så fejlen gav mere støj i belønningen, men påvirker ikke benchmarkresultaterne. Rettelserne er med i den offentliggjorte opsætning.
 
@@ -98,7 +98,7 @@ Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det
 
 RL-nodetimerne inkluderer mislykkede forsøg.
 
-I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10²², cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10²⁴ FLOP), lærermodeller og de syntetiske datasæt, der deles internt i DFM, er ikke talt med.
+I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10²², cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10²⁴ FLOP), lærermodeller og DFM's internt delte syntetiske datasæt er ikke talt med.
 
 ## Flere evalueringer
 
@@ -116,7 +116,7 @@ SFT-dataene indeholder træningssættene fra 24 danske EuroEval-opgaver. De inde
 
 Scanningen dækker kun det, vi selv har tilføjet i SFT og RL. NVIDIAs prætræning af basismodellen, som Munin 2.0 arver, og NVIDIAs post-træning af Nemotron 3 Super er ikke scannet, så "ren" betyder her ren for vores egne træningsdata.
 
-Københavns Universitets [Danish Semantic Reasoning Benchmark](https://github.com/kuhumcst/danish-semantic-reasoning-benchmark) (beta) tester ordbetydning og inferens. Som reference kørte vi Gemma 4 31B, der ofte bruges som en af de bedste modeller til dansk, i samme harness. På de eksempler, der er rene for vores træningsdata, scorer Munin 2.0 80,1 og Gemma 4 31B 80,5.
+Københavns Universitets [Danish Semantic Reasoning Benchmark](https://github.com/kuhumcst/danish-semantic-reasoning-benchmark) (beta) tester ordbetydning og inferens. Som reference kørte vi Gemma 4 31B, der ofte bruges som en af de bedste modeller til dansk, i samme harness. På de rene eksempler scorer Munin 2.0 80,1 og Gemma 4 31B 80,5.
 
 ### Dansk kreativ skrivning
 
@@ -158,7 +158,7 @@ Mimir fører på tre opgaver, og dens træningsdata indeholder de fleste af test
 
 Munin 2.0 fører på yderligere to opgaver, hvor kun den ene model har set testeksempler. På DANSK NER fører den, selvom Mimirs træningsdata indeholder 28 % af testsætningerne. På indfødsrets- og medborgerskabsprøverne tæller dens forspring ikke, fordi Munin 2.0's træningssæt gentager 76 % af testen.
 
-På de seks opgaver, hvis testeksempler ingen af modellerne har set, fører Munin 2.0 på tre og ligger lige på tre, med 64,0 mod Mimirs 59,0 i gennemsnit. De seks opgaver måler dog ikke rent, hvor god en model er til dansk. På nogle af dem scorer modellerne tæt på maksimum, og begge modeller er trænet på beslægtede data: Munin 2.0 på træningssættene fra opgaverne med talemåder, HellaSwag-da, sentiment og opsummering, og Mimir på langt flere opsummeringsdata, på store mængder data til instruktionsfølgning, oversættelse og engelsk sentiment og på nogle af de engelske HellaSwag-eksempler. Derfor kan EuroEval ikke afgøre sammenligningen.
+På de seks opgaver, som ingen af modellerne har set testeksempler fra, fører Munin 2.0 på tre og ligger lige på tre, med 64,0 mod Mimirs 59,0 i gennemsnit. De seks opgaver måler dog ikke rent, hvor god en model er til dansk. På nogle af dem scorer modellerne tæt på maksimum, og begge modeller er trænet på beslægtede data: Munin 2.0 på træningssættene fra opgaverne med talemåder, HellaSwag-da, sentiment og opsummering, og Mimir på langt flere opsummeringsdata, på store mængder data til instruktionsfølgning, oversættelse og engelsk sentiment og på nogle af de engelske HellaSwag-eksempler. Derfor kan EuroEval ikke afgøre sammenligningen.
 
 ## Sikkerhed
 
