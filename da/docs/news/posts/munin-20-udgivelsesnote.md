@@ -60,7 +60,7 @@ Instruktionsfølgning, kontaminering, dansk kreativ skrivning og sammenligningen
 
 ## Sådan trænede vi den
 
-Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arkitektur, tokenizer eller chat-skabelon. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.
+Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arkitektur eller tokenizer. Den bruger Qwen3's chat-template. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.
 
 ### Supervised fine-tuning
 

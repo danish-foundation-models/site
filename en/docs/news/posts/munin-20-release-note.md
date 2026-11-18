@@ -60,7 +60,7 @@ Instruction following, contamination, Danish creative writing and the comparison
 
 ## How we trained it
 
-Munin 2.0 was trained in two stages from Nemotron 3 Super Base, with the architecture, tokenizer and chat template unchanged. Summaries of the training data for both stages, following the EU AI Act template, will be published later.
+Munin 2.0 was trained in two stages from Nemotron 3 Super Base, with the architecture and tokenizer unchanged. It uses the Qwen3 chat template. Summaries of the training data for both stages, following the EU AI Act template, will be published later.
 
 ### Supervised fine-tuning
 
