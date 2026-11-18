@@ -19,7 +19,7 @@ Munin 2.0 er vores første model trænet med RL. Munin 1.0 brugte kun SFT. I RL 
 
 Med RL steg resultatet på SWE-bench Verified fra 58 % til 66 % og på Terminal-Bench Lite fra 48 % til 64 %. NVIDIA rapporterer 66,4 % på SWE-bench Verified for Qwen3.5-122B-A10B, som har samme størrelse. RL-træningen indeholdt intet dansk og kun lidt matematik. Alligevel blev modellen også bedre til dansk, matematik og naturvidenskab og nåede niveauet for NVIDIAs egen post-trænede Nemotron 3 Super. Det er målt på benchmarks, der ikke overlapper med vores træningsdata. Munin 2.0 har ikke fået særskilt sikkerhedstræning. Alligevel er den nummer tre af 16 modeller til at undgå skadelige handlinger som agent; kun to lukkede frontier-modeller er bedre. Vi har også sammenlignet 13 modellers danske kreative skrivning i en blindtest. Munin 2.0 blev nummer tre, og kun en model, der er mere end tre gange så stor, var klart bedre.
 
-Herfra kan vi skalere indsatsen op på flere måder: mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på de basismodeller, de satsninger frembringer.
+Herfra kan vi skalere indsatsen op på flere måder. Med mere regnekraft, flere og bredere RL-miljøer og bedre basismodeller. Større europæiske satsninger fokuserer på prætræning. Post-træning er lettere at skalere, og vores opskrift afhænger ikke af modellen, så vi kan bruge den på andre basismodeller.
 
 ## Modeller
 
@@ -64,7 +64,7 @@ Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base. Arkitektur, tokenizer 
 
 ### Supervised fine-tuning
 
-I SFT-trinnet så modellen 6,8 millioner samtaler én gang, i alt 11 milliarder tokens, i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agentforløb med værktøjskald. Nogle af dataene har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel fortsætter kun tekst; dette trin lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
+I SFT-trinnet så modellen hver af de 6,8 millioner samtaler én gang. I alt 11 milliarder tokens, i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agentforløb med værktøjskald. Nogle af dataene har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel færdiggør kun tekst. Dette trin lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
 
 ### Reinforcement learning
 
@@ -104,13 +104,13 @@ I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM tr�
 
 ### Instruktionsfølgning
 
-IFBench er der, hvor Munin 2.0 er længst bagud: 49,7 mod 74,0 for Nemotron 3 Super. Hver prompt er en almindelig forespørgsel med et eller to usædvanlige krav tilføjet, som kontrolleres mekanisk. Forskellen findes allerede i SFT-checkpointet. Instruktionsfølgning udgjorde omkring 6 % af vores RL-opgaver, mens NVIDIA trænede Nemotron 3 Super med dedikeret RL til instruktionsfølgning.
+IFBench er der, hvor Munin 2.0 er længst bagud: 49,7 mod 74,0 for Nemotron 3 Super. Hver prompt er en almindelig forespørgsel med et eller to usædvanlige krav tilføjet, som kontrolleres mekanisk. Forskellen findes allerede i SFT-checkpointet. Instruktionsfølgning udgjorde omkring 6 % af vores RL-opgaver, mens NVIDIA trænede Nemotron 3 Super med dedikeret RL til at følge instruktioner.
 
-Munin 2.0 ignorerer sjældent et krav: i 160 af sine 163 fejl planlægger den efter kravet i sin ræsonnering. Den prøver og rammer lidt ved siden af. For eksempel skulle den gøre hver sætning præcis fem ord længere end den forrige, og den skrev sætninger på 5, 10, 13, 20 og 25 ord.
+Munin 2.0 ignorerer sjældent et krav: i 160 af sine 163 fejl planlægger den efter kravet i sin ræsonnering. Den prøver og rammer lidt ved siden af. For eksempel skulle den gøre hver sætning præcis fem ord længere end den forrige, og her skrev den sætninger på 5, 10, 13, 20 og 25 ord.
 
 ### Kontaminering og danske benchmarks
 
-Alle vores træningsdata er sammenlignet, eksempel for eksempel, med hvert benchmark i denne note. De engelske og agentiske benchmarks er rene, det vil sige uden overlap med vores træningsdata, bortset fra én genbrugt AIME 2026-opgave og nogle IFBench-grundprompts fra offentlige chatdata (uden deres krav).
+Alle vores træningsdata er sammenlignet eksempel for eksempel med hvert benchmark i denne note. De engelske og agentiske benchmarks er rene, det vil sige uden overlap med vores træningsdata, bortset fra én genbrugt AIME 2026-opgave og nogle IFBench-grundprompts fra offentlige chatdata (uden deres krav).
 
 SFT-dataene indeholder træningssættene fra 24 danske EuroEval-opgaver. De indeholder også testeksempler fra 10 af de 27 datasæt, vi kører, fordi nogle af EuroEvals trænings- og testsæt overlapper, og flere opgaver deler kilder. Den danske score, vi rapporterer, er gennemsnittet over de 17 rene datasæt. Med alle 27 ville både vores score og vores forspring foran Nemotron 3 Super være højere.
 
@@ -138,7 +138,7 @@ I den danske skriveturnering fik modellerne 24 prompts fra [dfm-evals](https://g
 | DFM Mimir v1.5 | 0,15 | 0,17 |
 | Embla 1 | 0,11 | 0,05 |
 
-Qwen3.5-397B-A17B er nummer et hos begge dommere og slår Munin 2.0 i omkring to ud af tre indbyrdes dueller. Dens dansk er godt, men der sniger sig af og til en smutter ind: i ét svar skrev den, at en bus "ikke减速erede", med det kinesiske ord for "sætte farten ned" og en dansk verbalendelse.
+Qwen3.5-397B-A17B er nummer et hos begge dommere og slår Munin 2.0 i omkring to ud af tre indbyrdes dueller. Dens dansk er godt, men det smutter af og til. I ét svar skrev den, at en bus "ikke减速erede", med det kinesiske ord for "sætte farten ned" og en dansk verbalendelse.
 
 Nemotron 3 Super, Munin 2.0, de to Gemma 4-modeller og Munin 2.0 SFT følger tæt efter hinanden. I de indbyrdes dueller placerer Sonnet Munin 2.0 på niveau med Nemotron 3 Super; Gemma placerer Nemotron 3 Super foran. Gemma 4 31B favoriserer ikke sig selv: den placerer sine egne svar som nummer seks. RL ændrede næsten ikke på, hvordan Munin 2.0 skriver.
 
@@ -154,7 +154,7 @@ Munin 2.0 slår hver af Munin 1.0-modellerne i mindst omkring ni ud af ti indbyr
 
 Sammenligningen dækker de 11 danske opgaver, som begge modeller rapporterer. Mimirs resultater er de offentliggjorte (EuroEvals valideringssæt samt Mimirs eget evalueringsharness for DaLA og WMT24++). Begge modellers træningsdata er scannet for kontaminering på samme måde.
 
-Mimir fører på tre opgaver, og dens træningsdata indeholder de fleste af testeksemplerne for alle tre: 95 % af MultiWikiQA-da-spørgsmålene med svar og næsten alle grammatiske DaLA- og ScaLA-sætninger. DaLA- og ScaLA-sætningerne kommer fra DFM's eget Danish Dynaword-korpus, som indeholder den træbank, de to benchmarks er bygget af. Munin 2.0 har et mindre overlap på DaLA og ScaLA (21 %), så begge opgaver er udeladt af Munin 2.0's danske score.
+Mimir fører på tre opgaver, og dens træningsdata indeholder de fleste af testeksemplerne for alle tre: 95 % af MultiWikiQA-da-spørgsmålene med svar og næsten alle grammatiske DaLA- og ScaLA-sætninger. DaLA- og ScaLA-sætningerne kommer fra DFM's eget Danish Dynaword-korpus, som indeholder den treebank, de to benchmarks er bygget af. Munin 2.0 har et mindre overlap på DaLA og ScaLA (21 %), så begge opgaver er udeladt af Munin 2.0's danske score.
 
 Munin 2.0 fører på yderligere to opgaver, hvor kun den ene model har set testeksempler. På DANSK NER fører den, selvom Mimirs træningsdata indeholder 28 % af testsætningerne. På indfødsrets- og medborgerskabsprøverne tæller dens forspring ikke, fordi Munin 2.0's træningssæt gentager 76 % af testen.
 
@@ -180,9 +180,9 @@ Under RL fik Munin 2.0 også mere viden om cybersikkerhed, herunder farlig viden
 
 ## Hvad er det næste?
 
-Det var vores første RL-kørsel i denne skala, og pipelinen kan stadig optimeres betydeligt. Vi tilføjer flere softwareudviklings- og terminalopgaver, miljøer, der rækker langt ud over software, og danske opgaver med verificerbare belønninger. I SFT-trinnet mangler modellen data, der er lavet til instruktionsfølgning, længere agentforløb og mere dansk. Sideløbende bygger vi danske evalueringer, der holdes helt ude af træningen.
+Det var vores første RL-kørsel i denne skala, og pipelinen kan stadig optimeres betydeligt. Vi tilføjer flere softwareudviklings- og terminalopgaver, miljøer, der rækker langt ud over software, og danske opgaver med verificerbare belønninger. I SFT-trinnet mangler modellen dedikerede data til at følge instruktioner, længere agentforløb og mere dansk. Sideløbende bygger vi danske evalueringer, der holdes helt ude af træningen.
 
-Vi vil meget gerne have feedback på modellen, evalueringerne og på, hvilken retning vi skal gå i herfra.
+Vi vil meget gerne have feedback på modellen, evalueringerne og på, i hvilken retning vi skal forbedre modellen.
 
 ## Bidragydere
 
