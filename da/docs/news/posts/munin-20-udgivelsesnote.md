@@ -78,9 +78,9 @@ Træningen kører i Prime Intellects open source-framework [prime-rl](https://gi
 
 ### Sandkasser og infrastruktur
 
-I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i, og kan man ikke stille tusindvis af dem til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container, som startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så den kode, agenten kører, ikke kan påvirke noget udenfor, og når episoden er bedømt, slettes containeren igen. Omkring tusind episoder kørte samtidig, og det var sandkassetjenestens kapacitet, ikke GPU'erne, der bestemte, hvor hurtigt træningen kunne køre.
+I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i, og kan man ikke stille tusindvis af dem til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container, som startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så den kode, agenten kører, ikke kan påvirke noget udenfor, og når episoden er bedømt, slettes containeren igen. Omkring tusind episoder kørte samtidig, og det var sandkasseplatformens kapacitet, ikke GPU'erne, der bestemte, hvor hurtigt træningen kunne køre.
 
-Vi har bygget [sandkassetjenesten](https://github.com/rlrs/ucloud-sandboxes) til dette projekt. Den starter og fjerner containere på to backends, [UCloud](https://cloud.sdu.dk) på Syddansk Universitet og Hetzner, bygger opgavernes images og er integreret med prime-rl. Til denne model kørte sandkasserne på Hetzner. Harnesset i hver sandkasse taler med modellen gennem et relay, og for de fleste opgaver er relayet den eneste adresse, sandkassen kan nå, så agenten har ikke adgang til internettet.
+Vi har bygget [sandkasseplatformen](https://github.com/rlrs/ucloud-sandboxes) til dette projekt. Den starter og fjerner containere på to backends, [UCloud](https://cloud.sdu.dk) på Syddansk Universitet og Hetzner, bygger opgavernes images og er integreret med prime-rl. Til denne model kørte sandkasserne på Hetzner. Harnesset i hver sandkasse taler med modellen gennem et relay, og for de fleste opgaver er relayet den eneste adresse, sandkassen kan nå, så agenten har ikke adgang til internettet.
 
 ### Belønninger
 
