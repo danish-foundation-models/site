@@ -43,7 +43,7 @@ Modellen blev RL-trænet på opgaver i softwareudvikling og terminalarbejde, og 
 
 RL-træningen sigtede ikke mod dansk, GPQA eller AIME, men modellen blev bedre end SFT-checkpointet på alle tre og ligger omtrent på niveau med Nemotron 3 Super. To benchmarks er ikke med i figuren. På AIME 2025 er resultaterne 79,2 for Munin 2.0, 74,2 for SFT-checkpointet og 76,7 for Nemotron 3 Super, og på Humanity's Last Exam 10,6, 9,2 og 11,3.
 
-To forbehold. Vi valgte delvist det udgivne checkpoint ud fra disse benchmarks, så resultaterne på dem er noget optimistiske. Og Nemotron 3 Super laver få værktøjskald i vores harnesses, så den scorer lavere her end i NVIDIAs egen evaluering, som bruger andre harnesses ([modelkortet for Nemotron 3 Super](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16)):
+To forbehold. Det udgivne checkpoint er delvist valgt ud fra disse benchmarks, så resultaterne på dem er noget optimistiske. Og Nemotron 3 Super laver få værktøjskald i vores harnesses, så den scorer lavere her end i NVIDIAs egen evaluering, som bruger andre harnesses ([modelkortet for Nemotron 3 Super](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16)):
 
 | | SWE-bench Verified | Terminal-Bench 2.0 |
 |---|---:|---:|
@@ -60,7 +60,7 @@ Instruktionsfølgning, kontaminering, dansk kreativ skrivning og sammenligningen
 
 ## Sådan trænede vi den
 
-Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base. Arkitektur, tokenizer og chat-skabelon er uændrede. Vi offentliggør senere opsummeringer af træningsdata for begge trin, efter skabelonen fra EU's AI-forordning.
+Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base. Arkitektur, tokenizer og chat-skabelon er uændrede. Opsummeringer af træningsdata for begge trin offentliggøres senere og følger skabelonen fra EU's AI-forordning.
 
 ### Supervised fine-tuning
 
@@ -74,19 +74,19 @@ Frem til det udgivne checkpoint havde modellen arbejdet sig igennem omkring 119.
 
 En episode kan vare op til 300 ture og 300.000 tokens. Modellens kontekst er 128k tokens, så på lange opgaver komprimerer harnesset samtalen til et resumé, og agenten fortsætter.
 
-Vi træner med Prime Intellects open source-framework [prime-rl](https://github.com/PrimeIntellect-ai/prime-rl), og hele opsætningen ligger på `munin-2.0`-grenene i vores [fork](https://github.com/danish-foundation-models/prime-rl/tree/munin-2.0/gefion-rl).
+Træningen kører i Prime Intellects open source-framework [prime-rl](https://github.com/PrimeIntellect-ai/prime-rl), og hele opsætningen ligger på `munin-2.0`-grenene i vores [fork](https://github.com/danish-foundation-models/prime-rl/tree/munin-2.0/gefion-rl).
 
 ### Sandkasser og infrastruktur
 
-I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i. Kan man ikke stille tusindvis af computere til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container. Den startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så den kode, agenten kører, ikke kan påvirke noget udenfor. Når episoden er bedømt, slettes containeren. Omkring tusind episoder kørte samtidig. Det var sandkassetjenestens kapacitet, ikke GPU'erne, der bestemte, hvor hurtigt vi kunne træne.
+I hver kode- og terminalepisode skal agenten have sin egen computer at arbejde i. Kan man ikke stille tusindvis af computere til rådighed, kan man ikke træne agenter med RL. En sandkasse er en ny container. Den startes fra opgavens image, hvor repositoriet og dets afhængigheder allerede er installeret. Agentens harness kører inde i containeren, så den kode, agenten kører, ikke kan påvirke noget udenfor. Når episoden er bedømt, slettes containeren. Omkring tusind episoder kørte samtidig. Det var sandkassetjenestens kapacitet, ikke GPU'erne, der bestemte, hvor hurtigt træningen kunne køre.
 
 Vi har bygget [sandkassetjenesten](https://github.com/rlrs/ucloud-sandboxes) til dette projekt. Den starter og fjerner containere på to backends, [UCloud](https://cloud.sdu.dk) på Syddansk Universitet og Hetzner, bygger opgavernes images og er integreret med prime-rl. Til denne model kørte sandkasserne på Hetzner. Harnesset i hver sandkasse taler med modellen gennem et relay. For de fleste opgaver er relayet den eneste adresse, sandkassen kan nå, så agenten har ikke adgang til internettet.
 
 ### Belønninger
 
-En agent, der trænes på testresultater, tager enhver genvej, testene tillader. Derfor har vi lukket de oplagte genveje i hver opgave. Vi har fjernet git-historikken fra repositorierne, så agenten ikke kan slå løsningen op. Vi har også valideret hver opgave: referenceløsningen består testene, og et urørt repository dumper dem. Før bedømmelsen lægger vi de oprindelige tests tilbage, i tilfælde af at agenten har ændret dem. Episoder, der løber tør for budget, får nul i belønning, og ture, der ender i en gentagelsesløkke, tæller ikke med i opdateringen.
+En agent, der trænes på testresultater, tager enhver genvej, testene tillader. Derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op. Hver opgave er også valideret: referenceløsningen består testene, og et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests lagt tilbage, i tilfælde af at agenten har ændret dem. Episoder, der løber tør for budget, får nul i belønning, og ture, der ender i en gentagelsesløkke, tæller ikke med i opdateringen.
 
-Bedømmelsen var alligevel ikke fejlfri. Da vi gennemgik bedømmelsen efter det udgivne checkpoint, viste det sig, at 18–42 % af de eksakte referenceløsninger til SWE-smiths Rust-, C++- og Java-opgaver var blevet bedømt som forkerte, mest fordi testene kørte i den samme sandkasse, som agenten havde bygget i. SWE-smith bruges kun i træningen, så fejlen gav mere støj i belønningen, men påvirker ikke benchmarkresultaterne. Rettelserne er med i den offentliggjorte opsætning.
+Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det udgivne checkpoint viste, at 18–42 % af de eksakte referenceløsninger til SWE-smiths Rust-, C++- og Java-opgaver var blevet bedømt som forkerte, mest fordi testene kørte i den samme sandkasse, som agenten havde bygget i. SWE-smith bruges kun i træningen, så fejlen gav mere støj i belønningen, men påvirker ikke benchmarkresultaterne. Rettelserne er med i den offentliggjorte opsætning.
 
 ### Regnekraft
 
@@ -110,11 +110,11 @@ Munin 2.0 ignorerer sjældent et krav: i 160 af sine 163 fejl planlægger den ef
 
 ### Kontaminering og danske benchmarks
 
-Vi har sammenlignet alle vores træningsdata, eksempel for eksempel, med hvert benchmark, vi rapporterer her. De engelske og agentiske benchmarks er rene, det vil sige uden overlap med vores træningsdata, bortset fra én genbrugt AIME 2026-opgave og nogle IFBench-grundprompts fra offentlige chatdata (uden deres krav).
+Alle vores træningsdata er sammenlignet, eksempel for eksempel, med hvert benchmark i denne note. De engelske og agentiske benchmarks er rene, det vil sige uden overlap med vores træningsdata, bortset fra én genbrugt AIME 2026-opgave og nogle IFBench-grundprompts fra offentlige chatdata (uden deres krav).
 
 SFT-dataene indeholder træningssættene fra 24 danske EuroEval-opgaver. De indeholder også testeksempler fra 10 af de 27 datasæt, vi kører, fordi nogle af EuroEvals trænings- og testsæt overlapper, og flere opgaver deler kilder. Den danske score, vi rapporterer, er gennemsnittet over de 17 rene datasæt. Med alle 27 ville både vores score og vores forspring foran Nemotron 3 Super være højere.
 
-Scanningen dækker kun det, vi selv har tilføjet i SFT og RL. NVIDIAs prætræning af basismodellen, som Munin 2.0 arver, og NVIDIAs post-træning af Nemotron 3 Super har vi ikke scannet, så "ren" betyder her ren for vores egne træningsdata.
+Scanningen dækker kun det, vi selv har tilføjet i SFT og RL. NVIDIAs prætræning af basismodellen, som Munin 2.0 arver, og NVIDIAs post-træning af Nemotron 3 Super er ikke scannet, så "ren" betyder her ren for vores egne træningsdata.
 
 Københavns Universitets [Danish Semantic Reasoning Benchmark](https://github.com/kuhumcst/danish-semantic-reasoning-benchmark) (beta) tester ordbetydning og inferens. Som reference kørte vi Gemma 4 31B, der ofte bruges som en af de bedste modeller til dansk, i samme harness. På de eksempler, der er rene for vores træningsdata, scorer Munin 2.0 80,1 og Gemma 4 31B 80,5.
 
@@ -152,7 +152,7 @@ Munin 2.0 slår hver af Munin 1.0-modellerne i mindst omkring ni ud af ti indbyr
 
 [DFM Mimir v1.5](https://huggingface.co/danish-foundation-models/DFM-Mimir-v1.5) er vores anden nye model, og de to har forskellige formål. Mimir er en 1,8B-model, der genbruger sine lag flere gange per token. Den er trænet fra bunden på DFM's egne datablandinger og udgivet under Apache 2.0. Munin 2.0 er en 120B-model bygget på en prætrænet basismodel. Mimir køres uden ræsonnering og bruger omkring en tredjedel af Munin 2.0's regnekraft per token.
 
-Sammenligningen dækker de 11 danske opgaver, som begge modeller rapporterer. Mimirs resultater er de offentliggjorte (EuroEvals valideringssæt samt Mimirs eget evalueringsharness for DaLA og WMT24++). Vi har kørt den samme kontamineringsscanning over begge modellers træningsdata.
+Sammenligningen dækker de 11 danske opgaver, som begge modeller rapporterer. Mimirs resultater er de offentliggjorte (EuroEvals valideringssæt samt Mimirs eget evalueringsharness for DaLA og WMT24++). Begge modellers træningsdata er scannet for kontaminering på samme måde.
 
 Mimir fører på tre opgaver, og dens træningsdata indeholder de fleste af testeksemplerne for alle tre: 95 % af MultiWikiQA-da-spørgsmålene med svar og næsten alle grammatiske DaLA- og ScaLA-sætninger. DaLA- og ScaLA-sætningerne kommer fra DFM's eget Danish Dynaword-korpus, som indeholder den træbank, de to benchmarks er bygget af. Munin 2.0 har et mindre overlap på DaLA og ScaLA (21 %), så begge opgaver er udeladt af Munin 2.0's danske score.
 
