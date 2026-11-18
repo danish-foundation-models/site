@@ -92,13 +92,13 @@ Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det
 
 | Trin | Hardware | Regnekraft |
 |---|---|---|
-| SFT | 16 LUMI-noder (AMD MI250X), 57,5 timer | ≈ 8,7×10²⁰ FLOP; 1.870 kWh |
-| Syntetiske data til SFT | – | ≈ 3–4×10¹⁹ FLOP |
-| RL (til det udgivne checkpoint) | 16 Gefion-noder (NVIDIA DGX H100), 788 nodetimer | ≈ 6×10²⁰ FLOP; ~5–8 MWh (anslået) |
+| SFT | 16 LUMI-noder (AMD MI250X), 57,5 timer | ≈ 8,7×10<sup>20</sup> FLOP; 1.870 kWh |
+| Syntetiske data til SFT | – | ≈ 3–4×10<sup>19</sup> FLOP |
+| RL (til det udgivne checkpoint) | 16 Gefion-noder (NVIDIA DGX H100), 788 nodetimer | ≈ 6×10<sup>20</sup> FLOP; ~5–8 MWh (anslået) |
 
 RL-nodetimerne inkluderer mislykkede forsøg.
 
-I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10²², cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10²⁴ FLOP), lærermodeller og genereringen af de syntetiske DFM-datasæt, som begge modeller er trænet på, er ikke talt med.
+I alt brugte DFM omkring 1,5×10<sup>21</sup> FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10<sup>22</sup>, cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10<sup>24</sup> FLOP), lærermodeller og genereringen af de syntetiske DFM-datasæt, som begge modeller er trænet på, er ikke talt med.
 
 ## Flere evalueringer
 

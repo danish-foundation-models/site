@@ -92,13 +92,13 @@ Grading was still noisy. An audit after the released checkpoint showed that for 
 
 | Stage | Hardware | Compute |
 |---|---|---|
-| SFT | 16 LUMI nodes (AMD MI250X), 57.5 hours | ≈ 8.7×10²⁰ FLOP; 1,870 kWh |
-| Synthetic data for the SFT | n/a | ≈ 3–4×10¹⁹ FLOP |
-| RL (to the released checkpoint) | 16 Gefion nodes (NVIDIA DGX H100), 788 node-hours | ≈ 6×10²⁰ FLOP; ~5–8 MWh (estimated) |
+| SFT | 16 LUMI nodes (AMD MI250X), 57.5 hours | ≈ 8.7×10<sup>20</sup> FLOP; 1,870 kWh |
+| Synthetic data for the SFT | n/a | ≈ 3–4×10<sup>19</sup> FLOP |
+| RL (to the released checkpoint) | 16 Gefion nodes (NVIDIA DGX H100), 788 node-hours | ≈ 6×10<sup>20</sup> FLOP; ~5–8 MWh (estimated) |
 
 The RL node-hours include failed attempts.
 
-In total, DFM spent about 1.5×10²¹ FLOP on Munin 2.0. Mimir v1.5, which DFM trained from scratch on 8× B200, took about 1.7×10²², roughly eleven times as much. Both figures count only DFM's own compute: not NVIDIA's pretraining of our base model (an estimated 1.8×10²⁴ FLOP), teacher models, or the generation of the synthetic DFM datasets that both models trained on.
+In total, DFM spent about 1.5×10<sup>21</sup> FLOP on Munin 2.0. Mimir v1.5, which DFM trained from scratch on 8× B200, took about 1.7×10<sup>22</sup>, roughly eleven times as much. Both figures count only DFM's own compute: not NVIDIA's pretraining of our base model (an estimated 1.8×10<sup>24</sup> FLOP), teacher models, or the generation of the synthetic DFM datasets that both models trained on.
 
 ## More evaluations
 
