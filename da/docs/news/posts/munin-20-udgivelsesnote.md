@@ -64,7 +64,7 @@ Munin 2.0 er trænet i to trin fra Nemotron 3 Super Base, uden ændringer i arki
 
 ### Supervised fine-tuning
 
-I SFT-trinnet så modellen hver af de 6,8 millioner samtaler én gang. I alt 11 milliarder tokens, i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agentforløb med værktøjskald, og nogle af dem har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel færdiggør kun tekst. Dette trin lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
+I SFT-trinnet blev modellen trænet på 6,8 millioner samtaler, i alt 11 milliarder tokens, i et enkelt gennemløb og i sekvenser på op til 128k tokens. Dataene dækker chat, ræsonnering med gennemregnede løsninger, kode, funktionskald og agentforløb med værktøjskald, og nogle af dem har vi selv genereret. Omkring 8 % af de trænede tokens er danske, og yderligere 9 % blander dansk og engelsk. En basismodel kan kun færdiggøre tekst, så det er dette trin, der lærer den at chatte, ræsonnere og kalde værktøjer. Resultatet er Munin 2.0 SFT.
 
 ### Reinforcement learning
 
