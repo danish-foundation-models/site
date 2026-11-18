@@ -98,7 +98,7 @@ Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det
 
 RL-nodetimerne inkluderer mislykkede forsøg.
 
-I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10²², cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10²⁴ FLOP), lærermodeller og DFM's internt delte syntetiske datasæt er ikke talt med.
+I alt brugte DFM omkring 1,5×10²¹ FLOP på Munin 2.0. Mimir v1.5, som DFM trænede fra bunden på 8× B200, tog omkring 1,7×10²², cirka elleve gange så meget. Begge tal dækker kun DFM's egen regnekraft, så NVIDIAs prætræning af vores basismodel (anslået 1,8×10²⁴ FLOP), lærermodeller og genereringen af de syntetiske DFM-datasæt, som begge modeller er trænet på, er ikke talt med.
 
 ## Flere evalueringer
 

@@ -98,7 +98,7 @@ Grading was still noisy. An audit after the released checkpoint showed that for 
 
 The RL node-hours include failed attempts.
 
-In total, DFM spent about 1.5×10²¹ FLOP on Munin 2.0. Mimir v1.5, which DFM trained from scratch on 8× B200, took about 1.7×10²², roughly eleven times as much. Both figures count only DFM's own compute: not NVIDIA's pretraining of our base model (an estimated 1.8×10²⁴ FLOP), teacher models, or the synthetic datasets shared within DFM.
+In total, DFM spent about 1.5×10²¹ FLOP on Munin 2.0. Mimir v1.5, which DFM trained from scratch on 8× B200, took about 1.7×10²², roughly eleven times as much. Both figures count only DFM's own compute: not NVIDIA's pretraining of our base model (an estimated 1.8×10²⁴ FLOP), teacher models, or the generation of the synthetic DFM datasets that both models trained on.
 
 ## More evaluations
 
