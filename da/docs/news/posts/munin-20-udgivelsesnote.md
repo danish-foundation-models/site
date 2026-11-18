@@ -72,7 +72,7 @@ I RL-trinnet arbejder modellen som agent. Den får en opgave, for eksempel en fe
 
 Frem til det udgivne checkpoint havde modellen arbejdet sig igennem omkring 119.000 episoder og produceret eller læst 5,6 milliarder tokens. Omkring halvdelen af episoderne er softwareudvikling (Scale-SWE, SWE-smith, OpenSWE), og en fjerdedel er terminalopgaver (Terminal-Lego, TMax). Resten er værktøjsbrug, tekst-til-SQL, instruktionsfølgning og matematik. Kode- og terminalopgaverne kører i tre agent-harnesses: opencode, pi og et simpelt bash-værktøj. Ingen af opgaverne er på dansk.
 
-En episode kan vare op til 300 svar fra modellen og 300.000 tokens. Modellens kontekst er 128k tokens, så på lange opgaver komprimerer harnesset samtalen til et resumé, og agenten fortsætter.
+En episode kan vare op til 300 turns og 300.000 tokens. Modellens kontekst er 128k tokens, så på lange opgaver komprimerer harnesset samtalen til et resumé, og agenten fortsætter.
 
 Træningen kører i Prime Intellects open source-framework [prime-rl](https://github.com/PrimeIntellect-ai/prime-rl), og hele opsætningen ligger på `munin-2.0`-grenene i vores [fork](https://github.com/danish-foundation-models/prime-rl/tree/munin-2.0/gefion-rl).
 
@@ -84,7 +84,7 @@ Vi har bygget [sandkassetjenesten](https://github.com/rlrs/ucloud-sandboxes) til
 
 ### Belønninger
 
-En agent, der trænes på testresultater, tager enhver genvej, testene tillader, og derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op, og hver opgave er valideret, så referenceløsningen består testene, mens et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests desuden lagt tilbage, i tilfælde af at agenten har ændret dem. Episoder, der løber tør for budget, får nul i belønning, og svar, der ender i en gentagelsesløkke, tæller ikke med i opdateringen.
+En agent, der trænes på testresultater, tager enhver genvej, testene tillader, og derfor er de oplagte genveje lukket i hver opgave. Git-historikken er fjernet fra repositorierne, så agenten ikke kan slå løsningen op, og hver opgave er valideret, så referenceløsningen består testene, mens et urørt repository dumper dem. Før bedømmelsen bliver de oprindelige tests desuden lagt tilbage, i tilfælde af at agenten har ændret dem. Episoder, der løber tør for budget, får nul i belønning, og turns, der ender i en gentagelsesløkke, tæller ikke med i opdateringen.
 
 Bedømmelsen var alligevel ikke fejlfri. En gennemgang af bedømmelsen efter det udgivne checkpoint viste, at 18–42 % af de eksakte referenceløsninger til SWE-smiths Rust-, C++- og Java-opgaver var blevet bedømt som forkerte, mest fordi testene kørte i den samme sandkasse, som agenten havde bygget i. SWE-smith bruges kun i træningen, så fejlen gav mere støj i belønningen, men påvirker ikke benchmarkresultaterne. Rettelserne er med i den offentliggjorte opsætning.
 
