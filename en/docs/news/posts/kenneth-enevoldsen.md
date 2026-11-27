@@ -9,13 +9,13 @@ tags:
 
 # Kenneth Enevoldsen: The man who measures the machines
 
-Kenneth Enevoldsen was building Danish language models before ChatGPT made them a household name. Now the Aarhus University researcher wants to make Denmark a hub for language model evaluation. Because whoever writes the tests helps set the rules.
+Kenneth Enevoldsen was building Danish language models before ChatGPT made them a household name. Now the Aarhus University researcher wants to make Denmark a hub for language model evaluation. Because whoever writes the tests sets the rules.
 
 <!-- more -->
 
 ---
 
-Kenneth Enevoldsen no longer pours milk on his oatmeal. As a student, he worked out that water would be far less resource-intensive. He also weighs his coffee to a tenth of a gram. And the habit has stuck.
+Kenneth Enevoldsen no longer pours milk on his oatmeal. As a student, he worked out that water would be far less resource-intensive. Likewise, he also weighs his coffee to a tenth of a gram. And the habit has stuck.
 
 "You can't learn anything if you don't measure it," he says, with a characteristic mix of cheek and thoughtfulness.
 
@@ -23,7 +23,7 @@ Measuring and optimising is a philosophy that runs through everything Kenneth En
 
 The 31-year-old assistant professor at the Center for Humanities Computing at Aarhus University is one of the most central forces in Danish Foundation Models. In fact, he has been there from the start. While the rest of Denmark was blown away by ChatGPT in 2022, he and a small group of volunteers had already released the first Danish language model.
 
-It was not a given that he would end up there. He dropped out of HTX because he played too many computer games. And he tried his hand as both a chef and a forester before ending up at Danish Foundation Models and Aarhus University.
+It was not a given that he would end up there. He dropped out of HTX because he played too much computer. And he tried his hand as both a chef and a forester before ending up at Danish Foundation Models and Aarhus University.
 
 ## An email from Deloitte and KMD
 
@@ -35,7 +35,7 @@ His open-source work led Kenneth to release the language model DaCy in 2020, whi
 
 "I didn't think I had done anything special. I had just been playing around with some code. But I realised there was more to it. Language technology opened up the possibility of developing open source for our own corner of the world," he says.
 
-Around the same time, OpenAI's GPT-2 and GPT-3 showed what language models can do when you scale them up. Kenneth Enevoldsen could hardly believe his eyes when the models started telling stories and writing code. And he quickly started the conversation about Denmark needing its own models.
+Around the same time, OpenAI's GPT-2 and GPT-3 showed what language models can do when scaled up. Kenneth Enevoldsen could hardly believe his eyes when the models started telling stories and writing code. And he quickly started the conversation about Denmark needing its own models.
 
 First in the Danish Data Science Community (DDSC), and later in Danish Foundation Models, with members from Aarhus University, the Alexandra Institute, the University of Copenhagen and the University of Southern Denmark. Kenneth became the project's connecting link.
 
@@ -45,7 +45,7 @@ One of the first datasets he built was Danish Dynaword: an open, continuously up
 
 This brings us back to the oatmeal and the coffee. Because if there is one passion that runs like a red thread through Kenneth Enevoldsen's life, it is measurement and evaluation.
 
-Alongside his work in DFM, he maintains MTEB (the Massive Text Embedding Benchmark), one of the most important and widely recognised evaluation standards in language technology, used by both Google and NVIDIA. Put simply, he builds the exams the models have to sit.
+Alongside his work in DFM, he maintains MTEB (Massive Text Embedding Benchmark), one of the most important and widely recognised evaluation standards in language technology, used by both Google and NVIDIA. Put simply, he builds the exams the models have to solve.
 
 "Evaluation has become my biggest passion, because it's what limits us the most. Finding out how a model performs is something we need to be able to do in order to improve it," he says.
 
